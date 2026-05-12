@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Troy Etiket Pro</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="editor-panel" aria-label="Etiket bilgileri">
+        <div class="brand-block">
+          <img class="brand-mark" src="AppIcon.png" alt="">
+          <div>
+            <h1>Troy Etiket Pro</h1>
+            <p>Online etiket hazırlama aracı</p>
+          </div>
+        </div>
+
+        <form id="labelForm" class="label-form" autocomplete="off">
+          <label>
+            <span>Açıklaması (Model)</span>
+            <input id="modelInput" name="model" type="text" placeholder="Örn: 20 W USB-C Güç Adaptörü" required>
+          </label>
+
+          <label>
+            <span>Ürün Adı (Marka)</span>
+            <input id="brandInput" name="brand" type="text" placeholder="Örn: Apple" required>
+          </label>
+
+          <label>
+            <span>Fiyatı</span>
+            <div class="price-field">
+              <input id="priceInput" name="price" inputmode="numeric" type="text" placeholder="Örn: 779" required>
+              <span>TL</span>
+            </div>
+          </label>
+
+          <div class="inline-fields">
+            <label>
+              <span>Adet</span>
+              <input id="quantityInput" name="quantity" inputmode="numeric" type="text" value="1" required>
+            </label>
+
+            <label>
+              <span>Tarih</span>
+              <input id="dateInput" name="date" type="date" required>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button class="primary-button" type="submit">Listeye Ekle</button>
+            <button id="resetFormButton" class="ghost-button" type="button" title="Formu sıfırla">Sıfırla</button>
+          </div>
+        </form>
+
+        <div class="compact-tools" aria-label="Toplu araçlar">
+          <button id="sampleButton" type="button">Örnek Ekle</button>
+          <button id="exportButton" type="button">JSON Al</button>
+          <label class="import-button">
+            JSON Yükle
+            <input id="importInput" type="file" accept="application/json">
+          </label>
+        </div>
+      </aside>
+
+      <section class="workspace">
+        <header class="workspace-header">
+          <div>
+            <p class="eyebrow">A4 düzeni: 3 sütun x 9 satır</p>
+            <h2>Etiketler <span id="countBadge">0</span></h2>
+          </div>
+          <div class="header-actions">
+            <button id="clearButton" class="ghost-button" type="button" disabled>Temizle</button>
+            <button id="printButton" class="primary-button" type="button" disabled>PDF / Yazdır</button>
+          </div>
+        </header>
+
+        <div id="emptyState" class="empty-state">
+          <img src="APR.png" alt="">
+          <p>Etiketleri ekledikçe burada önizleme oluşur.</p>
+        </div>
+
+        <div id="previewGrid" class="preview-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <section id="printArea" class="print-area" aria-label="Yazdırılacak etiketler"></section>
+
+    <template id="labelTemplate">
+      <article class="label-card">
+        <div class="label-visual">
+          <div class="label-main">
+            <span class="label-model"></span>
+            <strong class="label-brand"></strong>
+            <b class="label-price"></b>
+          </div>
+          <div class="label-footer">
+            <span>K.D.V Dahildir</span>
+            <span>Üretim Yeri: Çin</span>
+            <span>Fiyat Uygulama Tarihi: <em class="label-date"></em></span>
+          </div>
+        </div>
+        <div class="item-actions">
+          <button class="duplicate-item" type="button">Kopyala</button>
+          <button class="remove-item" type="button">Sil</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
