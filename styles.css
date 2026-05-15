@@ -282,7 +282,7 @@ select:focus {
 
 .preview-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   padding: 28px;
 }
@@ -296,11 +296,6 @@ select:focus {
   border-radius: 8px;
   background: #fff;
   box-shadow: var(--shadow);
-}
-
-.label-card .label-visual {
-  transform: scale(0.72);
-  transform-origin: top center;
 }
 
 .label-visual {
@@ -472,9 +467,8 @@ select:focus {
     padding: 10px;
   }
 
-  .label-card .label-visual {
-    transform: scale(0.65);
-    transform-origin: top center;
+  .preview-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
