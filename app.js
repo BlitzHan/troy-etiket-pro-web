@@ -7,6 +7,7 @@ const brandInput = document.querySelector("#brandInput");
 const priceInput = document.querySelector("#priceInput");
 const quantityInput = document.querySelector("#quantityInput");
 const dateInput = document.querySelector("#dateInput");
+const conceptInput = document.querySelector("#conceptInput");
 const resetFormButton = document.querySelector("#resetFormButton");
 const previewGrid = document.querySelector("#previewGrid");
 const printArea = document.querySelector("#printArea");
@@ -91,6 +92,7 @@ function fillLabel(node, item) {
   node.querySelector(".label-model").textContent = item.model;
   node.querySelector(".label-price").textContent = `${item.price} TL`;
   node.querySelector(".label-date").textContent = item.date;
+  node.querySelector(".label-artwork").src = `${item.concept || "APR"}.png`;
 }
 
 function buildLabel(item) {
@@ -159,6 +161,7 @@ function addItemsFromForm(event) {
   const model = modelInput.value.trim();
   const price = priceInput.value.trim();
   const date = formatDisplayDate(dateInput.value || todayForInput());
+  const concept = conceptInput.value;
   const quantity = Math.max(1, Math.min(100, Number(quantityInput.value) || 1));
 
   if (!brand || !model || !price) return;
@@ -169,6 +172,7 @@ function addItemsFromForm(event) {
     model,
     price,
     date,
+    concept,
   }));
 
   items = [...items, ...newItems];
@@ -216,6 +220,7 @@ async function importJson(file) {
         model: String(item.model).trim(),
         price: formatPrice(String(item.price)),
         date: String(item.date).trim(),
+        concept: item.concept || "APR",
       }));
 
     items = [...items, ...normalized];
@@ -290,6 +295,7 @@ sampleButton.addEventListener("click", () => {
       model: "20 W USB-C Güç Adaptörü",
       price: "779",
       date: formatDisplayDate(dateInput.value || todayForInput()),
+      concept: conceptInput.value,
     },
   ];
   saveItems();
