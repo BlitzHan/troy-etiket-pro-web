@@ -949,6 +949,28 @@ select:focus {
   }
 }
 
+.excel-import-label {
+  background-color: #107c41 !important; /* Excel green */
+  border-color: #107c41 !important;
+  color: #ffffff !important;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.excel-import-label:hover {
+  background-color: #0b5930 !important;
+  border-color: #0b5930 !important;
+}
+
+.error-message {
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
 @page {
   size: A4;
   margin: 0;

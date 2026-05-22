@@ -208,6 +208,10 @@
           <div class="modal-toolbar">
             <input id="dbSearch" type="text" placeholder="Ürün adı ile ara...">
             <div class="db-actions">
+              <label class="primary-button excel-import-label" style="display: inline-flex; align-items: center; justify-content: center; cursor: pointer; gap: 6px;">
+                📥 Excel Yükle
+                <input id="excelImportInput" type="file" accept=".xlsx, .xls" style="display: none;">
+              </label>
               <button id="btnResetDb" class="ghost-button text-danger" type="button">Varsayılana Sıfırla</button>
               <button id="btnExportDb" class="primary-button" type="button">JSON İndir</button>
             </div>
@@ -228,6 +232,31 @@
               </tbody>
             </table>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Yönetici Şifre Doğrulama Modalı -->
+    <div id="passcodeModal" class="modal-overlay" hidden>
+      <div class="modal-card passcode-card" style="max-width: 400px;">
+        <header class="modal-header">
+          <h2>Yönetici Yetkilendirmesi</h2>
+          <button id="btnClosePasscodeModal" class="close-button" type="button" title="Kapat">&times;</button>
+        </header>
+        <div class="modal-body" style="gap: 20px;">
+          <p class="modal-description" style="font-size: 13px; text-align: center; color: var(--muted);">
+            Veritabanını düzenlemek veya Excel yüklemek için lütfen yönetici şifrenizi girin.
+          </p>
+          <form id="passcodeForm" class="label-form" style="gap: 16px;">
+            <label style="gap: 8px;">
+              <span>Şifre</span>
+              <input id="passcodeInput" type="password" placeholder="Şifrenizi yazın..." required style="min-height: 44px; text-align: center; letter-spacing: 3px; font-weight: bold;">
+            </label>
+            <div id="passcodeError" class="error-message" style="color: var(--danger); font-size: 13px; font-weight: 700; text-align: center;" hidden>
+              ❌ Hatalı şifre! Lütfen tekrar deneyin.
+            </div>
+            <button class="primary-button" type="submit" style="width: 100%; min-height: 44px; font-size: 14px; font-weight: 800;">Doğrula ve Giriş Yap</button>
+          </form>
         </div>
       </div>
     </div>
@@ -257,6 +286,7 @@
       </article>
     </template>
 
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

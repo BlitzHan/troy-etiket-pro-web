@@ -49,6 +49,16 @@ const btnResetDb = document.querySelector("#btnResetDb");
 const btnExportDb = document.querySelector("#btnExportDb");
 const dbTableBody = document.querySelector("#dbTableBody");
 
+// Passcode Modal Elements
+const passcodeModal = document.querySelector("#passcodeModal");
+const btnClosePasscodeModal = document.querySelector("#btnClosePasscodeModal");
+const passcodeForm = document.querySelector("#passcodeForm");
+const passcodeInput = document.querySelector("#passcodeInput");
+const passcodeError = document.querySelector("#passcodeError");
+
+// Excel Input
+const excelImportInput = document.querySelector("#excelImportInput");
+
 // State Variables
 let items = loadItems();
 let userEditedBrand = false;
@@ -56,6 +66,9 @@ let userEditedBrand = false;
 let currentScreen = "welcome"; // "welcome", "manual", "automatic"
 let catalogProducts = []; // Loaded from products.json
 const overridesStorageKey = "troy-etiket-catalog-overrides";
+const catalogStorageKey = "troy-etiket-custom-catalog";
+const ADMIN_PASSCODE = "troy123";
+
 let catalogOverrides = loadCatalogOverrides(); // { productId: newPriceString }
 let selectedQuantities = {}; // { productId: quantity }
 let activeCategoryFilter = "all";
@@ -118,7 +131,6 @@ function loadItems() {
   }
 }
 
-// Validation function
 function isValidItem(item) {
   return item && item.brand && item.model && item.price && item.date;
 }
@@ -144,7 +156,6 @@ function buildLabel(item) {
 }
 
 function renderPreview() {
-  if (!previewGrid) return;
   previewGrid.replaceChildren();
 
   for (const item of items) {
@@ -314,6 +325,20 @@ function saveCatalogOverrides() {
   localStorage.setItem(overridesStorageKey, JSON.stringify(catalogOverrides));
 }
 
+const customAddedStorageKey = "troy-etiket-custom-added-products";
+
+function loadCustomAddedProducts() {
+  try {
+    return JSON.parse(localStorage.getItem(customAddedStorageKey) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function saveCustomAddedProducts(products) {
+  localStorage.setItem(customAddedStorageKey, JSON.stringify(products));
+}
+
 function applyOverridesToCatalog() {
   for (const product of catalogProducts) {
     if (product.originalPrice === undefined) {
@@ -333,7 +358,10 @@ async function loadCatalog() {
     const response = await fetch("products.json");
     if (!response.ok) throw new Error("Katalog dosyası bulunamadı.");
     const products = await response.json();
-    catalogProducts = products;
+    
+    const customAdded = loadCustomAddedProducts();
+    catalogProducts = [...products, ...customAdded];
+    
     applyOverridesToCatalog();
     renderCatalog();
     renderDbTable();
@@ -624,9 +652,20 @@ autoPrintButton.addEventListener("click", () => {
 });
 
 // Database Modal Handlers
+function isAdminAuthenticated() {
+  return sessionStorage.getItem("troy-admin-authenticated") === "true";
+}
+
 btnOpenDbModal.addEventListener("click", () => {
-  dbModal.removeAttribute("hidden");
-  renderDbTable();
+  if (isAdminAuthenticated()) {
+    dbModal.removeAttribute("hidden");
+    renderDbTable();
+  } else {
+    passcodeError.hidden = true;
+    passcodeInput.value = "";
+    passcodeModal.removeAttribute("hidden");
+    passcodeInput.focus();
+  }
 });
 
 btnCloseDbModal.addEventListener("click", () => {
@@ -636,6 +675,36 @@ btnCloseDbModal.addEventListener("click", () => {
 dbModal.addEventListener("click", (e) => {
   if (e.target === dbModal) {
     dbModal.hidden = true;
+  }
+});
+
+// Passcode Modal Handlers
+btnClosePasscodeModal.addEventListener("click", () => {
+  passcodeModal.hidden = true;
+});
+
+passcodeModal.addEventListener("click", (e) => {
+  if (e.target === passcodeModal) {
+    passcodeModal.hidden = true;
+  }
+});
+
+passcodeForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const value = passcodeInput.value.trim();
+  if (value === ADMIN_PASSCODE) {
+    sessionStorage.setItem("troy-admin-authenticated", "true");
+    passcodeModal.hidden = true;
+    dbModal.removeAttribute("hidden");
+    renderDbTable();
+  } else {
+    passcodeError.hidden = false;
+    // Trigger shake animation
+    passcodeError.classList.remove("error-message");
+    void passcodeError.offsetWidth; // Force reflow
+    passcodeError.classList.add("error-message");
+    passcodeInput.value = "";
+    passcodeInput.focus();
   }
 });
 
@@ -668,13 +737,11 @@ dbTableBody.addEventListener("input", (event) => {
 });
 
 btnResetDb.addEventListener("click", () => {
-  if (confirm("Tüm fiyatları varsayılan ayarlara döndürmek istediğinizden emin misiniz?")) {
+  if (confirm("Tüm fiyatları varsayılan ayarlara döndürmek ve eklenen özel ürünleri temizlemek istediğinizden emin misiniz?")) {
     catalogOverrides = {};
     saveCatalogOverrides();
-    applyOverridesToCatalog();
-    renderCatalog();
-    renderDbTable();
-    updateAutoBadge();
+    saveCustomAddedProducts([]);
+    loadCatalog();
   }
 });
 
@@ -696,6 +763,93 @@ btnExportDb.addEventListener("click", () => {
   link.click();
   URL.revokeObjectURL(url);
 });
+
+// Excel Import Logic (SheetJS)
+function findValue(row, possibleKeys) {
+  for (const key of Object.keys(row)) {
+    const normKey = key.trim().toLowerCase("tr-TR");
+    if (possibleKeys.includes(normKey)) {
+      return row[key];
+    }
+  }
+  return undefined;
+}
+
+async function handleExcelImport(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  try {
+    const data = await file.arrayBuffer();
+    const workbook = XLSX.read(data, { type: "array" });
+    const firstSheetName = workbook.SheetNames[0];
+    const worksheet = workbook.Sheets[firstSheetName];
+    const rows = XLSX.utils.sheet_to_json(worksheet);
+
+    if (rows.length === 0) {
+      alert("Yüklenen Excel dosyasında veri bulunamadı.");
+      return;
+    }
+
+    let updatedCount = 0;
+    let addedCount = 0;
+    const customAdded = loadCustomAddedProducts();
+
+    for (const row of rows) {
+      const category = findValue(row, ["kategori", "category", "kategori adi", "kategori adı", "tür", "tur"]) || "Aksesuar";
+      const brand = findValue(row, ["marka", "brand", "markası", "markasi", "üretici", "uretici"]) || "Apple";
+      const model = findValue(row, ["model", "aciklama", "açıklama", "urun adi", "ürün adı", "model adi", "model adı", "tanım", "tanim", "ürün açıklaması", "urun aciklamasi"]);
+      const price = findValue(row, ["fiyat", "price", "tutar", "fiyatı", "fiyati", "etiket fiyatı", "etiket fiyati"]);
+
+      if (!model || price === undefined) continue;
+
+      const cleanPrice = String(price).replace(/\D/g, "");
+      const cleanModel = capitalizeProductText(String(model).trim());
+      const cleanBrand = capitalizeProductText(String(brand).trim());
+      const cleanCategory = String(category).trim();
+
+      // Check if it exists in current catalogProducts
+      const existing = catalogProducts.find(p => p.model.toLowerCase("tr-TR") === cleanModel.toLowerCase("tr-TR"));
+
+      if (existing) {
+        // Update its override and details in memory
+        existing.price = cleanPrice;
+        existing.brand = cleanBrand;
+        existing.category = cleanCategory;
+        catalogOverrides[existing.id] = cleanPrice;
+        updatedCount++;
+      } else {
+        // Create new product
+        const newProduct = {
+          id: "prod-" + createId(),
+          brand: cleanBrand,
+          model: cleanModel,
+          price: cleanPrice,
+          category: cleanCategory,
+          concept: "APR"
+        };
+        customAdded.push(newProduct);
+        addedCount++;
+      }
+    }
+
+    // Save state
+    saveCatalogOverrides();
+    saveCustomAddedProducts(customAdded);
+    
+    // Reload catalog combining products.json + custom added
+    await loadCatalog();
+
+    alert(`Excel başarıyla yüklendi!\nGüncellenen Ürün Fiyatı: ${updatedCount}\nYeni Eklenen Ürün Sayısı: ${addedCount}`);
+  } catch (error) {
+    console.error("Excel yüklenirken hata oluştu:", error);
+    alert(`Excel dosyası okunamadı. Lütfen dosya biçimini kontrol edin. Hata: ${error.message}`);
+  } finally {
+    excelImportInput.value = "";
+  }
+}
+
+excelImportInput.addEventListener("change", handleExcelImport);
 
 // Print area global listener (for browser menu printing)
 window.addEventListener("beforeprint", renderPrintArea);
