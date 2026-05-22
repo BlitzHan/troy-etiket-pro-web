@@ -1,0 +1,162 @@
+[
+  {
+    "id": "iphone-15-pm-256",
+    "brand": "Apple",
+    "model": "iPhone 15 Pro Max 256 GB",
+    "price": "89999",
+    "concept": "APR",
+    "category": "iPhone"
+  },
+  {
+    "id": "iphone-15-p-256",
+    "brand": "Apple",
+    "model": "iPhone 15 Pro 256 GB",
+    "price": "79999",
+    "concept": "APR",
+    "category": "iPhone"
+  },
+  {
+    "id": "iphone-15-128",
+    "brand": "Apple",
+    "model": "iPhone 15 128 GB",
+    "price": "58499",
+    "concept": "APR",
+    "category": "iPhone"
+  },
+  {
+    "id": "iphone-14-128",
+    "brand": "Apple",
+    "model": "iPhone 14 128 GB",
+    "price": "51499",
+    "concept": "APR",
+    "category": "iPhone"
+  },
+  {
+    "id": "iphone-13-128",
+    "brand": "Apple",
+    "model": "iPhone 13 128 GB",
+    "price": "42999",
+    "concept": "APR",
+    "category": "iPhone"
+  },
+  {
+    "id": "ipad-pro-m4-11-256",
+    "brand": "Apple",
+    "model": "iPad Pro 11 inç (M4) Wi-Fi 256 GB",
+    "price": "45999",
+    "concept": "APR",
+    "category": "iPad"
+  },
+  {
+    "id": "ipad-air-m2-11-128",
+    "brand": "Apple",
+    "model": "iPad Air 11 inç (M2) Wi-Fi 128 GB",
+    "price": "29999",
+    "concept": "APR",
+    "category": "iPad"
+  },
+  {
+    "id": "ipad-10-64",
+    "brand": "Apple",
+    "model": "iPad 10. Nesil 10.9 inç Wi-Fi 64 GB",
+    "price": "17499",
+    "concept": "APR",
+    "category": "iPad"
+  },
+  {
+    "id": "macbook-air-m3-13-16",
+    "brand": "Apple",
+    "model": "MacBook Air 13 inç (M3) 16 GB / 512 GB",
+    "price": "60999",
+    "concept": "APR",
+    "category": "Mac"
+  },
+  {
+    "id": "macbook-pro-m3-14-16",
+    "brand": "Apple",
+    "model": "MacBook Pro 14 inç (M3) 16 GB / 512 GB",
+    "price": "74999",
+    "concept": "APR",
+    "category": "Mac"
+  },
+  {
+    "id": "watch-ultra-2",
+    "brand": "Apple",
+    "model": "Apple Watch Ultra 2 GPS + Cellular 49mm",
+    "price": "46499",
+    "concept": "APR",
+    "category": "Watch"
+  },
+  {
+    "id": "watch-s9-45",
+    "brand": "Apple",
+    "model": "Apple Watch Series 9 GPS 45mm",
+    "price": "18999",
+    "concept": "APR",
+    "category": "Watch"
+  },
+  {
+    "id": "watch-se-44",
+    "brand": "Apple",
+    "model": "Apple Watch SE GPS 44mm",
+    "price": "11999",
+    "concept": "APR",
+    "category": "Watch"
+  },
+  {
+    "id": "airpods-pro-2",
+    "brand": "Apple",
+    "model": "AirPods Pro (2. Nesil) USB-C",
+    "price": "9349",
+    "concept": "APR",
+    "category": "AirPods"
+  },
+  {
+    "id": "airpods-3",
+    "brand": "Apple",
+    "model": "AirPods (3. Nesil) Lightning Şarj Kutusu",
+    "price": "6799",
+    "concept": "APR",
+    "category": "AirPods"
+  },
+  {
+    "id": "airpods-max",
+    "brand": "Apple",
+    "model": "AirPods Max",
+    "price": "24849",
+    "concept": "APR",
+    "category": "AirPods"
+  },
+  {
+    "id": "apple-adapter-20w",
+    "brand": "Apple",
+    "model": "20 W USB-C Güç Adaptörü",
+    "price": "779",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "apple-cable-usbc-lightning",
+    "brand": "Apple",
+    "model": "USB-C - Lightning Kablosu (1 m)",
+    "price": "779",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "apple-airtag-4pack",
+    "brand": "Apple",
+    "model": "AirTag 4'lü Paket",
+    "price": "4399",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "apple-pencil-pro",
+    "brand": "Apple",
+    "model": "Apple Pencil Pro",
+    "price": "5299",
+    "concept": "APR",
+    "category": "Aksesuar"
+  }
+]

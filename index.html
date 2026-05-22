@@ -7,11 +7,38 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <main class="app-shell">
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="welcome-screen">
+      <div class="welcome-card-container">
+        <div class="brand-header">
+          <img src="AppIcon.png" alt="Troy Logo" class="welcome-logo">
+          <h1>Troy Etiket Pro</h1>
+          <p>Çalışma modunuzu seçerek başlayın</p>
+        </div>
+        <div class="mode-options">
+          <button id="btnSelectManual" class="mode-card" type="button">
+            <div class="mode-card-icon">✍️</div>
+            <h3>Manuel Etiket Modu</h3>
+            <p>Ürün adı, fiyat ve diğer detayları elle girerek etiketleri serbestçe hazırlayın.</p>
+            <span class="mode-card-action">Giriş Yap →</span>
+          </button>
+          <button id="btnSelectAuto" class="mode-card" type="button">
+            <div class="mode-card-icon">⚡</div>
+            <h3>Otomatik Etiket Modu</h3>
+            <p>Hazır Apple ürün kataloğundan seçim yapıp adetleri belirleyerek hızlıca etiket basın.</p>
+            <span class="mode-card-action">Giriş Yap →</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Manuel Mod Shell -->
+    <main id="manualShell" class="app-shell" hidden>
       <aside class="editor-panel" aria-label="Etiket bilgileri">
         <div class="brand-block">
           <img class="brand-mark" src="AppIcon.png" alt="">
           <div>
+            <button type="button" class="back-home-button" id="btnManualBackHome">← Giriş Ekranına Dön</button>
             <h1>Troy Etiket Pro</h1>
             <p>Online etiket hazırlama aracı</p>
           </div>
@@ -93,6 +120,118 @@
         <div id="previewGrid" class="preview-grid" aria-live="polite"></div>
       </section>
     </main>
+
+    <!-- Otomatik Mod Shell -->
+    <main id="autoShell" class="app-shell" hidden>
+      <aside class="editor-panel auto-panel" aria-label="Otomatik etiket bilgileri">
+        <div class="brand-block">
+          <img class="brand-mark" src="AppIcon.png" alt="">
+          <div>
+            <button type="button" class="back-home-button" id="btnAutoBackHome">← Giriş Ekranına Dön</button>
+            <h1>Troy Etiket Pro</h1>
+            <p>Otomatik etiket hazırlama aracı</p>
+          </div>
+        </div>
+
+        <!-- Catalog Filters & Search -->
+        <div class="catalog-filters-section">
+          <label for="catalogSearch">
+            <span>Ürün Arama</span>
+            <input id="catalogSearch" type="text" placeholder="Ürün adı veya model ara...">
+          </label>
+          
+          <div class="category-tabs" id="categoryTabs">
+            <button class="category-tab active" data-category="all" type="button">Tümü</button>
+            <button class="category-tab" data-category="iPhone" type="button">iPhone</button>
+            <button class="category-tab" data-category="iPad" type="button">iPad</button>
+            <button class="category-tab" data-category="Mac" type="button">Mac</button>
+            <button class="category-tab" data-category="Watch" type="button">Watch</button>
+            <button class="category-tab" data-category="AirPods" type="button">AirPods</button>
+            <button class="category-tab" data-category="Aksesuar" type="button">Aksesuar</button>
+          </div>
+        </div>
+
+        <!-- Basım Ayarları -->
+        <div class="catalog-global-settings">
+          <h3>Basım Ayarları</h3>
+          <label>
+            <span>Mağaza Konsepti</span>
+            <select id="autoConceptInput" name="concept">
+              <option value="APR" selected>APR</option>
+              <option value="APP">APP</option>
+              <option value="AAR">AAR</option>
+            </select>
+          </label>
+          <label>
+            <span>Fiyat Uygulama Tarihi</span>
+            <input id="autoDateInput" name="date" type="date" required>
+          </label>
+        </div>
+
+        <div class="db-management-trigger">
+          <button id="btnOpenDbModal" class="ghost-button" type="button">⚙️ Fiyatları Yönet (Veritabanı)</button>
+        </div>
+      </aside>
+
+      <section class="workspace">
+        <header class="workspace-header">
+          <div>
+            <p class="eyebrow">A4 düzeni: 3 sütun x 9 satır</p>
+            <h2>Basılacak Etiketler <span id="autoCountBadge">0</span></h2>
+          </div>
+          <div class="header-actions">
+            <button id="autoClearButton" class="ghost-button" type="button" disabled>Tümünü Sıfırla</button>
+            <button id="autoPrintButton" class="primary-button" type="button" disabled>PDF / Yazdır</button>
+          </div>
+        </header>
+
+        <div class="workspace-content-scroll">
+          <div id="catalogGrid" class="catalog-grid">
+            <!-- Dynamic catalog products loaded from products.json -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Veritabanı Fiyat Yönetimi Modalı -->
+    <div id="dbModal" class="modal-overlay" hidden>
+      <div class="modal-card">
+        <header class="modal-header">
+          <h2>Veritabanı Fiyat Yönetimi</h2>
+          <button id="btnCloseDbModal" class="close-button" type="button" title="Kapat">&times;</button>
+        </header>
+        <div class="modal-body">
+          <p class="modal-description">
+            Buradan katalogdaki ürünlerin fiyatlarını tarayıcınızda geçici olarak güncelleyebilirsiniz. Kalıcı hale getirmek için <strong>JSON İndir</strong> butonu ile güncel veritabanını indirip projedeki <code>products.json</code> dosyasıyla değiştirebilirsiniz.
+          </p>
+          
+          <div class="modal-toolbar">
+            <input id="dbSearch" type="text" placeholder="Ürün adı ile ara...">
+            <div class="db-actions">
+              <button id="btnResetDb" class="ghost-button text-danger" type="button">Varsayılana Sıfırla</button>
+              <button id="btnExportDb" class="primary-button" type="button">JSON İndir</button>
+            </div>
+          </div>
+          
+          <div class="table-container">
+            <table class="db-table">
+              <thead>
+                <tr>
+                  <th>Kategori</th>
+                  <th>Ürün Adı</th>
+                  <th>Varsayılan Fiyat</th>
+                  <th>Güncel Fiyat (TL)</th>
+                </tr>
+              </thead>
+              <tbody id="dbTableBody">
+                <!-- Dynamic product editing rows -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <section id="printArea" class="print-area" aria-label="Yazdırılacak etiketler"></section>
 
