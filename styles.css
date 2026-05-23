@@ -686,6 +686,12 @@ input:focus, select:focus {
   gap: 12px;
 }
 
+@media (min-width: 851px) {
+  .catalog-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 .catalog-item-card {
   background: #fff;
   border: 1px solid var(--line);

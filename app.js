@@ -74,7 +74,7 @@ let catalogOverrides = loadCatalogOverrides(); // { productId: newPriceString }
 let selectedQuantities = {}; // { productId: quantity }
 let activeCategoryFilter = "all";
 let catalogCurrentPage = 1;
-const catalogItemsPerPage = 12;
+const catalogItemsPerPage = 8;
 
 const subcategoryRules = {
   // iPhone Subcategories
