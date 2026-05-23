@@ -142,7 +142,14 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   .editor-panel.auto-panel {
     gap: 8px;
     padding: 12px 12px 8px;
-    overflow-x: hidden; /* kategori chip bar için taşmayı kapat */
+    /* Chip barın yatay taşmasını engelle */
+    overflow-x: hidden;
+  }
+
+  /* Catalog filters: tam genişlikte kalsın */
+  .catalog-filters-section {
+    width: 100%;
+    overflow: hidden;
   }
 
   /* ── Workspace: fills remaining screen ── */
@@ -236,19 +243,20 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     padding: 0;
   }
 
-  /* ── Basım ayarları → sol hizalı dikey liste ── */
+  /* ── Basım ayarları: tam genişlik, sol hizalı ── */
   .catalog-global-settings {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    align-items: flex-start;
+    /* align-items varsayılanı stretch → çocuklar tam genişlik alır */
+    align-self: stretch;   /* panel içinde tam genişlik kapsın */
     padding-bottom: 8px;
   }
-  .catalog-global-settings label {
+  /* label ve select/input tam genişlikte */
+  .catalog-global-settings label,
+  .catalog-global-settings select,
+  .catalog-global-settings input {
     width: 100%;
-  }
-  .catalog-global-settings h3 {
-    /* h3 tam satır, grid-column gereksiz */
   }
 
   /* ── DB trigger ── */
