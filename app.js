@@ -500,7 +500,10 @@ function renderCatalog() {
       btn.style.fontSize = "13px";
       btn.style.boxShadow = "var(--shadow)";
       btn.innerHTML = `👇 Daha Fazla Göster (${filteredList.length - catalogVisibleLimit} ürün kaldı)`;
-      btn.addEventListener("click", () => {
+      
+      btn.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent any default scrolling behavior
+        
         const nextLimit = catalogVisibleLimit + 24;
         const nextSlice = filteredList.slice(catalogVisibleLimit, nextLimit);
         
@@ -509,7 +512,14 @@ function renderCatalog() {
         }
         
         catalogVisibleLimit = nextLimit;
-        renderLoadMoreButton(filteredList);
+        
+        if (filteredList.length > catalogVisibleLimit) {
+          // Update the existing button text in-place to prevent layout shift and focus loss
+          btn.innerHTML = `👇 Daha Fazla Göster (${filteredList.length - catalogVisibleLimit} ürün kaldı)`;
+        } else {
+          // No more products left, clear the container
+          loadMoreContainer.innerHTML = "";
+        }
       });
       loadMoreContainer.appendChild(btn);
     }
