@@ -382,7 +382,7 @@ function renderCatalog() {
       return false;
     }
     if (searchWord) {
-      const matchText = `${product.brand} ${product.model} ${product.category}`.toLocaleLowerCase("tr-TR");
+      const matchText = `${product.brand} ${product.model} ${product.category} ${product.barcode || ""} ${product.id || ""}`.toLocaleLowerCase("tr-TR");
       return matchText.includes(searchWord);
     }
     return true;
@@ -401,6 +401,7 @@ function renderCatalog() {
 
     card.innerHTML = `
       <span class="catalog-item-badge">${product.category}</span>
+      <div style="color: var(--muted); font-size: 11px; font-family: monospace; margin: 4px 0 2px 0;">${product.barcode || ""}</div>
       <h4>${product.model}</h4>
       <div class="catalog-item-price">${formatPrice(product.price)} TL</div>
       <div class="catalog-item-actions">
@@ -481,7 +482,7 @@ function renderDbTable() {
 
   const filtered = catalogProducts.filter(product => {
     if (query) {
-      const matchText = `${product.brand} ${product.model} ${product.category}`.toLowerCase("tr-TR");
+      const matchText = `${product.brand} ${product.model} ${product.category} ${product.barcode || ""} ${product.id || ""}`.toLowerCase("tr-TR");
       return matchText.includes(query);
     }
     return true;
@@ -499,7 +500,10 @@ function renderDbTable() {
 
     row.innerHTML = `
       <td style="${rowStyle}">${product.category}</td>
-      <td style="${rowStyle}"><strong>${product.brand}</strong> ${product.model}</td>
+      <td style="${rowStyle}">
+        <strong>${product.brand}</strong> ${product.model}
+        <div style="color: var(--muted); font-size: 11px; font-family: monospace; margin-top: 3px;">${product.barcode || ""}</div>
+      </td>
       <td style="${rowStyle}">${formatPrice(product.originalPrice)} TL</td>
       <td style="${rowStyle}">
         <input class="db-price-input" data-id="${product.id}" type="text" value="${formatPrice(product.price)}" style="${isOverridden ? "border-color: var(--accent); font-weight: bold;" : ""}">
