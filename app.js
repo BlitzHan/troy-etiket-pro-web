@@ -633,6 +633,13 @@ quantityInput.addEventListener("input", () => {
 form.addEventListener("submit", addItemsFromForm);
 resetFormButton.addEventListener("click", resetForm);
 
+conceptInput.addEventListener("change", () => {
+  const selectedConcept = conceptInput.value;
+  items.forEach(item => item.concept = selectedConcept);
+  saveItems();
+  renderPreview();
+});
+
 previewGrid.addEventListener("click", (event) => {
   const card = event.target.closest(".label-card");
   if (!card) return;
@@ -968,6 +975,9 @@ window.addEventListener("beforeprint", renderPrintArea);
 // Initializations
 dateInput.value = todayForInput();
 autoDateInput.value = todayForInput();
+if (items.length > 0 && items[0].concept) {
+  conceptInput.value = items[0].concept;
+}
 renderPreview();
 window.addEventListener("load", applyRouting);
 window.addEventListener("hashchange", applyRouting);
