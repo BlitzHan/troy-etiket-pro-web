@@ -521,7 +521,7 @@ function createCatalogItemCard(product) {
 
   card.innerHTML = `
     <span class="catalog-item-badge">${product.category}</span>
-    <div style="color: var(--muted); font-size: 11px; font-family: monospace; margin: 4px 0 2px 0;">${product.barcode || ""}</div>
+    <div style="color: var(--muted); font-size: 9.5px; font-family: monospace; margin: 2px 0 1px 0;">${product.barcode || ""}</div>
     <h4><strong>${capitalizeProductText(product.brand)}</strong> ${capitalizeProductText(product.model)}</h4>
     <div class="catalog-item-price">${formatPrice(product.price)} TL</div>
     <div class="catalog-item-actions">
@@ -887,7 +887,11 @@ categoryMenu.addEventListener("click", (event) => {
 
   if (toggleBtn) {
     const group = toggleBtn.closest(".menu-group");
-    group.classList.toggle("open");
+    const isOpen = group.classList.contains("open");
+    categoryMenu.querySelectorAll(".menu-group").forEach(g => g.classList.remove("open"));
+    if (!isOpen) {
+      group.classList.add("open");
+    }
     return;
   }
 
