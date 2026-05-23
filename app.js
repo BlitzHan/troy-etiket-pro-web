@@ -128,7 +128,9 @@ const subcategoryRules = {
   "acc-watch": (p) => {
     const m = p.model.toLowerCase();
     return m.includes("watch") || m.includes("band") || m.includes("kayış") || m.includes("kordon") || m.includes("loop") || m.includes("şarj") || m.includes("charger");
-  }
+  },
+  // 3. Parti
+  "brand-momax": (p) => p.brand.toLowerCase() === "momax"
 };
 
 // Shared Helpers
@@ -216,7 +218,13 @@ function buildLabel(item) {
 function renderPreview() {
   previewGrid.replaceChildren();
 
-  for (const item of items) {
+  const sortedItems = [...items].sort((a, b) => {
+    const priceA = parseFloat(String(a.price).replace(/\D/g, "")) || 0;
+    const priceB = parseFloat(String(b.price).replace(/\D/g, "")) || 0;
+    return priceA - priceB;
+  });
+
+  for (const item of sortedItems) {
     previewGrid.append(buildLabel(item));
   }
 
@@ -231,7 +239,14 @@ function renderPreview() {
 function renderPrintArea() {
   printArea.replaceChildren();
   
-  const printItems = currentScreen === "automatic" ? getAutoPrintItems() : items;
+  let printItems = currentScreen === "automatic" ? getAutoPrintItems() : items;
+
+  // Sort print items by price ascending
+  printItems = [...printItems].sort((a, b) => {
+    const priceA = parseFloat(String(a.price).replace(/\D/g, "")) || 0;
+    const priceB = parseFloat(String(b.price).replace(/\D/g, "")) || 0;
+    return priceA - priceB;
+  });
 
   for (let pageStart = 0; pageStart < printItems.length; pageStart += 27) {
     const pageItems = printItems.slice(pageStart, pageStart + 27);
@@ -442,7 +457,7 @@ function createCatalogItemCard(product) {
   card.innerHTML = `
     <span class="catalog-item-badge">${product.category}</span>
     <div style="color: var(--muted); font-size: 11px; font-family: monospace; margin: 4px 0 2px 0;">${product.barcode || ""}</div>
-    <h4>${product.model}</h4>
+    <h4><strong>${product.brand}</strong> ${product.model}</h4>
     <div class="catalog-item-price">${formatPrice(product.price)} TL</div>
     <div class="catalog-item-actions">
       <div class="counter-container">
@@ -474,6 +489,13 @@ function renderCatalog() {
       return matchText.includes(searchWord);
     }
     return true;
+  });
+
+  // Sort catalog products by price ascending
+  filtered.sort((a, b) => {
+    const priceA = parseFloat(String(a.price).replace(/\D/g, "")) || 0;
+    const priceB = parseFloat(String(b.price).replace(/\D/g, "")) || 0;
+    return priceA - priceB;
   });
 
   if (filtered.length === 0) {
