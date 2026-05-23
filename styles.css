@@ -59,7 +59,8 @@ button:disabled {
 .app-shell {
   display: grid;
   grid-template-columns: minmax(280px, 350px) minmax(0, 1fr);
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .editor-panel {
@@ -69,6 +70,8 @@ button:disabled {
   padding: 26px;
   border-right: 1px solid var(--line);
   background: var(--surface);
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .brand-block {
@@ -284,7 +287,7 @@ select:focus {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-  padding: 28px;
+  padding: 0;
 }
 
 .label-card {
