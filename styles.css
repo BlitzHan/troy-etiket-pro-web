@@ -60,7 +60,7 @@ button:disabled {
 
 .app-shell {
   display: grid;
-  grid-template-columns: minmax(240px, 290px) minmax(0, 1fr);
+  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
   height: 100vh;
   overflow: hidden;
 }
@@ -68,8 +68,8 @@ button:disabled {
 .editor-panel {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 12px;
+  gap: 12px;
+  padding: 15px;
   border-right: 1px solid var(--line);
   background: var(--surface);
   height: 100vh;
@@ -79,13 +79,13 @@ button:disabled {
 .brand-block {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .brand-mark {
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
   object-fit: cover;
 }
 
@@ -96,40 +96,40 @@ p {
 }
 
 h1 {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.1;
 }
 
 .brand-block p,
 .eyebrow {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .label-form {
   display: grid;
-  gap: 8px;
+  gap: 9px;
 }
 
 label {
   display: grid;
   gap: 3px;
   color: #2d3643;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
 }
 
 input,
 select {
   width: 100%;
-  min-height: 28px;
-  padding: 4px 8px;
+  min-height: 32px;
+  padding: 5px 9px;
   border: 1px solid #cbd2dc;
-  border-radius: 4px;
+  border-radius: 6px;
   color: var(--ink);
   background: #fff;
   outline: none;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 input:focus,
@@ -140,10 +140,10 @@ select:focus {
 
 .price-field {
   display: grid;
-  grid-template-columns: 1fr 36px;
+  grid-template-columns: 1fr 40px;
   align-items: center;
   border: 1px solid #cbd2dc;
-  border-radius: 4px;
+  border-radius: 6px;
   background: #fff;
   overflow: hidden;
 }
@@ -160,7 +160,7 @@ select:focus {
 }
 
 .price-field span {
-  padding-right: 8px;
+  padding-right: 10px;
   color: var(--muted);
   font-weight: 800;
   text-align: right;
@@ -168,8 +168,8 @@ select:focus {
 
 .inline-fields {
   display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 8px;
+  grid-template-columns: 82px 1fr;
+  gap: 10px;
 }
 
 .form-actions,
@@ -185,14 +185,14 @@ select:focus {
 .compact-tools button,
 .import-button,
 .item-actions button {
-  min-height: 30px;
-  padding: 5px 10px;
+  min-height: 35px;
+  padding: 7px 12px;
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: 6px;
   background: #fff;
   color: var(--ink);
   font-weight: 800;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .primary-button {
@@ -215,14 +215,14 @@ select:focus {
 
 .compact-tools {
   flex-wrap: wrap;
-  padding-top: 4px;
+  padding-top: 5px;
   border-top: 1px solid var(--line);
 }
 
 .compact-tools button,
 .import-button {
-  flex: 1 1 76px;
-  font-size: 11px;
+  flex: 1 1 86px;
+  font-size: 12px;
   text-align: center;
 }
 
@@ -247,9 +247,9 @@ select:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  min-height: 44px;
-  padding: 8px 14px;
+  gap: 12px;
+  min-height: 50px;
+  padding: 10px 16px;
   border-bottom: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.86);
   backdrop-filter: blur(12px);
@@ -257,20 +257,20 @@ select:focus {
 
 .workspace-header h2 {
   margin-top: 2px;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 #countBadge,
 #autoCountBadge {
   display: inline-grid;
   place-items: center;
-  min-width: 26px;
-  height: 22px;
-  padding: 0 6px;
-  border-radius: 4px;
+  min-width: 30px;
+  height: 26px;
+  padding: 0 8px;
+  border-radius: 6px;
   background: #dcecff;
   color: #064b91;
-  font-size: 12px;
+  font-size: 14px;
   margin-left: 4px;
 }
 
@@ -294,17 +294,17 @@ select:focus {
 .preview-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 14px;
   padding: 0;
 }
 
 .label-card {
   display: grid;
-  gap: 8px;
+  gap: 10px;
   justify-items: center;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: 6px;
   background: #fff;
   box-shadow: var(--shadow);
 }
@@ -386,14 +386,14 @@ select:focus {
 .item-actions {
   display: flex;
   width: 100%;
-  gap: 6px;
+  gap: 8px;
 }
 
 .item-actions button {
   flex: 1;
-  min-height: 26px;
-  padding: 4px 8px;
-  font-size: 11px;
+  min-height: 30px;
+  padding: 5px 9px;
+  font-size: 12px;
 }
 
 .remove-item {
@@ -611,8 +611,8 @@ select:focus {
 .catalog-filters-section {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding-bottom: 10px;
+  gap: 10px;
+  padding-bottom: 12px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -620,7 +620,7 @@ select:focus {
 .category-menu {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   width: 100%;
 }
 
@@ -629,11 +629,11 @@ select:focus {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 4px 8px;
-  font-size: 11px;
+  padding: 6px 10px;
+  font-size: 12px;
   font-weight: 700;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 6px;
   background: transparent;
   color: var(--ink);
   text-align: left;
@@ -672,9 +672,9 @@ select:focus {
 .group-items {
   display: none;
   flex-direction: column;
-  gap: 1px;
-  padding-left: 10px;
-  margin: 1px 0 4px 0;
+  gap: 2px;
+  padding-left: 12px;
+  margin: 2px 0 5px 0;
   border-left: 1.5px solid var(--line);
 }
 
@@ -684,11 +684,11 @@ select:focus {
 
 .sub-item {
   width: 100%;
-  padding: 3px 6px;
-  font-size: 10px;
+  padding: 5px 9px;
+  font-size: 11px;
   font-weight: 600;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 5px;
   background: transparent;
   color: var(--muted);
   text-align: left;
@@ -710,13 +710,13 @@ select:focus {
 .catalog-global-settings {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding-bottom: 10px;
+  gap: 10px;
+  padding-bottom: 12px;
   border-bottom: 1px solid var(--line);
 }
 
 .catalog-global-settings h3 {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   margin: 0;
   color: var(--ink);
@@ -724,7 +724,7 @@ select:focus {
 
 .db-management-trigger {
   margin-top: auto;
-  padding-top: 8px;
+  padding-top: 10px;
   border-top: 1px solid var(--line);
 }
 
@@ -736,23 +736,23 @@ select:focus {
 .workspace-content-scroll {
   flex: 1;
   overflow-y: auto;
-  padding: 10px;
+  padding: 16px;
 }
 
 .catalog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
 }
 
 .catalog-item-card {
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 6px;
+  border-radius: 8px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -769,18 +769,18 @@ select:focus {
   font-weight: 800;
   background: #e9edf3;
   color: var(--muted);
-  padding: 2px 5px;
+  padding: 3px 6px;
   border-radius: 20px;
   text-transform: uppercase;
 }
 
 .catalog-item-card h4 {
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 700;
   margin: 0;
   color: var(--ink);
   line-height: 1.25;
-  min-height: 26px;
+  min-height: 30px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -788,7 +788,7 @@ select:focus {
 }
 
 .catalog-item-price {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   color: var(--ink);
   margin-top: auto;
@@ -798,8 +798,8 @@ select:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 6px;
-  padding-top: 6px;
+  gap: 8px;
+  padding-top: 8px;
   border-top: 1px dashed var(--line);
 }
 
@@ -807,18 +807,18 @@ select:focus {
   display: flex;
   align-items: center;
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: 6px;
   background: #f6f8fb;
   overflow: hidden;
-  height: 22px;
+  height: 28px;
 }
 
 .counter-button {
   background: none;
   border: none;
-  width: 20px;
+  width: 26px;
   height: 100%;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   display: grid;
   place-items: center;
@@ -833,14 +833,14 @@ select:focus {
 }
 
 .counter-input {
-  width: 24px;
+  width: 30px;
   height: 100%;
   border: none;
   background: #fff;
   border-left: 1px solid var(--line);
   border-right: 1px solid var(--line);
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   padding: 0;
   color: var(--ink);
@@ -865,10 +865,10 @@ select:focus {
 
 .modal-card {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
   width: 100%;
-  max-width: 800px;
-  max-height: 90vh;
+  max-width: 850px;
+  max-height: 85vh;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -877,7 +877,7 @@ select:focus {
 }
 
 .modal-header {
-  padding: 10px 16px;
+  padding: 14px 20px;
   border-bottom: 1px solid var(--line);
   display: flex;
   align-items: center;
@@ -885,7 +885,7 @@ select:focus {
 }
 
 .modal-header h2 {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 800;
   margin: 0;
 }
@@ -893,7 +893,7 @@ select:focus {
 .close-button {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 24px;
   color: var(--muted);
   cursor: pointer;
   line-height: 1;
@@ -904,15 +904,15 @@ select:focus {
 }
 
 .modal-body {
-  padding: 14px;
+  padding: 18px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .modal-description {
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--muted);
   line-height: 1.5;
   margin: 0;
@@ -946,10 +946,10 @@ select:focus {
 
 .table-container {
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
   background: #fff;
-  max-height: 300px;
+  max-height: 350px;
   overflow-y: auto;
 }
 
@@ -957,12 +957,12 @@ select:focus {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 11.5px;
+  font-size: 12px;
 }
 
 .db-table th,
 .db-table td {
-  padding: 6px 10px;
+  padding: 9px 13px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -981,9 +981,9 @@ select:focus {
 }
 
 .db-table input {
-  min-height: 24px;
-  padding: 4px 8px;
-  font-size: 11.5px;
+  min-height: 28px;
+  padding: 5px 9px;
+  font-size: 12px;
   max-width: 160px;
 }
 
@@ -1076,9 +1076,9 @@ select:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 5px;
   flex-wrap: wrap;
-  padding: 10px 0 20px 0;
+  padding: 16px 0 24px 0;
   width: 100%;
 }
 
@@ -1086,17 +1086,17 @@ select:focus {
   background: var(--surface);
   color: var(--ink);
   border: 1px solid var(--line);
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.15s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 26px;
-  height: 26px;
+  min-width: 32px;
+  height: 32px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   user-select: none;
 }
@@ -1115,7 +1115,7 @@ select:focus {
 }
 
 .pagination-number {
-  min-width: 26px;
+  min-width: 32px;
 }
 
 .pagination-number.active {
@@ -1127,7 +1127,7 @@ select:focus {
 
 .pagination-ellipsis {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   padding: 0 4px;
   user-select: none;
 }
