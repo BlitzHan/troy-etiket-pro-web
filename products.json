@@ -10204,5 +10204,2174 @@
     "price": "899",
     "concept": "APR",
     "category": "Aksesuar"
+  },
+  {
+    "id": "EAP4AM-HANG-ST",
+    "barcode": "EAP4AM-HANG-ST",
+    "brand": "KA",
+    "model": "Elago AirPods4 Armor Hang Case-Stone",
+    "price": "1699",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "EAP4CL-HANG-TR",
+    "barcode": "EAP4CL-HANG-TR",
+    "brand": "KA",
+    "model": "Elago AirPods4 Clear Hang case-Transparent",
+    "price": "1499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "EAP4RH-BK",
+    "barcode": "EAP4RH-BK",
+    "brand": "KA",
+    "model": "Elago AirPods4 Liquid Silicone Basic Case-Black",
+    "price": "1599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "EAP4RH-ST",
+    "barcode": "EAP4RH-ST",
+    "brand": "KA",
+    "model": "Elago AirPods4 Liquid Silicone Basic Case-Stone",
+    "price": "1279",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "EAPP3AM-HANG-BK",
+    "barcode": "EAPP3AM-HANG-BK",
+    "brand": "KA",
+    "model": "Elago AirPodsPro3 ARMOR HANG-BK",
+    "price": "1699",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "EAPP3AW5-HANG-LGY",
+    "barcode": "EAPP3AW5-HANG-LGY",
+    "brand": "KA",
+    "model": "Elago AirPodsPro3 AW5 HANG-LGY",
+    "price": "1699",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "EAPP3TAPE-HANG-CWHRD",
+    "barcode": "EAPP3TAPE-HANG-CWHRD",
+    "brand": "KA",
+    "model": "Elago AirPodsPro3 CASSETTE TAPE HANG CASE-CWHRD",
+    "price": "1359",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "EAPP3RH-STRAP-BK",
+    "barcode": "EAPP3RH-STRAP-BK",
+    "brand": "KA",
+    "model": "Elago AirPodsPro3 LIQUID HYBRID STRAP-BK",
+    "price": "1599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "EAPP3RH-STRAP-ST",
+    "barcode": "EAPP3RH-STRAP-ST",
+    "brand": "KA",
+    "model": "Elago AirPodsPro3 LIQUID HYBRID STRAP-ST",
+    "price": "1279",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "EAPP3SC-HANG-JIN",
+    "barcode": "EAPP3SC-HANG-JIN",
+    "brand": "KA",
+    "model": "Elago AirPodsPro3 SILICONE HANG CASE-JIN",
+    "price": "1499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "EAPP3SC-HANG-ST",
+    "barcode": "EAPP3SC-HANG-ST",
+    "brand": "KA",
+    "model": "Elago AirPodsPro3 SILICONE HANG CASE-ST",
+    "price": "1199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "EAPP3CL-STRAP-TR",
+    "barcode": "EAPP3CL-STRAP-TR",
+    "brand": "KA",
+    "model": "Elago Clear Strap Case-Şeffaf",
+    "price": "1499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8809919811767",
+    "barcode": "8809919811767",
+    "brand": "Elago",
+    "model": "Apple Silikon Pet Ribbon AirTag Kılıfı - Min",
+    "price": "1199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8809919813082",
+    "barcode": "8809919813082",
+    "brand": "Elago",
+    "model": "Apple Silikon Pet Ribbon AirTag Kılıfı - Taş",
+    "price": "1199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629139953",
+    "barcode": "6944629139953",
+    "brand": "Piili",
+    "model": "Premium Temizlik Kiti",
+    "price": "659",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "1200130025013",
+    "barcode": "1200130025013",
+    "brand": "Harman",
+    "model": "Kardon AuraStudio 5, Bt Hoparlör, Siyah",
+    "price": "21900",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "1200130026713",
+    "barcode": "1200130026713",
+    "brand": "Harman",
+    "model": "Kardon Soundsticks 5, BT Hoparlör, Beyaz",
+    "price": "23900",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "1200130019555",
+    "barcode": "1200130019555",
+    "brand": "JBL",
+    "model": "Charge6 Bluetooth Hoparlör - Siyah",
+    "price": "11900",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6925281995590",
+    "barcode": "6925281995590",
+    "brand": "JBL",
+    "model": "Go Essential, Bluetooth Hoparlör, IPX7, Mavi",
+    "price": "1199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6925281995606",
+    "barcode": "6925281995606",
+    "brand": "JBL",
+    "model": "Go Essential, Bluetooth Hoparlör, IPX7-Kırmızı",
+    "price": "1199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "1200130009471",
+    "barcode": "1200130009471",
+    "brand": "JBL",
+    "model": "GO4  BLUETOOTH HOPARLÖR MOR",
+    "price": "2690",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "1200130011436",
+    "barcode": "1200130011436",
+    "brand": "JBL",
+    "model": "Go4, Bluetooth Hoparlör, IP67, Kum Beji",
+    "price": "2490",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "7340055399494",
+    "barcode": "7340055399494",
+    "brand": "Marshall",
+    "model": "Willen II Bluetooth Hoparlör - Siyah",
+    "price": "6990",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "1200130011641",
+    "barcode": "1200130011641",
+    "brand": "JBL",
+    "model": "Live Beam 3 Kablosuz Kulakiçi Kulaklık -Silver",
+    "price": "11990",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "7340055408882",
+    "barcode": "7340055408882",
+    "brand": "Marshall",
+    "model": "Mode USB-C, Kablolu, Siyah",
+    "price": "3490",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "1200130016233",
+    "barcode": "1200130016233",
+    "brand": "Tune",
+    "model": "FLEX2 NC Kulakiçi TWS Kulaklık, Siyah",
+    "price": "5790",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "1200130016271",
+    "barcode": "1200130016271",
+    "brand": "Tune",
+    "model": "FLEX2 NC Kulakiçi TWS Kulaklık,Ghost Beyaz",
+    "price": "3490",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "1200130016288",
+    "barcode": "1200130016288",
+    "brand": "Tune",
+    "model": "FLEX2 NC Kulakiçi TWS Kulaklık,Ghost Mor",
+    "price": "3490",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "1200130016264",
+    "barcode": "1200130016264",
+    "brand": "Tune",
+    "model": "FLEX2 NC Kulakiçi TWS Kulaklık,Ghost Siyah",
+    "price": "3490",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "7340055398251",
+    "barcode": "7340055398251",
+    "brand": "Marshall",
+    "model": "Minor IV BT ,TWS - Siyah",
+    "price": "6990",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8683548216809",
+    "barcode": "8683548216809",
+    "brand": "Buff",
+    "model": "15W MagSafe -Araç İçi Wireless Şarj Cihazı",
+    "price": "3249",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8683574441664",
+    "barcode": "8683574441664",
+    "brand": "IPRO",
+    "model": "20 W PD+QC Seyahat Şarjı - Beyaz",
+    "price": "699",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629170499",
+    "barcode": "6944629170499",
+    "brand": "Piili",
+    "model": "30w Pd - Q3.0  Type-c Adaptor - Beyaz",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6925281985928",
+    "barcode": "6925281985928",
+    "brand": "Infinity",
+    "model": "Lab InstantGo 10000 mAh Powerbank - Siyah",
+    "price": "799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "4894222079786",
+    "barcode": "4894222079786",
+    "brand": "Momax",
+    "model": "Power Vital 10000mAh Battery Pack (Black)",
+    "price": "2099",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "4894222079793",
+    "barcode": "4894222079793",
+    "brand": "Momax",
+    "model": "Power Vital 10000mAh Battery Pack (White)",
+    "price": "2099",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "4894222078208",
+    "barcode": "4894222078208",
+    "brand": "Momax",
+    "model": "XPro MagSafe Stand 10000mAh Powerbank-Sarı",
+    "price": "2599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "4894222078185",
+    "barcode": "4894222078185",
+    "brand": "Momax",
+    "model": "XPro MagSafe Stand 10000mAh Powerbank-Yeşil",
+    "price": "2599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "4894222078161",
+    "barcode": "4894222078161",
+    "brand": "Momax",
+    "model": "XPro MagSafe Stand 5000mAh Powerbank-Sarı",
+    "price": "2199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629191753",
+    "barcode": "6944629191753",
+    "brand": "Piili",
+    "model": "Mag Ring Stand 5.000 Mah P-Pb7 Powerbank Gri",
+    "price": "4599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629189538",
+    "barcode": "6944629189538",
+    "brand": "Piili",
+    "model": "Standlı MagSafe Powerbank 5.000 Mah Gold",
+    "price": "2499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629189132",
+    "barcode": "6944629189132",
+    "brand": "Piili",
+    "model": "Standlı MagSafe Powerbank 5.000 Mah Grey",
+    "price": "2449",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629191555",
+    "barcode": "6944629191555",
+    "brand": "Piili",
+    "model": "VoltEdge Magsafe Powerbank 5.000 mah Laciver",
+    "price": "3199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629191531",
+    "barcode": "6944629191531",
+    "brand": "Piili",
+    "model": "VoltEdge Magsafe Powerbank 5.000 mah Siyah P",
+    "price": "3199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629191494",
+    "barcode": "6944629191494",
+    "brand": "Piili",
+    "model": "VoltEdge Magsafe Powerbank 5.000 mah Çöl Tit",
+    "price": "3199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629191654",
+    "barcode": "6944629191654",
+    "brand": "Piili",
+    "model": "VoltPad 5.000 Mah P-Pb6 Powerbank Altın",
+    "price": "3699",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629189057",
+    "barcode": "6944629189057",
+    "brand": "Piili",
+    "model": "20W qi2 3 İn 1 Wi-Fi Şarj İstasyonu - Beyaz",
+    "price": "3999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629156370",
+    "barcode": "6944629156370",
+    "brand": "Piili",
+    "model": "Aliminyum Kablosuz Şarj Standı-Siyah",
+    "price": "1799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629189071",
+    "barcode": "6944629189071",
+    "brand": "Piili",
+    "model": "qi2 20W 3 İn 1 Swan Wirelles Şarj İstasyonu",
+    "price": "3499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387703994",
+    "barcode": "8684387703994",
+    "brand": "Buff",
+    "model": "iPad 10.9 inch 10th Gen Easyfit Glass Ekran K",
+    "price": "2499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387703161",
+    "barcode": "8684387703161",
+    "brand": "Buff",
+    "model": "iPad Air 11 inch 6. Nesil 2024 Easyfit Glass",
+    "price": "2499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387703154",
+    "barcode": "8684387703154",
+    "brand": "Buff",
+    "model": "iPad Air 13 inch 6. Nesil 2024 Easyfit Glass",
+    "price": "2499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387703147",
+    "barcode": "8684387703147",
+    "brand": "Buff",
+    "model": "iPad Pro 13 inch 7. Nesil 2024 Easyfit Glass",
+    "price": "2499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8682320020276",
+    "barcode": "8682320020276",
+    "brand": "IPRO",
+    "model": "iPad Air 11\" 2024 /10.Gen 10.9 Ekran Koruyucu",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "763250073766",
+    "barcode": "763250073766",
+    "brand": "Daphnela",
+    "model": "11.NESİL Magic Keyboard",
+    "price": "7999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "763250073520",
+    "barcode": "763250073520",
+    "brand": "Daphnela",
+    "model": "iPad 10.9 10.Nesil Klavyeli Kılıf - Siyah",
+    "price": "4999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "763250073643",
+    "barcode": "763250073643",
+    "brand": "Daphnela",
+    "model": "iPad Air 11 6.Nesil Klavyeli Kılıf-Siyah",
+    "price": "4999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "763250073650",
+    "barcode": "763250073650",
+    "brand": "Daphnela",
+    "model": "iPad Air 13 6.Nesil Klavyeli Kılıf-Siyah",
+    "price": "5399",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "763250073674",
+    "barcode": "763250073674",
+    "brand": "Daphnela",
+    "model": "iPad Pro 13 2024 Klavyeli Kılıf-Siyah",
+    "price": "5399",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387704182",
+    "barcode": "8684387704182",
+    "brand": "Buff",
+    "model": "iPad 10.9 inch (10th) LumiShield Kılıf  Siyah",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387706698",
+    "barcode": "8684387706698",
+    "brand": "Buff",
+    "model": "iPad 11inch/10,9Inch Slim Fit Kilif L.Gray",
+    "price": "2799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "0763250073728",
+    "barcode": "0763250073728",
+    "brand": "Daphnela",
+    "model": "iPad Air 11  Kılıf - Siyah",
+    "price": "2499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "0763250073711",
+    "barcode": "0763250073711",
+    "brand": "Daphnela",
+    "model": "iPad Pro 13 Kılıf - Siyah",
+    "price": "2998",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684730835297",
+    "barcode": "8684730835297",
+    "brand": "IPRO",
+    "model": "iPad 2025 10/11.Nesil Kılıfı - Mavi",
+    "price": "2799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684730835266",
+    "barcode": "8684730835266",
+    "brand": "IPRO",
+    "model": "iPad Air 11 2024/ 10.9 Kılıfı - Mavi",
+    "price": "2799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684730835167",
+    "barcode": "8684730835167",
+    "brand": "IPRO",
+    "model": "TRI- FOLD CASE iPad Pro 2024 11 - Lavanta",
+    "price": "2799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684730835143",
+    "barcode": "8684730835143",
+    "brand": "IPRO",
+    "model": "TRI- FOLD CASE iPad Pro 2024 11 - Siyah",
+    "price": "2799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684730835105",
+    "barcode": "8684730835105",
+    "brand": "IPRO",
+    "model": "TRI- FOLD CASE iPad Pro 2024 13 - Siyah",
+    "price": "2799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "0763250073582",
+    "barcode": "0763250073582",
+    "brand": "Daphnela",
+    "model": "Pencil",
+    "price": "3299",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8683548214027",
+    "barcode": "8683548214027",
+    "brand": "Buff",
+    "model": "33W Hızlı Şarj 3 Port Şarj Adaptörü - Siyah",
+    "price": "1799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8683548213990",
+    "barcode": "8683548213990",
+    "brand": "Buff",
+    "model": "45W Hızlı Şarj Cihazı Dual PD Type-C - Siyah",
+    "price": "3249",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387702157",
+    "barcode": "8684387702157",
+    "brand": "Buff",
+    "model": "BL60-ST Type-C to Lightning 20W Seyahat Şarj",
+    "price": "1499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387706506",
+    "barcode": "8684387706506",
+    "brand": "Buff",
+    "model": "BLC65 Dual Retractable 65W PD Hızlı Şarj Ciha",
+    "price": "3999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629184878",
+    "barcode": "6944629184878",
+    "brand": "Piili",
+    "model": "Smart Vakum Telefon Tututucu",
+    "price": "1749",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8683548216885",
+    "barcode": "8683548216885",
+    "brand": "Buff",
+    "model": "iPhone 15 5D Glass Ekran Koruyucu",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8683548216922",
+    "barcode": "8683548216922",
+    "brand": "Buff",
+    "model": "iPhone 15 5D Privacy Ekran Koruyucu",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8683548216915",
+    "barcode": "8683548216915",
+    "brand": "Buff",
+    "model": "iPhone 15 Plus 5D Privacy Ekran Koruyucu",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8683548216861",
+    "barcode": "8683548216861",
+    "brand": "Buff",
+    "model": "iPhone 15 Pro 5D Glass Ekran Koruyucu",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8683548216854",
+    "barcode": "8683548216854",
+    "brand": "Buff",
+    "model": "iPhone 15 Pro Max 5D Glass Ekran Koruyucu",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387701808",
+    "barcode": "8684387701808",
+    "brand": "Buff",
+    "model": "iPhone 16 5D Glass EasyFit Ekran Koruyucu",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387701815",
+    "barcode": "8684387701815",
+    "brand": "Buff",
+    "model": "iPhone 16 Plus Glass EasyFit Ekran Koruyucu",
+    "price": "1199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387702133",
+    "barcode": "8684387702133",
+    "brand": "Buff",
+    "model": "iPhone 16 Plus Privacy EasyFit Ekran Koruyucu",
+    "price": "1998",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387702140",
+    "barcode": "8684387702140",
+    "brand": "Buff",
+    "model": "iPhone 16 Privacy EasyFit Ekran Koruyucu",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387704649",
+    "barcode": "8684387704649",
+    "brand": "Buff",
+    "model": "iPhone 17 Pro Max/16 Pro Max 5D Privacy EasyF",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387704601",
+    "barcode": "8684387704601",
+    "brand": "Buff",
+    "model": "iPhone 17/17 Pro/16 Pro 5D Glass EasyFit Ekra",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387704632",
+    "barcode": "8684387704632",
+    "brand": "Buff",
+    "model": "iPhone 17/17 Pro/16 Pro 5D Privacy EasyFit Ek",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387704656",
+    "barcode": "8684387704656",
+    "brand": "Buff",
+    "model": "iPhone Air 5D Privacy EasyFit Ekran Koruyu",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "202511111516",
+    "barcode": "202511111516",
+    "brand": "Daphnela",
+    "model": "iPhone 15/16",
+    "price": "1050",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "202511111613",
+    "barcode": "202511111613",
+    "brand": "Daphnela",
+    "model": "iPhone 16e/14/13Pro",
+    "price": "1249",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "202508150628",
+    "barcode": "202508150628",
+    "brand": "Daphnela",
+    "model": "iPhone 17 Pro Max Ekran Koruyucu",
+    "price": "1599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "202508150636",
+    "barcode": "202508150636",
+    "brand": "Daphnela",
+    "model": "iPhone Air Ekran Koruyucu",
+    "price": "1599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629144674",
+    "barcode": "6944629144674",
+    "brand": "Piili",
+    "model": "iPhone 14 10X Askeri Sınıf Ekran Koruyucu",
+    "price": "1099",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629161978",
+    "barcode": "6944629161978",
+    "brand": "Piili",
+    "model": "iPhone 15 Pro Max 10X Sınıf Ekran Koruyucusu",
+    "price": "1099",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629198752",
+    "barcode": "6944629198752",
+    "brand": "Piili",
+    "model": "iPhone 17 Pro Privacy Ekran Koruyucu",
+    "price": "1399",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629198738",
+    "barcode": "6944629198738",
+    "brand": "Piili",
+    "model": "iPhone Air Privacy Ekran Koruyucu",
+    "price": "2100",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "KAIPEKAL01",
+    "barcode": "KAIPEKAL01",
+    "brand": "TR",
+    "model": "ALL iPhone17 Pro Tem.Glass Ek.K-Aluminosilicate",
+    "price": "2249",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "KAIPEKAL02",
+    "barcode": "KAIPEKAL02",
+    "brand": "TR",
+    "model": "ALL iPhone17ProMax Tem.Gla Ek.K-Aluminosilicate",
+    "price": "2249",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "KAIPEKAS01",
+    "barcode": "KAIPEKAS01",
+    "brand": "TR",
+    "model": "ASAHI iPhone 17-17Pro Temp.Glass Ekran Koruyucu",
+    "price": "1699",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "KAIPEKAS02",
+    "barcode": "KAIPEKAS02",
+    "brand": "TR",
+    "model": "ASAHI iPhone 17ProMax Temp.Glass Ekran Koruyucu",
+    "price": "1699",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "KAIPEKC01",
+    "barcode": "KAIPEKC01",
+    "brand": "TR",
+    "model": "COR 17- 17 Pro Corning Glass Ekran Koruyucu",
+    "price": "2999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "7394090000115",
+    "barcode": "7394090000115",
+    "brand": "Grafent",
+    "model": "60W  Type-C 1 Metre Kablo",
+    "price": "759",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "7394090000113",
+    "barcode": "7394090000113",
+    "brand": "Grafent",
+    "model": "Type-C 2 Metre Kablo",
+    "price": "1259",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "848467093704",
+    "barcode": "848467093704",
+    "brand": "Mophie",
+    "model": "Kablo USBA Lightning 1M - Beyaz",
+    "price": "899",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "848467093711",
+    "barcode": "848467093711",
+    "brand": "Mophie",
+    "model": "Kablo USBA Lightning 1M - Siyah",
+    "price": "899",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "848467093735",
+    "barcode": "848467093735",
+    "brand": "Mophie",
+    "model": "Kablo USBA Lightning 3M - Siyah",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "848467093650",
+    "barcode": "848467093650",
+    "brand": "Mophie",
+    "model": "Kablo USBA USBC 3M - Siyah",
+    "price": "799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "848467093575",
+    "barcode": "848467093575",
+    "brand": "Mophie",
+    "model": "Kablo USBC Lightning 1.8M - Siyah",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629184830",
+    "barcode": "6944629184830",
+    "brand": "Piili",
+    "model": "Type-C to Lightning 1 Metre Kablo",
+    "price": "599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629184854",
+    "barcode": "6944629184854",
+    "brand": "Piili",
+    "model": "Type-C to Lightning 2 Metre Kablo",
+    "price": "600",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629159272",
+    "barcode": "6944629159272",
+    "brand": "Piili",
+    "model": "Type-C to Lightning Cable 1m. - Siyah",
+    "price": "599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629187237",
+    "barcode": "6944629187237",
+    "brand": "Piili",
+    "model": "Type-c to Type-c  Magnetic Data Kablo",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629192255",
+    "barcode": "6944629192255",
+    "brand": "Piili",
+    "model": "Type-C To Type-C Kablo 1 Metre - Beyaz",
+    "price": "599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629192279",
+    "barcode": "6944629192279",
+    "brand": "Piili",
+    "model": "Type-C To Type-C Kablo 2 Metre - Beyaz",
+    "price": "799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387701396",
+    "barcode": "8684387701396",
+    "brand": "Buff",
+    "model": "iPhone 15 Magsafe Rubber Fit - Mavi",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387701471",
+    "barcode": "8684387701471",
+    "brand": "Buff",
+    "model": "iPhone 15 Pro Magsafe Rubber Fit - Mavi",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387701723",
+    "barcode": "8684387701723",
+    "brand": "Buff",
+    "model": "iPhone 16 Air Hybrid Şeffaf Kılıf",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387701686",
+    "barcode": "8684387701686",
+    "brand": "Buff",
+    "model": "iPhone 16 Magsafe Air Hybrid Şeffaf Kılıf",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387702454",
+    "barcode": "8684387702454",
+    "brand": "Buff",
+    "model": "iPhone 16 Magsafe Rubber Fit  Kılıf-Plum",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387702522",
+    "barcode": "8684387702522",
+    "brand": "Buff",
+    "model": "iPhone 16 Magsafe Rubber Fit  Kılıf-Siyah",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387701709",
+    "barcode": "8684387701709",
+    "brand": "Buff",
+    "model": "iPhone 16 Pro Magsafe Air Hybrid Şeffaf Kılıf",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387702324",
+    "barcode": "8684387702324",
+    "brand": "Buff",
+    "model": "iPhone 16 Pro Magsafe Rubber Fit Kılıf Pembe",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387702294",
+    "barcode": "8684387702294",
+    "brand": "Buff",
+    "model": "iPhone 16 Pro Magsafe Rubber Fit Kılıf Plum",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387702362",
+    "barcode": "8684387702362",
+    "brand": "Buff",
+    "model": "iPhone 16 Pro Magsafe Rubber Fit Kılıf Siyah",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387701785",
+    "barcode": "8684387701785",
+    "brand": "Buff",
+    "model": "iPhone 16 Pro Max Air Hibrit Kılıf - Şeffaf",
+    "price": "1798",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387702249",
+    "barcode": "8684387702249",
+    "brand": "Buff",
+    "model": "iPhone 16 Pro Max Magsafe Rubber Fit - Pembe",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387702287",
+    "barcode": "8684387702287",
+    "brand": "Buff",
+    "model": "iPhone 16 Pro Max Magsafe Rubber Fit - Siyah",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387702256",
+    "barcode": "8684387702256",
+    "brand": "Buff",
+    "model": "iPhone 16 Pro Max Magsafe Rubber Fit - Turunc",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387704342",
+    "barcode": "8684387704342",
+    "brand": "Buff",
+    "model": "iPhone 16E MagSafe Air Hybrid Kılıf - Şeffaf",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387705387",
+    "barcode": "8684387705387",
+    "brand": "Buff",
+    "model": "iPhone 17 Magsafe Kevlook Kılıf Black",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387705110",
+    "barcode": "8684387705110",
+    "brand": "Buff",
+    "model": "iPhone 17 Magsafe Rubber Fit Silikon Kılıf Bl",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387705097",
+    "barcode": "8684387705097",
+    "brand": "Buff",
+    "model": "iPhone 17 Magsafe Rubber Fit Silikon Kılıf La",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387705349",
+    "barcode": "8684387705349",
+    "brand": "Buff",
+    "model": "iPhone 17 Pro Magsafe Octa Shield Kılıf Blue",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387705202",
+    "barcode": "8684387705202",
+    "brand": "Buff",
+    "model": "iPhone 17 Pro Magsafe Rubber Fit Silikon Kılı",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387705370",
+    "barcode": "8684387705370",
+    "brand": "Buff",
+    "model": "iPhone 17 Pro Max Magsafe Octa Shield Kılıf B",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387705257",
+    "barcode": "8684387705257",
+    "brand": "Buff",
+    "model": "iPhone 17 Pro Max Magsafe Rubber Fit Silikon",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387705226",
+    "barcode": "8684387705226",
+    "brand": "Buff",
+    "model": "iPhone 17 Pro Max Magsafe Rubber Fit Silikon",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387705233",
+    "barcode": "8684387705233",
+    "brand": "Buff",
+    "model": "iPhone 17 Pro Max Magsafe Rubber Fit Silikon",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387704991",
+    "barcode": "8684387704991",
+    "brand": "Buff",
+    "model": "iPhone 17 Pro Max Şeffaf Kılıf - Air Hybrid S",
+    "price": "1199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387705684",
+    "barcode": "8684387705684",
+    "brand": "Buff",
+    "model": "iPhone 17 Pro Max Şeffaf Kılıf - Magsafe Air",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387705035",
+    "barcode": "8684387705035",
+    "brand": "Buff",
+    "model": "iPhone 17 Pro Max Şeffaf Kılıf - Magsafe Air",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387705028",
+    "barcode": "8684387705028",
+    "brand": "Buff",
+    "model": "iPhone 17 Pro Şeffaf Kılıf - Magsafe Air Hybr",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387705653",
+    "barcode": "8684387705653",
+    "brand": "Buff",
+    "model": "iPhone 17 Şeffaf Kılıf - Magsafe Air Fit Seri",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684387705004",
+    "barcode": "8684387705004",
+    "brand": "Buff",
+    "model": "iPhone Şeffaf Kılıf - Magsafe Air Hybrid S",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "763250073636",
+    "barcode": "763250073636",
+    "brand": "Daphnela",
+    "model": "Macbook 13.6 Kılıf-Şefaff",
+    "price": "1399",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "7394090000129",
+    "barcode": "7394090000129",
+    "brand": "Grafent",
+    "model": "Space Serisi iPhone 17 Pro Şeffaf Kılıf",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "7394090000131",
+    "barcode": "7394090000131",
+    "brand": "Grafent",
+    "model": "Space Serisi iPhone 17 Şeffaf Kılıf",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684730835495",
+    "barcode": "8684730835495",
+    "brand": "IPRO",
+    "model": "iPhone 16E Hibrit MagSafe Kılıfı - Şeffaf",
+    "price": "1199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8685100397278",
+    "barcode": "8685100397278",
+    "brand": "IPRO",
+    "model": "MageSafe  Rot.Bracket Case iPhone 17 Pro Blue",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8685100397100",
+    "barcode": "8685100397100",
+    "brand": "IPRO",
+    "model": "MageSafe Case iPhone 17 Pro Clear",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8685100397155",
+    "barcode": "8685100397155",
+    "brand": "IPRO",
+    "model": "MageSafe Case iPhone 17 Pro Max Orange",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684730835853",
+    "barcode": "8684730835853",
+    "brand": "iPRO",
+    "model": "MageSafe Hybrıd Case iPhone 17 Clear",
+    "price": "1599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684730835877",
+    "barcode": "8684730835877",
+    "brand": "iPRO",
+    "model": "MageSafe Hybrıd Case iPhone 17 Pro Clear",
+    "price": "1599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684730835884",
+    "barcode": "8684730835884",
+    "brand": "iPRO",
+    "model": "MageSafe Hybrıd Case iPhone 17 Pro Max Clear",
+    "price": "1599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684730835891",
+    "barcode": "8684730835891",
+    "brand": "iPRO",
+    "model": "MageSafe MATE Case iPhone 17 BLACK",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684730835914",
+    "barcode": "8684730835914",
+    "brand": "iPRO",
+    "model": "MageSafe MATE Case iPhone 17 Pro BLACK",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8685100397308",
+    "barcode": "8685100397308",
+    "brand": "IPRO",
+    "model": "MageSafe Rot.Brac Case iPhone17 Pro Max Blue",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8685100397292",
+    "barcode": "8685100397292",
+    "brand": "IPRO",
+    "model": "MageSafe Rot.Brac Case iPhone17 Pro Max-Clear",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629197335",
+    "barcode": "6944629197335",
+    "brand": "Knit",
+    "model": "iPhone 17 Pro Kevlar Series Case G-45",
+    "price": "2399",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629195096",
+    "barcode": "6944629195096",
+    "brand": "Piili",
+    "model": "iPhone 16 Pro Max Carbon Magsafe Kılıf Siyah",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629194372",
+    "barcode": "6944629194372",
+    "brand": "Piili",
+    "model": "iPhone 16 Pro Soft Aura Magsafe Kılıf Pembe",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629197816",
+    "barcode": "6944629197816",
+    "brand": "Piili",
+    "model": "iPhone Air Magsafe Crystal Clear Şeffaf",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629195591",
+    "barcode": "6944629195591",
+    "brand": "Piili",
+    "model": "ıPhone 17 Kevlar Serisi Magsafe Kılıf Dimeto",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629198196",
+    "barcode": "6944629198196",
+    "brand": "Piili",
+    "model": "ıPhone 17 Kevlar Serisi Magsafe Kılıf Mavi H",
+    "price": "1899",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629195317",
+    "barcode": "6944629195317",
+    "brand": "Piili",
+    "model": "ıPhone 17 Leather Magsafe Kılıf Mavi",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629198516",
+    "barcode": "6944629198516",
+    "brand": "Piili",
+    "model": "ıPhone 17 Pro Gradient Magsafe Kılıf Beyaz",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629200530",
+    "barcode": "6944629200530",
+    "brand": "Piili",
+    "model": "ıPhone 17 Pro Kevlar Serisi Magsafe  Kılıf D",
+    "price": "2199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629195751",
+    "barcode": "6944629195751",
+    "brand": "Piili",
+    "model": "ıPhone 17 Pro Kevlar Serisi Magsafe Kılıf Di",
+    "price": "1899",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629198097",
+    "barcode": "6944629198097",
+    "brand": "Piili",
+    "model": "ıPhone 17 Pro Kevlar Serisi Magsafe Kılıf Ka",
+    "price": "1899",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629195430",
+    "barcode": "6944629195430",
+    "brand": "Piili",
+    "model": "ıPhone 17 Pro Leather Magsafe Kılıf Mavi",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629195454",
+    "barcode": "6944629195454",
+    "brand": "Piili",
+    "model": "ıPhone 17 Pro Leather Magsafe Kılıf Titanyum",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629200578",
+    "barcode": "6944629200578",
+    "brand": "Piili",
+    "model": "ıPhone 17 Pro Max Kevlar Serisi Magsafe  Kıl",
+    "price": "2199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629200615",
+    "barcode": "6944629200615",
+    "brand": "Piili",
+    "model": "ıPhone 17 Pro Max Kevlar Serisi Magsafe Kılı",
+    "price": "2199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629200639",
+    "barcode": "6944629200639",
+    "brand": "Piili",
+    "model": "ıPhone 17 Pro Max Kevlar Serisi Magsafe Kılı",
+    "price": "2199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629204033",
+    "barcode": "6944629204033",
+    "brand": "Piili",
+    "model": "ıPhone 17 Pro Max Metal Stand GripMagsafe  K",
+    "price": "2399",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629200172",
+    "barcode": "6944629200172",
+    "brand": "Piili",
+    "model": "ıPhone 17 Pro Max Rot Msafe  Sil.Kılf-Turunc",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629200134",
+    "barcode": "6944629200134",
+    "brand": "Piili",
+    "model": "ıPhone 17 Pro Max Rot.Magsafe  Silikon Kılıf",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629200097",
+    "barcode": "6944629200097",
+    "brand": "Piili",
+    "model": "ıPhone 17 Pro Rotation Magsafe  Sil.Kılı-Gri",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "202512242016",
+    "barcode": "202512242016",
+    "brand": "Daphnela",
+    "model": "Daphnela14/15/16/17 Pro&ProMax Safir Lens Koruyucu",
+    "price": "1799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "202512242017",
+    "barcode": "202512242017",
+    "brand": "Daphnela",
+    "model": "iPhone 17/16/16Plus Safir Lens Koruyucu",
+    "price": "1799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629185813",
+    "barcode": "6944629185813",
+    "brand": "Piili",
+    "model": "iPhone 16 Pro/ Max Safir Lens Koruyucu Gümüş",
+    "price": "699",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629185875",
+    "barcode": "6944629185875",
+    "brand": "Piili",
+    "model": "iPhone 16 Pro/Max Safir Lens  Koruyucu Çöl",
+    "price": "699",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629185738",
+    "barcode": "6944629185738",
+    "brand": "Piili",
+    "model": "iPhone 16/16 Plus Safir Lens Koruyucu Siyah",
+    "price": "699",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "KAIPLKAS01",
+    "barcode": "KAIPLKAS01",
+    "brand": "TR",
+    "model": "ASAHI iPhone 17 Lens Koruyucu- Şeffaf",
+    "price": "1299",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "KAIPLKAS02",
+    "barcode": "KAIPLKAS02",
+    "brand": "TR",
+    "model": "ASAHI iPhone 17 Pro/17 Pro Max Lens Kor- Şeffaf",
+    "price": "1299",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "KAIPKKS03",
+    "barcode": "KAIPKKS03",
+    "brand": "TR",
+    "model": "SPP iPhone 17 Pro/Pro Max Lens Koruyucu -Blue",
+    "price": "2499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "KAIPKKS02",
+    "barcode": "KAIPKKS02",
+    "brand": "TR",
+    "model": "SPP iPhone 17 Pro/Pro Max Lens Koruyucu -Grey",
+    "price": "2499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "KAIPKKS04",
+    "barcode": "KAIPKKS04",
+    "brand": "TR",
+    "model": "SPP iPhone 17 Pro/Pro Max Lens Koruyucu -Orange",
+    "price": "2499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "KAIPKKS01",
+    "barcode": "KAIPKKS01",
+    "brand": "TR",
+    "model": "SPP iPhone 17 Pro/Pro Max Lens Koruyucu -Silver",
+    "price": "2499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8683548210753",
+    "barcode": "8683548210753",
+    "brand": "Buff",
+    "model": "iPhone WalletMag Stand Deri Cüzdan - Mavi",
+    "price": "1499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "4894222081192",
+    "barcode": "4894222081192",
+    "brand": "Momax",
+    "model": "3-in-1 MagSafe 3lü Şarj Stand (Titanium)",
+    "price": "5999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "4894222073968",
+    "barcode": "4894222073968",
+    "brand": "Momax",
+    "model": "Mag Go 3in1 MagSafe Şarj Standı - Titanyum",
+    "price": "6999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8683548210777",
+    "barcode": "8683548210777",
+    "brand": "Buff",
+    "model": "Type C USB 8 in 1 Hub Çoklayıcı  Adaptör",
+    "price": "2499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8683548219664",
+    "barcode": "8683548219664",
+    "brand": "Buff",
+    "model": "Örgülü Type-C to USB OTG Dönüştürücü Adaptör",
+    "price": "599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8685100397186",
+    "barcode": "8685100397186",
+    "brand": "IPRO",
+    "model": "Usb-A to C Charge & Data Cable 1 Metre-Beyaz",
+    "price": "699",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8683574441213",
+    "barcode": "8683574441213",
+    "brand": "IPRO",
+    "model": "Usb-C Adapter",
+    "price": "599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629184137",
+    "barcode": "6944629184137",
+    "brand": "Piili",
+    "model": "Type-C 3 Portlu Dönüştürücü Adaptör JT",
+    "price": "1899",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8685100397162",
+    "barcode": "8685100397162",
+    "brand": "PRO",
+    "model": "Usb-C to C 60W Charge & Data Cable 2 Metre-Bey",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8684730835792",
+    "barcode": "8684730835792",
+    "brand": "IPRO",
+    "model": "MacBook Air 15.3\" M2/3/4 Ultra İnce Kılıf-Şef",
+    "price": "1749",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629199230",
+    "barcode": "6944629199230",
+    "brand": "Piili",
+    "model": "Macbook Air 15 2023 Hardshell Kapak Şeffaf",
+    "price": "2999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629199131",
+    "barcode": "6944629199131",
+    "brand": "Piili",
+    "model": "Macbook Air13 2022 Hardshell Mat Kapak Siyah",
+    "price": "2799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629199179",
+    "barcode": "6944629199179",
+    "brand": "Piili",
+    "model": "Macbook Air15 2023 Hardshell Mat Kapak Siyah",
+    "price": "2999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "840390323026",
+    "barcode": "840390323026",
+    "brand": "Zagg",
+    "model": "Hardshell Apple MacbookPro14\" M4/M3/M2 Şeffaf",
+    "price": "3499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "085854246019",
+    "barcode": "085854246019",
+    "brand": "Case Logic",
+    "model": "Reflect Notebook Kılıfı 13.3\" -Graphite",
+    "price": "1099",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6973709120994",
+    "barcode": "6973709120994",
+    "brand": "FD",
+    "model": "2.4G & BT5.0 Wireless Dual Mode Mouse - Pembe",
+    "price": "1109",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "740617321340",
+    "barcode": "740617321340",
+    "brand": "Kingston",
+    "model": "XS2000 1 TB Mini USB SSD Taşınabilir Disk",
+    "price": "13999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "740617321333",
+    "barcode": "740617321333",
+    "brand": "Kingston",
+    "model": "XS2000 2 TB Mini USB SSD Taşınabilir Disk",
+    "price": "24499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "196388412563",
+    "barcode": "196388412563",
+    "brand": "Microsoft",
+    "model": "Office Ev 2024 Türkçe",
+    "price": "8299",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "889842863369",
+    "barcode": "889842863369",
+    "brand": "Office",
+    "model": "365 Bireysel TR (12 Aylık Abonelik)",
+    "price": "2299",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "085854241786",
+    "barcode": "085854241786",
+    "brand": "Case Logic",
+    "model": "Deco 13 Sleeve - Siyah",
+    "price": "740",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "085854241793",
+    "barcode": "085854241793",
+    "brand": "Case Logic",
+    "model": "Deco Sleeve - Siyah",
+    "price": "893",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "085854259552",
+    "barcode": "085854259552",
+    "brand": "Thule",
+    "model": "Gauntlet 5 MacBook Kılıfı 14 Hazy Green",
+    "price": "3490",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "085854259576",
+    "barcode": "085854259576",
+    "brand": "Thule",
+    "model": "Gauntlet 5 MacBook Kılıfı 16\", Hazy Green",
+    "price": "3490",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "085854259590",
+    "barcode": "085854259590",
+    "brand": "Thule",
+    "model": "Gauntlet 5 MacBook Çantası, 16\", Black",
+    "price": "4990",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "085854255752",
+    "barcode": "085854255752",
+    "brand": "Thule",
+    "model": "Subterra 2 P.shuttle Large Organizer,V.Gray",
+    "price": "3261",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "085854251945",
+    "barcode": "085854251945",
+    "brand": "Thule",
+    "model": "Tact 8L Çapraz Askılı Çanta - Siyah",
+    "price": "3799",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "8721008535333",
+    "barcode": "8721008535333",
+    "brand": "SEGWAY",
+    "model": "E2 II Elektrikli Scooter",
+    "price": "19999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "731052331406",
+    "barcode": "731052331406",
+    "brand": "Daphnela",
+    "model": "Apple Watch Ekran Koruyucu 42mm",
+    "price": "699",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "731052331529",
+    "barcode": "731052331529",
+    "brand": "Daphnela",
+    "model": "Apple Watch Kordonu S/M 42/44/45/46/49mm",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629193696",
+    "barcode": "6944629193696",
+    "brand": "Piili",
+    "model": "Apple Watch  42-44-45-49 mm Tit. Kayış-Natur",
+    "price": "5299",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "6944629187992",
+    "barcode": "6944629187992",
+    "brand": "Piili",
+    "model": "Watch 42-44-45-46-49mm Urban Kayış - Yeşil",
+    "price": "1049",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "MWR03TQ/A",
+    "barcode": "MWR03TQ/A",
+    "brand": "Apple",
+    "model": "Magic Keyboard for iPad Pro 11-inch (M4) - Turkish",
+    "price": "16209",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "MWR53TQ/A",
+    "barcode": "MWR53TQ/A",
+    "brand": "Apple",
+    "model": "Magic Keyboard for iPad Pro 13-inch (M4) - Turkish",
+    "price": "18859",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "MGYY4TQ/A",
+    "barcode": "MGYY4TQ/A",
+    "brand": "Apple",
+    "model": "Magic Keyboard for iPad Air 13-inch (M3) - Turkish",
+    "price": "14499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "MX2D3ZE/A",
+    "barcode": "MX2D3ZE/A",
+    "brand": "Apple",
+    "model": "Pencil Pro",
+    "price": "7199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "MUWA3ZE/A",
+    "barcode": "MUWA3ZE/A",
+    "brand": "Apple",
+    "model": "Pencil USB-C",
+    "price": "4199",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "MX4F2ZM/A",
+    "barcode": "MX4F2ZM/A",
+    "brand": "Apple",
+    "model": "AirTag Loop - White",
+    "price": "1299",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "MDGG4EE/A",
+    "barcode": "MDGG4EE/A",
+    "brand": "Apple",
+    "model": "Beats USB-A to USB-C Woven Cable (1.5 m) - Bolt Bl",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "MGJD4LL/A",
+    "barcode": "MGJD4LL/A",
+    "brand": "Apple",
+    "model": "Beats 17 Pro Max MagSafe & Camera Control - Granit",
+    "price": "2749",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "MYY73ZM/A",
+    "barcode": "MYY73ZM/A",
+    "brand": "Apple",
+    "model": "iPhone 16 Silicone Case with MagSafe - Star Fruit",
+    "price": "1749",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "MXK63ZE/A",
+    "barcode": "MXK63ZE/A",
+    "brand": "Apple",
+    "model": "Magic Mouse - Black Multi-Touch Surface",
+    "price": "5499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "MXK53ZE/A",
+    "barcode": "MXK53ZE/A",
+    "brand": "Apple",
+    "model": "Magic Mouse - White Multi-Touch Surface",
+    "price": "4499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "MWW83TU/A",
+    "barcode": "MWW83TU/A",
+    "brand": "Apple",
+    "model": "AirPods Max - Purple",
+    "price": "29999",
+    "concept": "APR",
+    "category": "AirPods"
+  },
+  {
+    "id": "MUVX3EE/A",
+    "barcode": "MUVX3EE/A",
+    "brand": "Beats",
+    "model": "Solo Buds - True Wireless Earbuds - Arctic P",
+    "price": "4499",
+    "concept": "APR",
+    "category": "AirPods"
+  },
+  {
+    "id": "MX733EE/A",
+    "barcode": "MX733EE/A",
+    "brand": "Beats",
+    "model": "Powerbeats Pro 2 Quick Sand",
+    "price": "14999",
+    "concept": "APR",
+    "category": "AirPods"
+  },
+  {
+    "id": "MFEA4ZF/A",
+    "barcode": "MFEA4ZF/A",
+    "brand": "Apple",
+    "model": "AirTag (4’lü Paket)",
+    "price": "5499",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "MFE94ZF/A",
+    "barcode": "MFE94ZF/A",
+    "brand": "Apple",
+    "model": "AirTag (Tekli Paket)",
+    "price": "1599",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "TROYBLACK",
+    "barcode": "TROYBLACK",
+    "brand": "Troy",
+    "model": "Club Black Kart",
+    "price": "17999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "PLUSTROYGOLD",
+    "barcode": "PLUSTROYGOLD",
+    "brand": "Troy",
+    "model": "Club Gold Kart",
+    "price": "14999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "TROYGOLD",
+    "barcode": "TROYGOLD",
+    "brand": "Troy",
+    "model": "Club Gold Kart",
+    "price": "10999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "TROYSILVER",
+    "barcode": "TROYSILVER",
+    "brand": "Troy",
+    "model": "Club Silver Kart",
+    "price": "6999",
+    "concept": "APR",
+    "category": "Aksesuar"
+  },
+  {
+    "id": "SERVISBAKIM",
+    "barcode": "SERVISBAKIM",
+    "brand": "SERVİS",
+    "model": "BAKIM",
+    "price": "1999",
+    "concept": "APR",
+    "category": "Aksesuar"
   }
 ]
