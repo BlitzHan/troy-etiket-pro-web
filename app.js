@@ -433,6 +433,29 @@ async function loadCatalog() {
 }
 
 // Render Catalog Grid
+function createCatalogItemCard(product) {
+  const qty = selectedQuantities[product.id] || 0;
+  const card = document.createElement("article");
+  card.className = `catalog-item-card ${qty > 0 ? "has-selected" : ""}`;
+  card.dataset.id = product.id;
+
+  card.innerHTML = `
+    <span class="catalog-item-badge">${product.category}</span>
+    <div style="color: var(--muted); font-size: 11px; font-family: monospace; margin: 4px 0 2px 0;">${product.barcode || ""}</div>
+    <h4>${product.model}</h4>
+    <div class="catalog-item-price">${formatPrice(product.price)} TL</div>
+    <div class="catalog-item-actions">
+      <div class="counter-container">
+        <button class="counter-button btn-dec" type="button" aria-label="Azalt">-</button>
+        <input class="counter-input qty-input" type="text" inputmode="numeric" value="${qty}">
+        <button class="counter-button btn-inc" type="button" aria-label="Arttır">+</button>
+      </div>
+    </div>
+  `;
+  return card;
+}
+
+// Render Catalog Grid
 function renderCatalog() {
   catalogGrid.innerHTML = "";
   loadMoreContainer.innerHTML = "";
@@ -462,44 +485,37 @@ function renderCatalog() {
   const sliced = filtered.slice(0, catalogVisibleLimit);
 
   for (const product of sliced) {
-    const qty = selectedQuantities[product.id] || 0;
-    const card = document.createElement("article");
-    card.className = `catalog-item-card ${qty > 0 ? "has-selected" : ""}`;
-    card.dataset.id = product.id;
-
-    card.innerHTML = `
-      <span class="catalog-item-badge">${product.category}</span>
-      <div style="color: var(--muted); font-size: 11px; font-family: monospace; margin: 4px 0 2px 0;">${product.barcode || ""}</div>
-      <h4>${product.model}</h4>
-      <div class="catalog-item-price">${formatPrice(product.price)} TL</div>
-      <div class="catalog-item-actions">
-        <div class="counter-container">
-          <button class="counter-button btn-dec" type="button" aria-label="Azalt">-</button>
-          <input class="counter-input qty-input" type="text" inputmode="numeric" value="${qty}">
-          <button class="counter-button btn-inc" type="button" aria-label="Arttır">+</button>
-        </div>
-      </div>
-    `;
-
-    catalogGrid.append(card);
+    catalogGrid.appendChild(createCatalogItemCard(product));
   }
 
-  // Render "Load More" button if there are remaining products
-  if (filtered.length > catalogVisibleLimit) {
-    const btn = document.createElement("button");
-    btn.className = "primary-button";
-    btn.type = "button";
-    btn.style.minWidth = "240px";
-    btn.style.height = "42px";
-    btn.style.fontSize = "13px";
-    btn.style.boxShadow = "var(--shadow)";
-    btn.innerHTML = `👇 Daha Fazla Göster (${filtered.length - catalogVisibleLimit} ürün kaldı)`;
-    btn.addEventListener("click", () => {
-      catalogVisibleLimit += 24; // Show 24 more products
-      renderCatalog();
-    });
-    loadMoreContainer.appendChild(btn);
+  // Render "Load More" button helper
+  function renderLoadMoreButton(filteredList) {
+    loadMoreContainer.innerHTML = "";
+    if (filteredList.length > catalogVisibleLimit) {
+      const btn = document.createElement("button");
+      btn.className = "primary-button";
+      btn.type = "button";
+      btn.style.minWidth = "240px";
+      btn.style.height = "42px";
+      btn.style.fontSize = "13px";
+      btn.style.boxShadow = "var(--shadow)";
+      btn.innerHTML = `👇 Daha Fazla Göster (${filteredList.length - catalogVisibleLimit} ürün kaldı)`;
+      btn.addEventListener("click", () => {
+        const nextLimit = catalogVisibleLimit + 24;
+        const nextSlice = filteredList.slice(catalogVisibleLimit, nextLimit);
+        
+        for (const product of nextSlice) {
+          catalogGrid.appendChild(createCatalogItemCard(product));
+        }
+        
+        catalogVisibleLimit = nextLimit;
+        renderLoadMoreButton(filteredList);
+      });
+      loadMoreContainer.appendChild(btn);
+    }
   }
+
+  renderLoadMoreButton(filtered);
 }
 
 function updateSelectedQuantity(productId, quantity) {
