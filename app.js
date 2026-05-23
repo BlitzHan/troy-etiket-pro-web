@@ -145,13 +145,19 @@ function formatDisplayDate(value) {
 }
 
 function capitalizeProductText(value) {
+  if (!value) return "";
   const specialCases = new Map([
     ["iphone", "iPhone"],
+    ["ıphone", "iPhone"],
     ["ipad", "iPad"],
+    ["ıpad", "iPad"],
     ["imac", "iMac"],
+    ["ımac", "iMac"],
     ["macbook", "MacBook"],
     ["ipod", "iPod"],
+    ["ıpod", "iPod"],
     ["ios", "iOS"],
+    ["ıos", "iOS"],
     ["macos", "macOS"],
     ["airpods", "AirPods"],
     ["airtag", "AirTag"],
@@ -164,9 +170,22 @@ function capitalizeProductText(value) {
     .split(/\s+/)
     .filter(Boolean)
     .map((word) => {
-      const key = word.toLocaleLowerCase("tr-TR");
-      if (specialCases.has(key)) return specialCases.get(key);
-      return word.charAt(0).toLocaleUpperCase("tr-TR") + word.slice(1);
+      const match = word.match(/^([^A-Za-z0-9ÇĞİÖŞÜçğıöşü]*)(.*?)([^A-Za-z0-9ÇĞİÖŞÜçğıöşü]*)$/);
+      if (!match) return word;
+      const leading = match[1];
+      const core = match[2];
+      const trailing = match[3];
+
+      if (!core) return word;
+
+      const key = core.toLocaleLowerCase("tr-TR");
+      let formattedCore;
+      if (specialCases.has(key)) {
+        formattedCore = specialCases.get(key);
+      } else {
+        formattedCore = core.charAt(0).toLocaleUpperCase("tr-TR") + core.slice(1).toLocaleLowerCase("tr-TR");
+      }
+      return leading + formattedCore + trailing;
     })
     .join(" ");
 }
@@ -200,8 +219,8 @@ function saveItems() {
 }
 
 function fillLabel(node, item) {
-  node.querySelector(".label-brand").textContent = item.brand;
-  node.querySelector(".label-model").textContent = item.model;
+  node.querySelector(".label-brand").textContent = capitalizeProductText(item.brand);
+  node.querySelector(".label-model").textContent = capitalizeProductText(item.model);
   node.querySelector(".label-price").textContent = `${item.price} TL`;
   node.querySelector(".label-date").textContent = item.date;
   node.querySelector(".label-artwork").src = `${item.concept || "APR"}.png`;
@@ -457,7 +476,7 @@ function createCatalogItemCard(product) {
   card.innerHTML = `
     <span class="catalog-item-badge">${product.category}</span>
     <div style="color: var(--muted); font-size: 11px; font-family: monospace; margin: 4px 0 2px 0;">${product.barcode || ""}</div>
-    <h4><strong>${product.brand}</strong> ${product.model}</h4>
+    <h4><strong>${capitalizeProductText(product.brand)}</strong> ${capitalizeProductText(product.model)}</h4>
     <div class="catalog-item-price">${formatPrice(product.price)} TL</div>
     <div class="catalog-item-actions">
       <div class="counter-container">
