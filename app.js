@@ -165,6 +165,21 @@ function capitalizeProductText(value) {
     ["usb-c", "USB-C"],
     ["usb", "USB"],
     ["wi-fi", "Wi-Fi"],
+    ["jbl", "JBL"],
+    ["ipro", "IPRO"],
+    ["ıpro", "IPRO"],
+    ["ka", "KA"],
+    ["tr", "TR"],
+    ["fd", "FD"],
+    ["zagg", "ZAGG"],
+    ["tws", "TWS"],
+    ["pd", "PD"],
+    ["qc", "QC"],
+    ["otg", "OTG"],
+    ["ram", "RAM"],
+    ["ssd", "SSD"],
+    ["bt", "BT"],
+    ["magsafe", "MagSafe"]
   ]);
 
   return value
@@ -459,11 +474,41 @@ async function loadCatalog() {
     catalogProducts = [...products, ...customAdded];
     
     applyOverridesToCatalog();
+    populateThirdPartyBrands();
     renderCatalog();
     renderDbTable();
   } catch (error) {
     console.error("Katalog yüklenirken hata oluştu:", error);
     alert("Katalog dosyası (products.json) yüklenemedi. Manuel giriş modunu kullanabilir veya veritabanı dosyasını kontrol edebilirsiniz.");
+  }
+}
+
+function populateThirdPartyBrands() {
+  const brands = new Set();
+  for (const p of catalogProducts) {
+    if (p.brand) {
+      const cleanBrand = p.brand.trim();
+      if (cleanBrand && cleanBrand.toLowerCase() !== "apple") {
+        brands.add(cleanBrand);
+      }
+    }
+  }
+
+  const sortedBrands = Array.from(brands).sort((a, b) => 
+    a.localeCompare(b, "tr-TR", { sensitivity: "base" })
+  );
+
+  const container = document.getElementById("thirdPartyBrandItems");
+  if (!container) return;
+
+  container.innerHTML = "";
+  for (const brand of sortedBrands) {
+    const btn = document.createElement("button");
+    btn.className = "sub-item";
+    btn.type = "button";
+    btn.dataset.filter = `brand-${brand.toLowerCase()}`;
+    btn.textContent = capitalizeProductText(brand);
+    container.appendChild(btn);
   }
 }
 
@@ -499,9 +544,16 @@ function renderCatalog() {
   
   const filtered = catalogProducts.filter(product => {
     if (activeCategoryFilter !== "all") {
-      const rule = subcategoryRules[activeCategoryFilter];
-      if (rule && !rule(product)) {
-        return false;
+      if (activeCategoryFilter.startsWith("brand-")) {
+        const brandName = activeCategoryFilter.replace("brand-", "").toLowerCase();
+        if (!product.brand || product.brand.toLowerCase() !== brandName) {
+          return false;
+        }
+      } else {
+        const rule = subcategoryRules[activeCategoryFilter];
+        if (rule && !rule(product)) {
+          return false;
+        }
       }
     }
     if (searchWord) {
