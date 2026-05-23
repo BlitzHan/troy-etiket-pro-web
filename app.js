@@ -58,6 +58,7 @@ const passcodeError = document.querySelector("#passcodeError");
 
 // Excel Input
 const excelImportInput = document.querySelector("#excelImportInput");
+const loadMoreContainer = document.querySelector("#catalogLoadMoreContainer");
 
 // State Variables
 let items = loadItems();
@@ -72,6 +73,7 @@ const ADMIN_PASSCODE = "troy123";
 let catalogOverrides = loadCatalogOverrides(); // { productId: newPriceString }
 let selectedQuantities = {}; // { productId: quantity }
 let activeCategoryFilter = "all";
+let catalogVisibleLimit = 12;
 
 // Shared Helpers
 function todayForInput() {
@@ -301,8 +303,11 @@ function applyRouting() {
     welcomeScreen.hidden = true;
     manualShell.hidden = true;
     autoShell.removeAttribute("hidden");
+    catalogVisibleLimit = 12;
     if (catalogProducts.length === 0) {
       loadCatalog();
+    } else {
+      renderCatalog();
     }
   } else {
     currentScreen = "welcome";
@@ -374,6 +379,7 @@ async function loadCatalog() {
 // Render Catalog Grid
 function renderCatalog() {
   catalogGrid.innerHTML = "";
+  loadMoreContainer.innerHTML = "";
   
   const searchWord = catalogSearch.value.trim().toLocaleLowerCase("tr-TR");
   
@@ -393,7 +399,10 @@ function renderCatalog() {
     return;
   }
 
-  for (const product of filtered) {
+  // Slice the list according to the limit
+  const sliced = filtered.slice(0, catalogVisibleLimit);
+
+  for (const product of sliced) {
     const qty = selectedQuantities[product.id] || 0;
     const card = document.createElement("article");
     card.className = `catalog-item-card ${qty > 0 ? "has-selected" : ""}`;
@@ -414,6 +423,23 @@ function renderCatalog() {
     `;
 
     catalogGrid.append(card);
+  }
+
+  // Render "Load More" button if there are remaining products
+  if (filtered.length > catalogVisibleLimit) {
+    const btn = document.createElement("button");
+    btn.className = "primary-button";
+    btn.type = "button";
+    btn.style.minWidth = "240px";
+    btn.style.height = "42px";
+    btn.style.fontSize = "13px";
+    btn.style.boxShadow = "var(--shadow)";
+    btn.innerHTML = `👇 Daha Fazla Göster (${filtered.length - catalogVisibleLimit} ürün kaldı)`;
+    btn.addEventListener("click", () => {
+      catalogVisibleLimit += 24; // Show 24 more products
+      renderCatalog();
+    });
+    loadMoreContainer.appendChild(btn);
   }
 }
 
@@ -589,7 +615,10 @@ exportButton.addEventListener("click", exportJson);
 importInput.addEventListener("change", () => importJson(importInput.files[0]));
 
 // Automatic Mode Handlers
-catalogSearch.addEventListener("input", renderCatalog);
+catalogSearch.addEventListener("input", () => {
+  catalogVisibleLimit = 12;
+  renderCatalog();
+});
 
 categoryTabs.addEventListener("click", (event) => {
   const tab = event.target.closest(".category-tab");
@@ -598,6 +627,7 @@ categoryTabs.addEventListener("click", (event) => {
   categoryTabs.querySelectorAll(".category-tab").forEach(t => t.classList.remove("active"));
   tab.classList.add("active");
   activeCategoryFilter = tab.dataset.category;
+  catalogVisibleLimit = 12;
   renderCatalog();
 });
 
