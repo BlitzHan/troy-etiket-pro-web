@@ -235,6 +235,8 @@ select:focus {
   flex-direction: column;
   min-width: 0;
   background: var(--panel);
+  height: 100vh;
+  overflow: hidden;
 }
 
 .workspace-header {
