@@ -593,6 +593,20 @@ function renderCatalog() {
   renderPaginationControls(filtered, totalPages);
 }
 
+function scrollToCatalogTop() {
+  if (window.innerWidth <= 850) {
+    // Mobilde sayfanın grid başlangıcına kaydır
+    const gridTop = catalogGrid.getBoundingClientRect().top + window.scrollY - 60;
+    window.scrollTo({ top: gridTop, behavior: "smooth" });
+  } else {
+    // Desktopda workspace container'ı scroll et
+    const scrollContainer = catalogGrid.closest(".workspace-content-scroll");
+    if (scrollContainer) {
+      scrollContainer.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+}
+
 function renderPaginationControls(filteredList, totalPages) {
   loadMoreContainer.innerHTML = "";
   if (totalPages <= 1) return;
@@ -606,7 +620,7 @@ function renderPaginationControls(filteredList, totalPages) {
   firstBtn.addEventListener("click", () => {
     catalogCurrentPage = 1;
     renderCatalog();
-    catalogGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+    scrollToCatalogTop();
   });
   loadMoreContainer.appendChild(firstBtn);
 
@@ -620,7 +634,7 @@ function renderPaginationControls(filteredList, totalPages) {
     if (catalogCurrentPage > 1) {
       catalogCurrentPage -= 1;
       renderCatalog();
-      catalogGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+      scrollToCatalogTop();
     }
   });
   loadMoreContainer.appendChild(prevBtn);
@@ -662,7 +676,7 @@ function renderPaginationControls(filteredList, totalPages) {
     numBtn.addEventListener("click", () => {
       catalogCurrentPage = page;
       renderCatalog();
-      catalogGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+      scrollToCatalogTop();
     });
     loadMoreContainer.appendChild(numBtn);
   }
@@ -677,7 +691,7 @@ function renderPaginationControls(filteredList, totalPages) {
     if (catalogCurrentPage < totalPages) {
       catalogCurrentPage += 1;
       renderCatalog();
-      catalogGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+      scrollToCatalogTop();
     }
   });
   loadMoreContainer.appendChild(nextBtn);
@@ -691,7 +705,7 @@ function renderPaginationControls(filteredList, totalPages) {
   lastBtn.addEventListener("click", () => {
     catalogCurrentPage = totalPages;
     renderCatalog();
-    catalogGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+    scrollToCatalogTop();
   });
   loadMoreContainer.appendChild(lastBtn);
 }
@@ -886,11 +900,28 @@ categoryMenu.addEventListener("click", (event) => {
   const subItem = event.target.closest(".sub-item");
 
   if (toggleBtn) {
-    const group = toggleBtn.closest(".menu-group");
-    const isOpen = group.classList.contains("open");
-    categoryMenu.querySelectorAll(".menu-group").forEach(g => g.classList.remove("open"));
-    if (!isOpen) {
-      group.classList.add("open");
+    const isMobile = window.innerWidth <= 850;
+    if (isMobile) {
+      // Mobilde grup toggle -> direkt o grubun "tümü" filtresini uygula
+      const group = toggleBtn.closest(".menu-group");
+      // İlk sub-item'ın data-filter'ına bak (-all ile biten)
+      const firstSubItem = group.querySelector(".sub-item[data-filter$='-all']") ||
+                           group.querySelector(".sub-item");
+      const filter = firstSubItem ? firstSubItem.dataset.filter : "all";
+      
+      categoryMenu.querySelectorAll(".menu-item, .sub-item").forEach(item => item.classList.remove("active"));
+      toggleBtn.classList.add("active");
+      activeCategoryFilter = filter;
+      catalogCurrentPage = 1;
+      renderCatalog();
+    } else {
+      // Desktop: accordion davranışı
+      const group = toggleBtn.closest(".menu-group");
+      const isOpen = group.classList.contains("open");
+      categoryMenu.querySelectorAll(".menu-group").forEach(g => g.classList.remove("open"));
+      if (!isOpen) {
+        group.classList.add("open");
+      }
     }
     return;
   }
