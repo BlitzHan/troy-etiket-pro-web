@@ -10,6 +10,20 @@
     <link rel="preload" href="AAR.png" as="image">
   </head>
   <body>
+    <!-- Site Login Screen -->
+    <div id="siteLoginScreen" class="site-login-screen">
+      <form id="siteLoginForm" class="site-login-card" autocomplete="off">
+        <img src="AppIcon.png" alt="Troy Logo" class="site-login-logo">
+        <h1>Troy Etiket Pro</h1>
+        <label>
+          <span>Giriş Şifresi</span>
+          <input id="sitePasswordInput" type="password" inputmode="numeric" placeholder="Şifre" required autofocus>
+        </label>
+        <p id="siteLoginError" class="login-error" hidden>Şifre hatalı.</p>
+        <button class="primary-button" type="submit">Giriş Yap</button>
+      </form>
+    </div>
+
     <!-- Welcome Screen -->
     <div id="welcomeScreen" class="welcome-screen">
       <div class="welcome-card-container">

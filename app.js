@@ -1,6 +1,12 @@
 const storageKey = "troy-etiket-pro-items";
 const formatter = new Intl.NumberFormat("tr-TR");
 
+// Site Login Elements
+const siteLoginScreen = document.querySelector("#siteLoginScreen");
+const siteLoginForm = document.querySelector("#siteLoginForm");
+const sitePasswordInput = document.querySelector("#sitePasswordInput");
+const siteLoginError = document.querySelector("#siteLoginError");
+
 // Manual Mode Elements
 const form = document.querySelector("#labelForm");
 const modelInput = document.querySelector("#modelInput");
@@ -68,6 +74,7 @@ let currentScreen = "welcome"; // "welcome", "manual", "automatic"
 let catalogProducts = []; // Loaded from products.json
 const overridesStorageKey = "troy-etiket-catalog-overrides";
 const catalogStorageKey = "troy-etiket-custom-catalog";
+const SITE_PASSCODES = ["2808", "0828"];
 const ADMIN_PASSCODE = "troy123";
 
 let catalogOverrides = loadCatalogOverrides(); // { productId: newPriceString }
@@ -397,7 +404,29 @@ async function importJson(file) {
 }
 
 // Navigation & Routing Logic
+function isSiteAuthenticated() {
+  return sessionStorage.getItem("troy-site-authenticated") === "true";
+}
+
+function showSiteLogin() {
+  siteLoginScreen.hidden = false;
+  welcomeScreen.hidden = true;
+  manualShell.hidden = true;
+  autoShell.hidden = true;
+  setTimeout(() => sitePasswordInput.focus(), 0);
+}
+
+function hideSiteLogin() {
+  siteLoginScreen.hidden = true;
+}
+
 function applyRouting() {
+  if (!isSiteAuthenticated()) {
+    showSiteLogin();
+    return;
+  }
+
+  hideSiteLogin();
   const hash = window.location.hash;
   if (hash === "#manual") {
     currentScreen = "manual";
@@ -422,6 +451,23 @@ function applyRouting() {
     autoShell.hidden = true;
   }
 }
+
+siteLoginForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (SITE_PASSCODES.includes(sitePasswordInput.value)) {
+    sessionStorage.setItem("troy-site-authenticated", "true");
+    sitePasswordInput.value = "";
+    siteLoginError.hidden = true;
+    applyRouting();
+  } else {
+    siteLoginError.hidden = false;
+    sitePasswordInput.select();
+  }
+});
+
+sitePasswordInput.addEventListener("input", () => {
+  siteLoginError.hidden = true;
+});
 
 // Catalog Database Overrides
 function loadCatalogOverrides() {
