@@ -142,6 +142,7 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
   .editor-panel.auto-panel {
     gap: 8px;
     padding: 12px 12px 8px;
+    overflow-x: hidden; /* kategori chip bar için taşmayı kapat */
   }
 
   /* ── Workspace: fills remaining screen ── */
@@ -168,7 +169,10 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     padding-bottom: 2px;
-    width: 100%;
+    /* min-width:0 olmadan flex child taşar */
+    min-width: 0;
+    /* Konteyner tam genişliği aşmasın */
+    max-width: 100%;
   }
   .category-menu::-webkit-scrollbar { display: none; }
 
@@ -232,16 +236,19 @@ button:disabled { cursor: not-allowed; opacity: 0.48; }
     padding: 0;
   }
 
-  /* ── Basım ayarları → 2 cols ── */
+  /* ── Basım ayarları → sol hizalı dikey liste ── */
   .catalog-global-settings {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 8px;
-    align-items: end;
+    align-items: flex-start;
     padding-bottom: 8px;
   }
+  .catalog-global-settings label {
+    width: 100%;
+  }
   .catalog-global-settings h3 {
-    grid-column: 1 / -1;
+    /* h3 tam satır, grid-column gereksiz */
   }
 
   /* ── DB trigger ── */
