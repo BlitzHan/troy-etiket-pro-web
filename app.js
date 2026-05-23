@@ -73,7 +73,8 @@ const ADMIN_PASSCODE = "troy123";
 let catalogOverrides = loadCatalogOverrides(); // { productId: newPriceString }
 let selectedQuantities = {}; // { productId: quantity }
 let activeCategoryFilter = "all";
-let catalogVisibleLimit = 12;
+let catalogCurrentPage = 1;
+const catalogItemsPerPage = 12;
 
 const subcategoryRules = {
   // iPhone Subcategories
@@ -393,7 +394,7 @@ function applyRouting() {
     welcomeScreen.hidden = true;
     manualShell.hidden = true;
     autoShell.removeAttribute("hidden");
-    catalogVisibleLimit = 12;
+    catalogCurrentPage = 1;
     if (catalogProducts.length === 0) {
       loadCatalog();
     } else {
@@ -522,51 +523,125 @@ function renderCatalog() {
     return;
   }
 
-  // Slice the list according to the limit
-  const sliced = filtered.slice(0, catalogVisibleLimit);
+  // Pagination calculation
+  const totalPages = Math.ceil(filtered.length / catalogItemsPerPage);
+  if (catalogCurrentPage > totalPages) {
+    catalogCurrentPage = Math.max(1, totalPages);
+  }
+
+  const start = (catalogCurrentPage - 1) * catalogItemsPerPage;
+  const end = start + catalogItemsPerPage;
+  const sliced = filtered.slice(start, end);
 
   for (const product of sliced) {
     catalogGrid.appendChild(createCatalogItemCard(product));
   }
 
-  // Render "Load More" button helper
-  function renderLoadMoreButton(filteredList) {
-    loadMoreContainer.innerHTML = "";
-    if (filteredList.length > catalogVisibleLimit) {
-      const btn = document.createElement("button");
-      btn.className = "primary-button";
-      btn.type = "button";
-      btn.style.minWidth = "240px";
-      btn.style.height = "42px";
-      btn.style.fontSize = "13px";
-      btn.style.boxShadow = "var(--shadow)";
-      btn.innerHTML = `👇 Daha Fazla Göster (${filteredList.length - catalogVisibleLimit} ürün kaldı)`;
-      
-      btn.addEventListener("click", (e) => {
-        e.preventDefault(); // Prevent any default scrolling behavior
-        
-        const nextLimit = catalogVisibleLimit + 24;
-        const nextSlice = filteredList.slice(catalogVisibleLimit, nextLimit);
-        
-        for (const product of nextSlice) {
-          catalogGrid.appendChild(createCatalogItemCard(product));
-        }
-        
-        catalogVisibleLimit = nextLimit;
-        
-        if (filteredList.length > catalogVisibleLimit) {
-          // Update the existing button text in-place to prevent layout shift and focus loss
-          btn.innerHTML = `👇 Daha Fazla Göster (${filteredList.length - catalogVisibleLimit} ürün kaldı)`;
-        } else {
-          // No more products left, clear the container
-          loadMoreContainer.innerHTML = "";
-        }
-      });
-      loadMoreContainer.appendChild(btn);
+  // Render pagination controls
+  renderPaginationControls(filtered, totalPages);
+}
+
+function renderPaginationControls(filteredList, totalPages) {
+  loadMoreContainer.innerHTML = "";
+  if (totalPages <= 1) return;
+
+  // 1. First Page Button
+  const firstBtn = document.createElement("button");
+  firstBtn.className = "pagination-btn";
+  firstBtn.type = "button";
+  firstBtn.innerHTML = "⏮️ En Başa Git";
+  firstBtn.disabled = catalogCurrentPage === 1;
+  firstBtn.addEventListener("click", () => {
+    catalogCurrentPage = 1;
+    renderCatalog();
+    catalogGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  loadMoreContainer.appendChild(firstBtn);
+
+  // 2. Previous Page Button
+  const prevBtn = document.createElement("button");
+  prevBtn.className = "pagination-btn";
+  prevBtn.type = "button";
+  prevBtn.innerHTML = "⬅️ Önceki";
+  prevBtn.disabled = catalogCurrentPage === 1;
+  prevBtn.addEventListener("click", () => {
+    if (catalogCurrentPage > 1) {
+      catalogCurrentPage -= 1;
+      renderCatalog();
+      catalogGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+  loadMoreContainer.appendChild(prevBtn);
+
+  // 3. Numeric Page Buttons
+  const delta = 2;
+  const pageRange = [];
+  for (let i = 1; i <= totalPages; i++) {
+    if (
+      i === 1 ||
+      i === totalPages ||
+      (i >= catalogCurrentPage - delta && i <= catalogCurrentPage + delta)
+    ) {
+      pageRange.push(i);
     }
   }
 
-  renderLoadMoreButton(filtered);
+  let lastNumber = 0;
+  for (const page of pageRange) {
+    if (lastNumber !== 0) {
+      if (page - lastNumber === 2) {
+        createPageNumBtn(lastNumber + 1);
+      } else if (page - lastNumber > 2) {
+        const ellipsis = document.createElement("span");
+        ellipsis.className = "pagination-ellipsis";
+        ellipsis.textContent = "...";
+        loadMoreContainer.appendChild(ellipsis);
+      }
+    }
+    createPageNumBtn(page);
+    lastNumber = page;
+  }
+
+  function createPageNumBtn(page) {
+    const numBtn = document.createElement("button");
+    numBtn.className = `pagination-btn pagination-number ${page === catalogCurrentPage ? "active" : ""}`;
+    numBtn.type = "button";
+    numBtn.textContent = page;
+    numBtn.addEventListener("click", () => {
+      catalogCurrentPage = page;
+      renderCatalog();
+      catalogGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    loadMoreContainer.appendChild(numBtn);
+  }
+
+  // 4. Next Page Button
+  const nextBtn = document.createElement("button");
+  nextBtn.className = "pagination-btn";
+  nextBtn.type = "button";
+  nextBtn.innerHTML = "Sonraki ➡️";
+  nextBtn.disabled = catalogCurrentPage === totalPages;
+  nextBtn.addEventListener("click", () => {
+    if (catalogCurrentPage < totalPages) {
+      catalogCurrentPage += 1;
+      renderCatalog();
+      catalogGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+  loadMoreContainer.appendChild(nextBtn);
+
+  // 5. Last Page Button
+  const lastBtn = document.createElement("button");
+  lastBtn.className = "pagination-btn";
+  lastBtn.type = "button";
+  lastBtn.innerHTML = "En Sona Git ⏭️";
+  lastBtn.disabled = catalogCurrentPage === totalPages;
+  lastBtn.addEventListener("click", () => {
+    catalogCurrentPage = totalPages;
+    renderCatalog();
+    catalogGrid.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  loadMoreContainer.appendChild(lastBtn);
 }
 
 function updateSelectedQuantity(productId, quantity) {
@@ -749,7 +824,7 @@ importInput.addEventListener("change", () => importJson(importInput.files[0]));
 
 // Automatic Mode Handlers
 catalogSearch.addEventListener("input", () => {
-  catalogVisibleLimit = 12;
+  catalogCurrentPage = 1;
   renderCatalog();
 });
 
@@ -768,7 +843,7 @@ categoryMenu.addEventListener("click", (event) => {
     categoryMenu.querySelectorAll(".menu-item, .sub-item").forEach(item => item.classList.remove("active"));
     menuItem.classList.add("active");
     activeCategoryFilter = menuItem.dataset.filter;
-    catalogVisibleLimit = 12;
+    catalogCurrentPage = 1;
     renderCatalog();
     return;
   }
@@ -777,7 +852,7 @@ categoryMenu.addEventListener("click", (event) => {
     categoryMenu.querySelectorAll(".menu-item, .sub-item").forEach(item => item.classList.remove("active"));
     subItem.classList.add("active");
     activeCategoryFilter = subItem.dataset.filter;
-    catalogVisibleLimit = 12;
+    catalogCurrentPage = 1;
     renderCatalog();
   }
 });
