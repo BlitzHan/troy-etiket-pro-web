@@ -140,14 +140,84 @@
             <input id="catalogSearch" type="text" placeholder="Ürün adı veya model ara...">
           </label>
           
-          <div class="category-tabs" id="categoryTabs">
-            <button class="category-tab active" data-category="all" type="button">Tümü</button>
-            <button class="category-tab" data-category="iPhone" type="button">iPhone</button>
-            <button class="category-tab" data-category="iPad" type="button">iPad</button>
-            <button class="category-tab" data-category="Mac" type="button">Mac</button>
-            <button class="category-tab" data-category="Watch" type="button">Watch</button>
-            <button class="category-tab" data-category="AirPods" type="button">AirPods</button>
-            <button class="category-tab" data-category="Aksesuar" type="button">Aksesuar</button>
+          <div class="category-menu" id="categoryMenu">
+            <!-- Tümü (Flat) -->
+            <button class="menu-item active" data-filter="all" type="button">
+              <span>🏷️ Tümü</span>
+            </button>
+            
+            <!-- iPhone (Accordion) -->
+            <div class="menu-group">
+              <button class="menu-item group-toggle" type="button">
+                <span>📱 iPhone</span> <span class="arrow">▼</span>
+              </button>
+              <div class="group-items">
+                <button class="sub-item" data-filter="iphone-all" type="button">Tüm iPhone'lar</button>
+                <button class="sub-item" data-filter="iphone-17" type="button">iPhone 17 Serisi</button>
+                <button class="sub-item" data-filter="iphone-16" type="button">iPhone 16 Serisi</button>
+                <button class="sub-item" data-filter="iphone-15" type="button">iPhone 15 Serisi</button>
+              </div>
+            </div>
+
+            <!-- iPad (Accordion) -->
+            <div class="menu-group">
+              <button class="menu-item group-toggle" type="button">
+                <span>📟 iPad</span> <span class="arrow">▼</span>
+              </button>
+              <div class="group-items">
+                <button class="sub-item" data-filter="ipad-all" type="button">Tüm iPad'ler</button>
+                <button class="sub-item" data-filter="ipad-pro" type="button">iPad Pro</button>
+                <button class="sub-item" data-filter="ipad-air" type="button">iPad Air</button>
+                <button class="sub-item" data-filter="ipad-standard" type="button">iPad</button>
+              </div>
+            </div>
+
+            <!-- Mac (Accordion) -->
+            <div class="menu-group">
+              <button class="menu-item group-toggle" type="button">
+                <span>💻 Mac</span> <span class="arrow">▼</span>
+              </button>
+              <div class="group-items">
+                <button class="sub-item" data-filter="mac-all" type="button">Tüm Mac'ler</button>
+                <button class="sub-item" data-filter="mac-pro" type="button">MacBook Pro</button>
+                <button class="sub-item" data-filter="mac-air" type="button">MacBook Air</button>
+                <button class="sub-item" data-filter="mac-desktop" type="button">iMac / Mini / Studio</button>
+              </div>
+            </div>
+
+            <!-- Watch (Accordion) -->
+            <div class="menu-group">
+              <button class="menu-item group-toggle" type="button">
+                <span>⌚ Watch</span> <span class="arrow">▼</span>
+              </button>
+              <div class="group-items">
+                <button class="sub-item" data-filter="watch-all" type="button">Tüm Saatler</button>
+                <button class="sub-item" data-filter="watch-ultra" type="button">Apple Watch Ultra</button>
+                <button class="sub-item" data-filter="watch-s11" type="button">Apple Watch Series 11</button>
+                <button class="sub-item" data-filter="watch-s9-se" type="button">Series 9 / SE</button>
+              </div>
+            </div>
+
+            <!-- AirPods (Flat) -->
+            <button class="menu-item" data-filter="airpods-all" type="button">
+              <span>🎧 AirPods</span>
+            </button>
+
+            <!-- Aksesuar (Accordion) -->
+            <div class="menu-group">
+              <button class="menu-item group-toggle" type="button">
+                <span>🔌 Aksesuar</span> <span class="arrow">▼</span>
+              </button>
+              <div class="group-items">
+                <button class="sub-item" data-filter="acc-all" type="button">Tüm Aksesuarlar</button>
+                <button class="sub-item" data-filter="acc-cable-adapter" type="button">Adaptörler & Kablolar</button>
+                <button class="sub-item" data-filter="acc-case" type="button">Kılıflar & Ekran Koruyucular</button>
+                <button class="sub-item" data-filter="acc-headphones" type="button">Kulaklıklar</button>
+                <button class="sub-item" data-filter="acc-ipad" type="button">iPad Ürünleri (Kalem/Klavye)</button>
+                <button class="sub-item" data-filter="acc-iphone" type="button">iPhone Aksesuarları</button>
+                <button class="sub-item" data-filter="acc-watch" type="button">Watch Aksesuarları (Kordon/Şarj)</button>
+              </div>
+            </div>
           </div>
         </div>
 

@@ -33,7 +33,7 @@ const btnAutoBackHome = document.querySelector("#btnAutoBackHome");
 // Automatic Mode Elements
 const catalogGrid = document.querySelector("#catalogGrid");
 const catalogSearch = document.querySelector("#catalogSearch");
-const categoryTabs = document.querySelector("#categoryTabs");
+const categoryMenu = document.querySelector("#categoryMenu");
 const autoConceptInput = document.querySelector("#autoConceptInput");
 const autoDateInput = document.querySelector("#autoDateInput");
 const autoCountBadge = document.querySelector("#autoCountBadge");
@@ -74,6 +74,62 @@ let catalogOverrides = loadCatalogOverrides(); // { productId: newPriceString }
 let selectedQuantities = {}; // { productId: quantity }
 let activeCategoryFilter = "all";
 let catalogVisibleLimit = 12;
+
+const subcategoryRules = {
+  // iPhone Subcategories
+  "iphone-all": (p) => p.category === "iPhone",
+  "iphone-17": (p) => p.category === "iPhone" && p.model.toLowerCase().includes("iphone 17"),
+  "iphone-16": (p) => p.category === "iPhone" && p.model.toLowerCase().includes("iphone 16"),
+  "iphone-15": (p) => p.category === "iPhone" && p.model.toLowerCase().includes("iphone 15"),
+
+  // iPad Subcategories
+  "ipad-all": (p) => p.category === "iPad",
+  "ipad-pro": (p) => p.category === "iPad" && p.model.toLowerCase().includes("ipad pro"),
+  "ipad-air": (p) => p.category === "iPad" && p.model.toLowerCase().includes("ipad air"),
+  "ipad-standard": (p) => p.category === "iPad" && !p.model.toLowerCase().includes("ipad pro") && !p.model.toLowerCase().includes("ipad air"),
+
+  // Mac Subcategories
+  "mac-all": (p) => p.category === "Mac",
+  "mac-pro": (p) => p.category === "Mac" && p.model.toLowerCase().includes("macbook pro"),
+  "mac-air": (p) => p.category === "Mac" && p.model.toLowerCase().includes("macbook air"),
+  "mac-desktop": (p) => p.category === "Mac" && (p.model.toLowerCase().includes("mini") || p.model.toLowerCase().includes("studio") || p.model.toLowerCase().includes("imac")),
+
+  // Watch Subcategories
+  "watch-all": (p) => p.category === "Watch",
+  "watch-ultra": (p) => p.category === "Watch" && p.model.toLowerCase().includes("ultra"),
+  "watch-s11": (p) => p.category === "Watch" && p.model.toLowerCase().includes("series 11"),
+  "watch-s9-se": (p) => p.category === "Watch" && (p.model.toLowerCase().includes("series 9") || p.model.toLowerCase().includes("se")),
+
+  // AirPods Subcategories
+  "airpods-all": (p) => p.category === "AirPods" || p.model.toLowerCase().includes("airpods"),
+
+  // Aksesuar Subcategories
+  "acc-all": (p) => p.category === "Aksesuar",
+  "acc-cable-adapter": (p) => {
+    const m = p.model.toLowerCase();
+    return m.includes("kablo") || m.includes("cable") || m.includes("adaptör") || m.includes("adapter") || m.includes("charger") || m.includes("şarj") || m.includes("power adapter") || m.includes("güç adaptörü");
+  },
+  "acc-case": (p) => {
+    const m = p.model.toLowerCase();
+    return m.includes("kılıf") || m.includes("kilif") || m.includes("case") || m.includes("sleeve") || m.includes("koruyucu");
+  },
+  "acc-headphones": (p) => {
+    const m = p.model.toLowerCase();
+    return p.category === "AirPods" || m.includes("airpods") || m.includes("kulaklık") || m.includes("kulaklik") || m.includes("earpods") || m.includes("beats");
+  },
+  "acc-ipad": (p) => {
+    const m = p.model.toLowerCase();
+    return m.includes("pencil") || m.includes("keyboard") || m.includes("klavye") || m.includes("ipad") || m.includes("kalem");
+  },
+  "acc-iphone": (p) => {
+    const m = p.model.toLowerCase();
+    return m.includes("iphone") || m.includes("kablo") || m.includes("adaptör") || m.includes("kilif") || m.includes("kılıf") || m.includes("magsafe");
+  },
+  "acc-watch": (p) => {
+    const m = p.model.toLowerCase();
+    return m.includes("watch") || m.includes("band") || m.includes("kayış") || m.includes("kordon") || m.includes("loop") || m.includes("şarj") || m.includes("charger");
+  }
+};
 
 // Shared Helpers
 function todayForInput() {
@@ -384,8 +440,11 @@ function renderCatalog() {
   const searchWord = catalogSearch.value.trim().toLocaleLowerCase("tr-TR");
   
   const filtered = catalogProducts.filter(product => {
-    if (activeCategoryFilter !== "all" && product.category !== activeCategoryFilter) {
-      return false;
+    if (activeCategoryFilter !== "all") {
+      const rule = subcategoryRules[activeCategoryFilter];
+      if (rule && !rule(product)) {
+        return false;
+      }
     }
     if (searchWord) {
       const matchText = `${product.brand} ${product.model} ${product.category} ${product.barcode || ""} ${product.id || ""}`.toLocaleLowerCase("tr-TR");
@@ -620,15 +679,33 @@ catalogSearch.addEventListener("input", () => {
   renderCatalog();
 });
 
-categoryTabs.addEventListener("click", (event) => {
-  const tab = event.target.closest(".category-tab");
-  if (!tab) return;
-  
-  categoryTabs.querySelectorAll(".category-tab").forEach(t => t.classList.remove("active"));
-  tab.classList.add("active");
-  activeCategoryFilter = tab.dataset.category;
-  catalogVisibleLimit = 12;
-  renderCatalog();
+categoryMenu.addEventListener("click", (event) => {
+  const toggleBtn = event.target.closest(".group-toggle");
+  const menuItem = event.target.closest(".menu-item:not(.group-toggle)");
+  const subItem = event.target.closest(".sub-item");
+
+  if (toggleBtn) {
+    const group = toggleBtn.closest(".menu-group");
+    group.classList.toggle("open");
+    return;
+  }
+
+  if (menuItem) {
+    categoryMenu.querySelectorAll(".menu-item, .sub-item").forEach(item => item.classList.remove("active"));
+    menuItem.classList.add("active");
+    activeCategoryFilter = menuItem.dataset.filter;
+    catalogVisibleLimit = 12;
+    renderCatalog();
+    return;
+  }
+
+  if (subItem) {
+    categoryMenu.querySelectorAll(".menu-item, .sub-item").forEach(item => item.classList.remove("active"));
+    subItem.classList.add("active");
+    activeCategoryFilter = subItem.dataset.filter;
+    catalogVisibleLimit = 12;
+    renderCatalog();
+  }
 });
 
 catalogGrid.addEventListener("click", (event) => {
