@@ -152,6 +152,13 @@ function enrichAccessories() {
   }
 }
 
+// Her ürün için normalize edilmiş arama metnini bir kez hesaplar (performans).
+function buildSearchIndex() {
+  for (const p of catalogProducts) {
+    p.searchIndex = normalizeSearchText(`${p.brand} ${p.model} ${p.category} ${p.barcode || ""} ${p.id || ""}`);
+  }
+}
+
 // Shared Helpers
 function todayForInput() {
   return new Date().toISOString().slice(0, 10);
@@ -232,6 +239,21 @@ function formatPrice(value) {
 
 function createId() {
   return crypto.randomUUID ? crypto.randomUUID() : String(Date.now() + Math.random());
+}
+
+// Arama metnini normalize eder: küçük harf + inç/inch/"/-inch birleştirme +
+// ayraçları boşluğa çevirme. Böylece "macbook 14\"", "14 inch macbook pro",
+// "macbook pro m5" gibi günlük yazımlar da eşleşir.
+function normalizeSearchText(value) {
+  return String(value)
+    .toLocaleLowerCase("tr-TR")
+    .replace(/["’”″′‘“\x27]/g, '"')        // tüm tırnak türlerini tek tipe indir
+    .replace(/(\d+)\s*-?\s*inch/g, "$1inch") // 14-inch / 14 inch -> 14inch
+    .replace(/(\d+)\s*"/g, "$1inch")          // 14" -> 14inch
+    .replace(/(\d+)\s*in[çc]/g, "$1inch")     // 14inç / 14inc -> 14inch
+    .replace(/[-_/.,:;()]+/g, " ")            // ayraçları boşluğa çevir
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 // Manual Mode logic
@@ -500,6 +522,7 @@ async function loadCatalog() {
     catalogProducts = await response.json();
 
     enrichAccessories();
+    buildSearchIndex();
     populateThirdPartyBrands();
     renderCatalog();
   } catch (error) {
@@ -565,7 +588,8 @@ function renderCatalog() {
   catalogGrid.innerHTML = "";
   loadMoreContainer.innerHTML = "";
   
-  const searchWord = catalogSearch.value.trim().toLocaleLowerCase("tr-TR");
+  // Arama: kelimelere böl, her kelime üründe (sırası önemsiz) geçmeli.
+  const searchTokens = normalizeSearchText(catalogSearch.value).split(" ").filter(Boolean);
 
   // "Yeni Fiyatlar": yalnızca en güncel priceUpdatedAt tarihindeki ürünler.
   const latestPriceDate = activeCategoryFilter === "recent-prices" ? getLatestPriceUpdateDate() : null;
@@ -588,9 +612,9 @@ function renderCatalog() {
         }
       }
     }
-    if (searchWord) {
-      const matchText = `${product.brand} ${product.model} ${product.category} ${product.barcode || ""} ${product.id || ""}`.toLocaleLowerCase("tr-TR");
-      return matchText.includes(searchWord);
+    if (searchTokens.length) {
+      const hay = product.searchIndex || "";
+      return searchTokens.every(token => hay.includes(token));
     }
     return true;
   });
