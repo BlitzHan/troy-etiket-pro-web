@@ -584,12 +584,12 @@ input:focus, select:focus {
 .print-area { display: none; }
 .print-page {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   width: 210mm;
   height: 297mm;
-  /* Ayarlanabilir baskı boşlukları (Basım Ayarları'ndaki kutulardan gelir). */
-  padding: var(--pm-top, 10mm) 0 0 var(--pm-left, 9mm);
+  /* Standart, güvenli baskı boşlukları (üstte 10mm, yanlarda 9mm). */
+  padding: 10mm 9mm;
   background: #fff;
   break-after: page;
   page-break-after: always;
@@ -689,19 +689,6 @@ input:focus, select:focus {
   font-weight: 800;
   margin: 0;
   color: var(--ink);
-}
-
-/* ── Baskı boşluğu kalibrasyon kutuları ── */
-.print-margin-fields {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-.print-margin-hint {
-  margin: 0;
-  font-size: 10px;
-  line-height: 1.4;
-  color: var(--muted);
 }
 
 /* ── Catalog grid ── */
