@@ -45,6 +45,8 @@ const autoDateInput = document.querySelector("#autoDateInput");
 const autoCountBadge = document.querySelector("#autoCountBadge");
 const autoClearButton = document.querySelector("#autoClearButton");
 const autoPrintButton = document.querySelector("#autoPrintButton");
+const printMarginTopInput = document.querySelector("#printMarginTop");
+const printMarginLeftInput = document.querySelector("#printMarginLeft");
 
 const loadMoreContainer = document.querySelector("#catalogLoadMoreContainer");
 
@@ -57,6 +59,7 @@ let catalogProducts = []; // Loaded from products.json
 const SITE_PASSCODES = ["2808", "0828"];
 
 let selectedQuantities = {}; // { productId: quantity }
+const printMarginStorageKey = "troy-etiket-print-margins";
 let activeCategoryFilter = "all";
 let catalogCurrentPage = 1;
 const catalogItemsPerPage = 12;
@@ -125,7 +128,7 @@ function classifyAccessory(model) {
   let accType = "stand-other";
   if (m.includes("ekran kor") || m.includes("screen prot") || (m.includes("glass") && !m.includes("nano-texture") && !m.includes("standard glass"))) {
     accType = "screen";
-  } else if (m.includes("kılıf") || m.includes("kilif") || m.includes("case") || m.includes("silicone") || m.includes("clear case") || m.includes("techwoven") || m.includes("aramid") || m.includes("kevlar") || m.includes("folio") || m.includes("sleeve") || m.includes("magsafe")) {
+  } else if (m.includes("kılıf") || m.includes("kilif") || m.includes("case") || m.includes("silicone") || m.includes("clear case") || m.includes("techwoven") || m.includes("aramid") || m.includes("kevlar") || m.includes("folio") || m.includes("sleeve") || m.includes("magsafe") || m.includes("bumper")) {
     accType = "case";
   } else if (m.includes("kablo") || m.includes("cable") || m.includes("adaptör") || m.includes("adapter") || m.includes("şarj") || m.includes("charger") || m.includes("powerbank") || m.includes("power bank") || m.includes("güç adaptörü") || m.includes("dönüştürücü") || m.includes("hub") || m.includes("dock")) {
     accType = "cable-charger";
@@ -494,7 +497,8 @@ function getLatestPriceUpdateDate() {
 // Load Catalog JSON
 async function loadCatalog() {
   try {
-    const response = await fetch("products.json");
+    // cache: no-store → tarayıcı/Pages önbelleğini atla, her zaman güncel fiyatlar gelsin.
+    const response = await fetch("products.json", { cache: "no-store" });
     if (!response.ok) throw new Error("Katalog dosyası bulunamadı.");
     catalogProducts = await response.json();
 
@@ -993,10 +997,42 @@ autoPrintButton.addEventListener("click", () => {
   window.print();
 });
 
+// Ayarlanabilir baskı boşlukları (düz A4'e basıp elle kesim için kalibrasyon).
+function applyPrintMargins(topMm, leftMm) {
+  document.documentElement.style.setProperty("--pm-top", `${topMm}mm`);
+  document.documentElement.style.setProperty("--pm-left", `${leftMm}mm`);
+}
+
+function loadPrintMargins() {
+  let top = 10;
+  let left = 9;
+  try {
+    const saved = JSON.parse(localStorage.getItem(printMarginStorageKey) || "{}");
+    if (Number.isFinite(saved.top)) top = saved.top;
+    if (Number.isFinite(saved.left)) left = saved.left;
+  } catch {}
+  return { top, left };
+}
+
+function onPrintMarginChange() {
+  const top = Math.max(0, Math.min(40, Number(printMarginTopInput.value) || 0));
+  const left = Math.max(0, Math.min(30, Number(printMarginLeftInput.value) || 0));
+  applyPrintMargins(top, left);
+  localStorage.setItem(printMarginStorageKey, JSON.stringify({ top, left }));
+}
+
+printMarginTopInput.addEventListener("input", onPrintMarginChange);
+printMarginLeftInput.addEventListener("input", onPrintMarginChange);
+
 // Print area global listener (for browser menu printing)
 window.addEventListener("beforeprint", renderPrintArea);
 
 // Initializations
+const initialMargins = loadPrintMargins();
+printMarginTopInput.value = initialMargins.top;
+printMarginLeftInput.value = initialMargins.left;
+applyPrintMargins(initialMargins.top, initialMargins.left);
+
 dateInput.value = todayForInput();
 autoDateInput.value = todayForInput();
 if (items.length > 0 && items[0].concept) {

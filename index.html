@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Troy Etiket Pro</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260603b">
     <link rel="preload" href="APP.png" as="image">
     <link rel="preload" href="APR.png" as="image">
     <link rel="preload" href="AAR.png" as="image">
@@ -277,6 +277,17 @@
             <span>Fiyat Uygulama Tarihi</span>
             <input id="autoDateInput" name="date" type="date" required>
           </label>
+          <div class="print-margin-fields">
+            <label>
+              <span>Üst Boşluk (mm)</span>
+              <input id="printMarginTop" type="number" min="0" max="40" step="1" value="10">
+            </label>
+            <label>
+              <span>Yan Boşluk (mm)</span>
+              <input id="printMarginLeft" type="number" min="0" max="30" step="1" value="9">
+            </label>
+          </div>
+          <p class="print-margin-hint">Etiketler kâğıda tam oturana kadar üst boşluğu artırıp azaltarak deneyin. Ayar otomatik kaydedilir.</p>
         </div>
       </aside>
 
@@ -325,6 +336,6 @@
       </article>
     </template>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=20260603b"></script>
   </body>
 </html>

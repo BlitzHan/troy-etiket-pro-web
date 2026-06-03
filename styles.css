@@ -584,11 +584,12 @@ input:focus, select:focus {
 .print-area { display: none; }
 .print-page {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   width: 210mm;
   height: 297mm;
-  padding: 10mm 9mm;
+  /* Ayarlanabilir baskı boşlukları (Basım Ayarları'ndaki kutulardan gelir). */
+  padding: var(--pm-top, 10mm) 0 0 var(--pm-left, 9mm);
   background: #fff;
   break-after: page;
   page-break-after: always;
@@ -690,13 +691,18 @@ input:focus, select:focus {
   color: var(--ink);
 }
 
-/* ── DB trigger ── */
-.db-management-trigger {
-  margin-top: auto;
-  padding-top: 10px;
-  border-top: 1px solid var(--line);
+/* ── Baskı boşluğu kalibrasyon kutuları ── */
+.print-margin-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
-.db-management-trigger button { width: 100%; }
+.print-margin-hint {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.4;
+  color: var(--muted);
+}
 
 /* ── Catalog grid ── */
 .catalog-grid {

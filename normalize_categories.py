@@ -20,6 +20,7 @@ ACC_KEYWORDS = [
     "mouse", " hub", " dock", "dönüştürücü", "magsafe", "bracelet",
     "magnetic link", "modern buckle", "crossbody", "strap", "key ring",
     "polishing cloth", "card reader", "finewoven", "folio", "smart cover",
+    "bumper",
 ]
 
 
