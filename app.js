@@ -46,24 +46,6 @@ const autoCountBadge = document.querySelector("#autoCountBadge");
 const autoClearButton = document.querySelector("#autoClearButton");
 const autoPrintButton = document.querySelector("#autoPrintButton");
 
-// Database Modal Elements
-const dbModal = document.querySelector("#dbModal");
-const btnOpenDbModal = document.querySelector("#btnOpenDbModal");
-const btnCloseDbModal = document.querySelector("#btnCloseDbModal");
-const dbSearch = document.querySelector("#dbSearch");
-const btnResetDb = document.querySelector("#btnResetDb");
-const btnExportDb = document.querySelector("#btnExportDb");
-const dbTableBody = document.querySelector("#dbTableBody");
-
-// Passcode Modal Elements
-const passcodeModal = document.querySelector("#passcodeModal");
-const btnClosePasscodeModal = document.querySelector("#btnClosePasscodeModal");
-const passcodeForm = document.querySelector("#passcodeForm");
-const passcodeInput = document.querySelector("#passcodeInput");
-const passcodeError = document.querySelector("#passcodeError");
-
-// Excel Input
-const excelImportInput = document.querySelector("#excelImportInput");
 const loadMoreContainer = document.querySelector("#catalogLoadMoreContainer");
 
 // State Variables
@@ -72,12 +54,8 @@ let userEditedBrand = false;
 
 let currentScreen = "welcome"; // "welcome", "manual", "automatic"
 let catalogProducts = []; // Loaded from products.json
-const overridesStorageKey = "troy-etiket-catalog-overrides";
-const catalogStorageKey = "troy-etiket-custom-catalog";
 const SITE_PASSCODES = ["2808", "0828"];
-const ADMIN_PASSCODE = "troy123";
 
-let catalogOverrides = loadCatalogOverrides(); // { productId: newPriceString }
 let selectedQuantities = {}; // { productId: quantity }
 let activeCategoryFilter = "all";
 let catalogCurrentPage = 1;
@@ -109,37 +87,70 @@ const subcategoryRules = {
   "watch-s9-se": (p) => p.category === "Watch" && (p.model.toLowerCase().includes("series 9") || p.model.toLowerCase().includes("se")),
 
   // AirPods Subcategories
-  "airpods-all": (p) => p.category === "AirPods" || p.model.toLowerCase().includes("airpods"),
+  "airpods-all": (p) => p.category === "AirPods",
 
-  // Aksesuar Subcategories
+  // Aksesuar — ana cihaza göre (accFor) ve türe göre (accType).
+  // accFor / accType alanları loadCatalog() içinde enrichAccessories() ile hesaplanır.
   "acc-all": (p) => p.category === "Aksesuar",
-  "acc-cable-adapter": (p) => {
-    const m = p.model.toLowerCase();
-    return m.includes("kablo") || m.includes("cable") || m.includes("adaptör") || m.includes("adapter") || m.includes("charger") || m.includes("şarj") || m.includes("power adapter") || m.includes("güç adaptörü");
-  },
-  "acc-case": (p) => {
-    const m = p.model.toLowerCase();
-    return m.includes("kılıf") || m.includes("kilif") || m.includes("case") || m.includes("sleeve") || m.includes("koruyucu");
-  },
-  "acc-headphones": (p) => {
-    const m = p.model.toLowerCase();
-    return p.category === "AirPods" || m.includes("airpods") || m.includes("kulaklık") || m.includes("kulaklik") || m.includes("earpods") || m.includes("beats");
-  },
-  "acc-ipad": (p) => {
-    const m = p.model.toLowerCase();
-    return m.includes("pencil") || m.includes("keyboard") || m.includes("klavye") || m.includes("ipad") || m.includes("kalem");
-  },
-  "acc-iphone": (p) => {
-    const m = p.model.toLowerCase();
-    return m.includes("iphone") || m.includes("kablo") || m.includes("adaptör") || m.includes("kilif") || m.includes("kılıf") || m.includes("magsafe");
-  },
-  "acc-watch": (p) => {
-    const m = p.model.toLowerCase();
-    return m.includes("watch") || m.includes("band") || m.includes("kayış") || m.includes("kordon") || m.includes("loop") || m.includes("şarj") || m.includes("charger");
-  },
+  "acc-for-iphone": (p) => p.category === "Aksesuar" && p.accFor === "iphone",
+  "acc-for-ipad": (p) => p.category === "Aksesuar" && p.accFor === "ipad",
+  "acc-for-mac": (p) => p.category === "Aksesuar" && p.accFor === "mac",
+  "acc-for-watch": (p) => p.category === "Aksesuar" && p.accFor === "watch",
+  "acc-for-airpods": (p) => p.category === "Aksesuar" && p.accFor === "airpods",
+  "acc-type-case": (p) => p.category === "Aksesuar" && p.accType === "case",
+  "acc-type-screen": (p) => p.category === "Aksesuar" && p.accType === "screen",
+  "acc-type-cable-charger": (p) => p.category === "Aksesuar" && p.accType === "cable-charger",
+  "acc-type-headphone-speaker": (p) => p.category === "Aksesuar" && p.accType === "headphone-speaker",
+  "acc-type-watch-band": (p) => p.category === "Aksesuar" && p.accType === "watch-band",
+  "acc-type-bag": (p) => p.category === "Aksesuar" && p.accType === "bag",
+  "acc-type-pencil-keyboard": (p) => p.category === "Aksesuar" && p.accType === "pencil-keyboard",
+
   // 3. Parti
   "brand-momax": (p) => p.brand.toLowerCase() === "momax"
 };
+
+// Aksesuar ürünlerini ana cihaz (accFor) ve türe (accType) göre etiketler.
+function classifyAccessory(model) {
+  const m = (model || "").toLowerCase();
+
+  // Hangi ana cihaza ait?
+  let accFor = "general";
+  if (m.includes("iphone")) accFor = "iphone";
+  else if (m.includes("ipad")) accFor = "ipad";
+  else if (m.includes("macbook") || m.includes("imac") || m.includes("mac mini") || m.includes("mac studio") || m.includes("mac pro") || /\bmac\b/.test(m)) accFor = "mac";
+  else if (m.includes("watch")) accFor = "watch";
+  else if (m.includes("airpods")) accFor = "airpods";
+
+  // Hangi tür? (sıralama önemli — daha özgün olan önce)
+  let accType = "stand-other";
+  if (m.includes("ekran kor") || m.includes("screen prot") || (m.includes("glass") && !m.includes("nano-texture") && !m.includes("standard glass"))) {
+    accType = "screen";
+  } else if (m.includes("kılıf") || m.includes("kilif") || m.includes("case") || m.includes("silicone") || m.includes("clear case") || m.includes("techwoven") || m.includes("aramid") || m.includes("kevlar") || m.includes("folio") || m.includes("sleeve") || m.includes("magsafe")) {
+    accType = "case";
+  } else if (m.includes("kablo") || m.includes("cable") || m.includes("adaptör") || m.includes("adapter") || m.includes("şarj") || m.includes("charger") || m.includes("powerbank") || m.includes("power bank") || m.includes("güç adaptörü") || m.includes("dönüştürücü") || m.includes("hub") || m.includes("dock")) {
+    accType = "cable-charger";
+  } else if (m.includes("kulaklık") || m.includes("kulaklik") || m.includes("hoparlör") || m.includes("speaker") || m.includes("earpods") || m.includes("beats") || m.includes("homepod") || m.includes("airpods")) {
+    accType = "headphone-speaker";
+  } else if (m.includes("kordon") || m.includes("band") || m.includes("loop") || m.includes("kayış") || m.includes("bracelet") || m.includes("magnetic link") || m.includes("modern buckle") || m.includes("strap")) {
+    accType = "watch-band";
+  } else if (m.includes("çanta") || m.includes(" bag") || m.includes("kılıf çanta")) {
+    accType = "bag";
+  } else if (m.includes("pencil") || m.includes("kalem") || m.includes("klavye") || m.includes("keyboard") || m.includes("mouse")) {
+    accType = "pencil-keyboard";
+  }
+
+  return { accFor, accType };
+}
+
+function enrichAccessories() {
+  for (const p of catalogProducts) {
+    if (p.category === "Aksesuar") {
+      const { accFor, accType } = classifyAccessory(p.model);
+      p.accFor = accFor;
+      p.accType = accType;
+    }
+  }
+}
 
 // Shared Helpers
 function todayForInput() {
@@ -246,7 +257,7 @@ function fillLabel(node, item) {
   node.querySelector(".label-model").textContent = capitalizeProductText(item.model);
   node.querySelector(".label-price").textContent = `${item.price} TL`;
   node.querySelector(".label-date").textContent = item.date;
-  node.querySelector(".label-artwork").src = `${item.concept || "APR"}.png`;
+  node.querySelector(".label-artwork").src = `${item.concept || "APP"}.png`;
 }
 
 function buildLabel(item) {
@@ -390,7 +401,7 @@ async function importJson(file) {
         model: String(item.model).trim(),
         price: formatPrice(String(item.price)),
         date: String(item.date).trim(),
-        concept: item.concept || "APR",
+        concept: item.concept || "APP",
       }));
 
     items = [...items, ...normalized];
@@ -469,44 +480,15 @@ sitePasswordInput.addEventListener("input", () => {
   siteLoginError.hidden = true;
 });
 
-// Catalog Database Overrides
-function loadCatalogOverrides() {
-  try {
-    return JSON.parse(localStorage.getItem(overridesStorageKey) || "{}");
-  } catch {
-    return {};
-  }
-}
-
-function saveCatalogOverrides() {
-  localStorage.setItem(overridesStorageKey, JSON.stringify(catalogOverrides));
-}
-
-const customAddedStorageKey = "troy-etiket-custom-added-products";
-
-function loadCustomAddedProducts() {
-  try {
-    return JSON.parse(localStorage.getItem(customAddedStorageKey) || "[]");
-  } catch {
-    return [];
-  }
-}
-
-function saveCustomAddedProducts(products) {
-  localStorage.setItem(customAddedStorageKey, JSON.stringify(products));
-}
-
-function applyOverridesToCatalog() {
-  for (const product of catalogProducts) {
-    if (product.originalPrice === undefined) {
-      product.originalPrice = product.price;
-    }
-    if (catalogOverrides[product.id] !== undefined) {
-      product.price = catalogOverrides[product.id];
-    } else {
-      product.price = product.originalPrice;
+// "Yeni Fiyatlar" için: katalogdaki en güncel priceUpdatedAt tarihi (yoksa null).
+function getLatestPriceUpdateDate() {
+  let latest = null;
+  for (const p of catalogProducts) {
+    if (p.priceUpdatedAt && (latest === null || p.priceUpdatedAt > latest)) {
+      latest = p.priceUpdatedAt;
     }
   }
+  return latest;
 }
 
 // Load Catalog JSON
@@ -514,18 +496,14 @@ async function loadCatalog() {
   try {
     const response = await fetch("products.json");
     if (!response.ok) throw new Error("Katalog dosyası bulunamadı.");
-    const products = await response.json();
-    
-    const customAdded = loadCustomAddedProducts();
-    catalogProducts = [...products, ...customAdded];
-    
-    applyOverridesToCatalog();
+    catalogProducts = await response.json();
+
+    enrichAccessories();
     populateThirdPartyBrands();
     renderCatalog();
-    renderDbTable();
   } catch (error) {
     console.error("Katalog yüklenirken hata oluştu:", error);
-    alert("Katalog dosyası (products.json) yüklenemedi. Manuel giriş modunu kullanabilir veya veritabanı dosyasını kontrol edebilirsiniz.");
+    alert("Katalog dosyası (products.json) yüklenemedi. Manuel giriş modunu kullanabilir veya dosyayı kontrol edebilirsiniz.");
   }
 }
 
@@ -587,10 +565,17 @@ function renderCatalog() {
   loadMoreContainer.innerHTML = "";
   
   const searchWord = catalogSearch.value.trim().toLocaleLowerCase("tr-TR");
-  
+
+  // "Yeni Fiyatlar": yalnızca en güncel priceUpdatedAt tarihindeki ürünler.
+  const latestPriceDate = activeCategoryFilter === "recent-prices" ? getLatestPriceUpdateDate() : null;
+
   const filtered = catalogProducts.filter(product => {
     if (activeCategoryFilter !== "all") {
-      if (activeCategoryFilter.startsWith("brand-")) {
+      if (activeCategoryFilter === "recent-prices") {
+        if (!latestPriceDate || product.priceUpdatedAt !== latestPriceDate) {
+          return false;
+        }
+      } else if (activeCategoryFilter.startsWith("brand-")) {
         const brandName = activeCategoryFilter.replace("brand-", "").toLowerCase();
         if (!product.brand || product.brand.toLowerCase() !== brandName) {
           return false;
@@ -617,7 +602,10 @@ function renderCatalog() {
   });
 
   if (filtered.length === 0) {
-    catalogGrid.innerHTML = `<div class="empty-state"><p>Aradığınız kriterlere uygun ürün bulunamadı.</p></div>`;
+    const msg = activeCategoryFilter === "recent-prices"
+      ? "Henüz fiyatı güncellenen ürün kaydı yok."
+      : "Aradığınız kriterlere uygun ürün bulunamadı.";
+    catalogGrid.innerHTML = `<div class="empty-state"><p>${msg}</p></div>`;
     return;
   }
 
@@ -814,45 +802,6 @@ function getAutoPrintItems() {
   return itemsToPrint;
 }
 
-// Database Table Rendering & Editing
-function renderDbTable() {
-  dbTableBody.innerHTML = "";
-  const query = dbSearch.value.trim().toLowerCase("tr-TR");
-
-  const filtered = catalogProducts.filter(product => {
-    if (query) {
-      const matchText = `${product.brand} ${product.model} ${product.category} ${product.barcode || ""} ${product.id || ""}`.toLowerCase("tr-TR");
-      return matchText.includes(query);
-    }
-    return true;
-  });
-
-  if (filtered.length === 0) {
-    dbTableBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--muted); padding: 20px;">Ürün bulunamadı.</td></tr>`;
-    return;
-  }
-
-  for (const product of filtered) {
-    const row = document.createElement("tr");
-    const isOverridden = catalogOverrides[product.id] !== undefined;
-    const rowStyle = isOverridden ? "background-color: #f4f9ff;" : "";
-
-    row.innerHTML = `
-      <td style="${rowStyle}">${product.category}</td>
-      <td style="${rowStyle}">
-        <strong>${product.brand}</strong> ${product.model}
-        <div style="color: var(--muted); font-size: 11px; font-family: monospace; margin-top: 3px;">${product.barcode || ""}</div>
-      </td>
-      <td style="${rowStyle}">${formatPrice(product.originalPrice)} TL</td>
-      <td style="${rowStyle}">
-        <input class="db-price-input" data-id="${product.id}" type="text" value="${formatPrice(product.price)}" style="${isOverridden ? "border-color: var(--accent); font-weight: bold;" : ""}">
-      </td>
-    `;
-
-    dbTableBody.append(row);
-  }
-}
-
 // Event Listeners Registration
 
 // Navigation
@@ -1043,206 +992,6 @@ autoPrintButton.addEventListener("click", () => {
   renderPrintArea();
   window.print();
 });
-
-// Database Modal Handlers
-function isAdminAuthenticated() {
-  return sessionStorage.getItem("troy-admin-authenticated") === "true";
-}
-
-btnOpenDbModal.addEventListener("click", () => {
-  if (isAdminAuthenticated()) {
-    dbModal.removeAttribute("hidden");
-    renderDbTable();
-  } else {
-    passcodeError.hidden = true;
-    passcodeInput.value = "";
-    passcodeModal.removeAttribute("hidden");
-    passcodeInput.focus();
-  }
-});
-
-btnCloseDbModal.addEventListener("click", () => {
-  dbModal.hidden = true;
-});
-
-dbModal.addEventListener("click", (e) => {
-  if (e.target === dbModal) {
-    dbModal.hidden = true;
-  }
-});
-
-// Passcode Modal Handlers
-btnClosePasscodeModal.addEventListener("click", () => {
-  passcodeModal.hidden = true;
-});
-
-passcodeModal.addEventListener("click", (e) => {
-  if (e.target === passcodeModal) {
-    passcodeModal.hidden = true;
-  }
-});
-
-passcodeForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const value = passcodeInput.value.trim();
-  if (value === ADMIN_PASSCODE) {
-    sessionStorage.setItem("troy-admin-authenticated", "true");
-    passcodeModal.hidden = true;
-    dbModal.removeAttribute("hidden");
-    renderDbTable();
-  } else {
-    passcodeError.hidden = false;
-    // Trigger shake animation
-    passcodeError.classList.remove("error-message");
-    void passcodeError.offsetWidth; // Force reflow
-    passcodeError.classList.add("error-message");
-    passcodeInput.value = "";
-    passcodeInput.focus();
-  }
-});
-
-dbSearch.addEventListener("input", renderDbTable);
-
-dbTableBody.addEventListener("input", (event) => {
-  const input = event.target.closest(".db-price-input");
-  if (!input) return;
-
-  const productId = input.dataset.id;
-  const digits = input.value.replace(/\D/g, "");
-  input.value = formatPrice(digits);
-
-  const product = catalogProducts.find(p => p.id === productId);
-  if (!product) return;
-
-  if (!digits || digits === product.originalPrice.replace(/\D/g, "")) {
-    delete catalogOverrides[productId];
-    input.style.borderColor = "";
-    input.style.fontWeight = "";
-  } else {
-    catalogOverrides[productId] = digits;
-    input.style.borderColor = "var(--accent)";
-    input.style.fontWeight = "bold";
-  }
-
-  saveCatalogOverrides();
-  applyOverridesToCatalog();
-  renderCatalog();
-});
-
-btnResetDb.addEventListener("click", () => {
-  if (confirm("Tüm fiyatları varsayılan ayarlara döndürmek ve eklenen özel ürünleri temizlemek istediğinizden emin misiniz?")) {
-    catalogOverrides = {};
-    saveCatalogOverrides();
-    saveCustomAddedProducts([]);
-    loadCatalog();
-  }
-});
-
-btnExportDb.addEventListener("click", () => {
-  const exportData = catalogProducts.map(product => ({
-    id: product.id,
-    brand: product.brand,
-    model: product.model,
-    price: product.price,
-    concept: product.concept || "APR",
-    category: product.category
-  }));
-
-  const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = "products.json";
-  link.click();
-  URL.revokeObjectURL(url);
-});
-
-// Excel Import Logic (SheetJS)
-function findValue(row, possibleKeys) {
-  for (const key of Object.keys(row)) {
-    const normKey = key.trim().toLowerCase("tr-TR");
-    if (possibleKeys.includes(normKey)) {
-      return row[key];
-    }
-  }
-  return undefined;
-}
-
-async function handleExcelImport(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-
-  try {
-    const data = await file.arrayBuffer();
-    const workbook = XLSX.read(data, { type: "array" });
-    const firstSheetName = workbook.SheetNames[0];
-    const worksheet = workbook.Sheets[firstSheetName];
-    const rows = XLSX.utils.sheet_to_json(worksheet);
-
-    if (rows.length === 0) {
-      alert("Yüklenen Excel dosyasında veri bulunamadı.");
-      return;
-    }
-
-    let updatedCount = 0;
-    let addedCount = 0;
-    const customAdded = loadCustomAddedProducts();
-
-    for (const row of rows) {
-      const category = findValue(row, ["kategori", "category", "kategori adi", "kategori adı", "tür", "tur"]) || "Aksesuar";
-      const brand = findValue(row, ["marka", "brand", "markası", "markasi", "üretici", "uretici"]) || "Apple";
-      const model = findValue(row, ["model", "aciklama", "açıklama", "urun adi", "ürün adı", "model adi", "model adı", "tanım", "tanim", "ürün açıklaması", "urun aciklamasi"]);
-      const price = findValue(row, ["fiyat", "price", "tutar", "fiyatı", "fiyati", "etiket fiyatı", "etiket fiyati"]);
-
-      if (!model || price === undefined) continue;
-
-      const cleanPrice = String(price).replace(/\D/g, "");
-      const cleanModel = capitalizeProductText(String(model).trim());
-      const cleanBrand = capitalizeProductText(String(brand).trim());
-      const cleanCategory = String(category).trim();
-
-      // Check if it exists in current catalogProducts
-      const existing = catalogProducts.find(p => p.model.toLowerCase("tr-TR") === cleanModel.toLowerCase("tr-TR"));
-
-      if (existing) {
-        // Update its override and details in memory
-        existing.price = cleanPrice;
-        existing.brand = cleanBrand;
-        existing.category = cleanCategory;
-        catalogOverrides[existing.id] = cleanPrice;
-        updatedCount++;
-      } else {
-        // Create new product
-        const newProduct = {
-          id: "prod-" + createId(),
-          brand: cleanBrand,
-          model: cleanModel,
-          price: cleanPrice,
-          category: cleanCategory,
-          concept: "APR"
-        };
-        customAdded.push(newProduct);
-        addedCount++;
-      }
-    }
-
-    // Save state
-    saveCatalogOverrides();
-    saveCustomAddedProducts(customAdded);
-    
-    // Reload catalog combining products.json + custom added
-    await loadCatalog();
-
-    alert(`Excel başarıyla yüklendi!\nGüncellenen Ürün Fiyatı: ${updatedCount}\nYeni Eklenen Ürün Sayısı: ${addedCount}`);
-  } catch (error) {
-    console.error("Excel yüklenirken hata oluştu:", error);
-    alert(`Excel dosyası okunamadı. Lütfen dosya biçimini kontrol edin. Hata: ${error.message}`);
-  } finally {
-    excelImportInput.value = "";
-  }
-}
-
-excelImportInput.addEventListener("change", handleExcelImport);
 
 // Print area global listener (for browser menu printing)
 window.addEventListener("beforeprint", renderPrintArea);

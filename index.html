@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Troy Etiket Pro</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preload" href="APR.png" as="image">
     <link rel="preload" href="APP.png" as="image">
+    <link rel="preload" href="APR.png" as="image">
     <link rel="preload" href="AAR.png" as="image">
   </head>
   <body>
@@ -83,8 +83,8 @@
           <label>
             <span>Mağaza Konsepti</span>
             <select id="conceptInput" name="concept">
-              <option value="APR" selected>APR</option>
-              <option value="APP">APP</option>
+              <option value="APP" selected>APP</option>
+              <option value="APR">APR</option>
               <option value="AAR">AAR</option>
             </select>
           </label>
@@ -164,7 +164,12 @@
             <button class="menu-item active" data-filter="all" type="button">
               <span>🏷️ Tümü</span>
             </button>
-            
+
+            <!-- Yeni Fiyatlar (Flat) — en son güncellenen fiyatlar -->
+            <button class="menu-item" data-filter="recent-prices" type="button">
+              <span>🆕 Yeni Fiyatlar</span>
+            </button>
+
             <!-- iPhone (Accordion) -->
             <div class="menu-group">
               <button class="menu-item group-toggle" type="button">
@@ -222,19 +227,27 @@
               <span>🎧 AirPods</span>
             </button>
 
-            <!-- Aksesuar (Accordion) -->
+            <!-- Aksesuar (Accordion) — önce ana cihaza göre, sonra türe göre -->
             <div class="menu-group">
               <button class="menu-item group-toggle" type="button">
                 <span>🔌 Aksesuar</span> <span class="arrow">▼</span>
               </button>
               <div class="group-items">
                 <button class="sub-item" data-filter="acc-all" type="button">Tüm Aksesuarlar</button>
-                <button class="sub-item" data-filter="acc-cable-adapter" type="button">Adaptörler & Kablolar</button>
-                <button class="sub-item" data-filter="acc-case" type="button">Kılıflar & Ekran Koruyucular</button>
-                <button class="sub-item" data-filter="acc-headphones" type="button">Kulaklıklar</button>
-                <button class="sub-item" data-filter="acc-ipad" type="button">iPad Ürünleri (Kalem/Klavye)</button>
-                <button class="sub-item" data-filter="acc-iphone" type="button">iPhone Aksesuarları</button>
-                <button class="sub-item" data-filter="acc-watch" type="button">Watch Aksesuarları (Kordon/Şarj)</button>
+                <div class="sub-heading">Ana Cihaza Göre</div>
+                <button class="sub-item" data-filter="acc-for-iphone" type="button">iPhone Aksesuarları</button>
+                <button class="sub-item" data-filter="acc-for-ipad" type="button">iPad Aksesuarları</button>
+                <button class="sub-item" data-filter="acc-for-mac" type="button">Mac Aksesuarları</button>
+                <button class="sub-item" data-filter="acc-for-watch" type="button">Watch Aksesuarları</button>
+                <button class="sub-item" data-filter="acc-for-airpods" type="button">AirPods Aksesuarları</button>
+                <div class="sub-heading">Türe Göre</div>
+                <button class="sub-item" data-filter="acc-type-case" type="button">Kılıflar</button>
+                <button class="sub-item" data-filter="acc-type-screen" type="button">Ekran Koruyucular</button>
+                <button class="sub-item" data-filter="acc-type-cable-charger" type="button">Kablolar & Adaptörler</button>
+                <button class="sub-item" data-filter="acc-type-headphone-speaker" type="button">Kulaklık & Hoparlör</button>
+                <button class="sub-item" data-filter="acc-type-watch-band" type="button">Watch Kordonları</button>
+                <button class="sub-item" data-filter="acc-type-bag" type="button">Çantalar</button>
+                <button class="sub-item" data-filter="acc-type-pencil-keyboard" type="button">Kalem & Klavye</button>
               </div>
             </div>
 
@@ -255,8 +268,8 @@
           <label>
             <span>Mağaza Konsepti</span>
             <select id="autoConceptInput" name="concept">
-              <option value="APR" selected>APR</option>
-              <option value="APP">APP</option>
+              <option value="APP" selected>APP</option>
+              <option value="APR">APR</option>
               <option value="AAR">AAR</option>
             </select>
           </label>
@@ -264,10 +277,6 @@
             <span>Fiyat Uygulama Tarihi</span>
             <input id="autoDateInput" name="date" type="date" required>
           </label>
-        </div>
-
-        <div class="db-management-trigger">
-          <button id="btnOpenDbModal" class="ghost-button" type="button">⚙️ Fiyatları Yönet (Veritabanı)</button>
         </div>
       </aside>
 
@@ -291,75 +300,6 @@
         </div>
       </section>
     </main>
-
-    <!-- Veritabanı Fiyat Yönetimi Modalı -->
-    <div id="dbModal" class="modal-overlay" hidden>
-      <div class="modal-card">
-        <header class="modal-header">
-          <h2>Veritabanı Fiyat Yönetimi</h2>
-          <button id="btnCloseDbModal" class="close-button" type="button" title="Kapat">&times;</button>
-        </header>
-        <div class="modal-body">
-          <p class="modal-description">
-            Buradan katalogdaki ürünlerin fiyatlarını tarayıcınızda geçici olarak güncelleyebilirsiniz. Kalıcı hale getirmek için <strong>JSON İndir</strong> butonu ile güncel veritabanını indirip projedeki <code>products.json</code> dosyasıyla değiştirebilirsiniz.
-          </p>
-          
-          <div class="modal-toolbar">
-            <input id="dbSearch" type="text" placeholder="Ürün adı ile ara...">
-            <div class="db-actions">
-              <label class="primary-button excel-import-label" style="display: inline-flex; align-items: center; justify-content: center; cursor: pointer; gap: 6px;">
-                📥 Excel Yükle
-                <input id="excelImportInput" type="file" accept=".xlsx, .xls" style="display: none;">
-              </label>
-              <button id="btnResetDb" class="ghost-button text-danger" type="button">Varsayılana Sıfırla</button>
-              <button id="btnExportDb" class="primary-button" type="button">JSON İndir</button>
-            </div>
-          </div>
-          
-          <div class="table-container">
-            <table class="db-table">
-              <thead>
-                <tr>
-                  <th>Kategori</th>
-                  <th>Ürün Adı</th>
-                  <th>Varsayılan Fiyat</th>
-                  <th>Güncel Fiyat (TL)</th>
-                </tr>
-              </thead>
-              <tbody id="dbTableBody">
-                <!-- Dynamic product editing rows -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Yönetici Şifre Doğrulama Modalı -->
-    <div id="passcodeModal" class="modal-overlay" hidden>
-      <div class="modal-card passcode-card" style="max-width: 400px;">
-        <header class="modal-header">
-          <h2>Yönetici Yetkilendirmesi</h2>
-          <button id="btnClosePasscodeModal" class="close-button" type="button" title="Kapat">&times;</button>
-        </header>
-        <div class="modal-body" style="gap: 20px;">
-          <p class="modal-description" style="font-size: 13px; text-align: center; color: var(--muted);">
-            Veritabanını düzenlemek veya Excel yüklemek için lütfen yönetici şifrenizi girin.
-          </p>
-          <form id="passcodeForm" class="label-form" style="gap: 16px;">
-            <label style="gap: 8px;">
-              <span>Şifre</span>
-              <input id="passcodeInput" type="password" placeholder="Şifrenizi yazın..." required style="min-height: 44px; text-align: center; letter-spacing: 3px; font-weight: bold;">
-            </label>
-            <div id="passcodeError" class="error-message" style="color: var(--danger); font-size: 13px; font-weight: 700; text-align: center;" hidden>
-              ❌ Hatalı şifre! Lütfen tekrar deneyin.
-            </div>
-            <button class="primary-button" type="submit" style="width: 100%; min-height: 44px; font-size: 14px; font-weight: 800;">Doğrula ve Giriş Yap</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
 
     <section id="printArea" class="print-area" aria-label="Yazdırılacak etiketler"></section>
 
@@ -385,7 +325,6 @@
       </article>
     </template>
 
-    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

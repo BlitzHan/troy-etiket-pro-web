@@ -1,50 +1,64 @@
-# Yönetici Kullanım Kılavuzu & Güncelleme Detayları
+# Yönetici Kullanım Kılavuzu & Veri Akışı
 
-Bu kılavuz, **Troy Etiket Pro** uygulamasının yeni şifre korumalı veritabanı yönetim modunu ve Excel entegrasyonunu nasıl kullanacağınızı açıklar.
-
----
-
-## 🔐 1. Yönetici Girişi (Şifre Koruması)
-Uygulama artık yetkisiz kişilerin fiyatları ve ürünleri değiştirmesini engellemek için şifre korumalıdır.
-- **Yönetim Butonu**: Otomatik Etiket Modu sol panelindeki **⚙️ Fiyatları Yönet (Veritabanı)** butonuyla açılır.
-- **Varsayılan Giriş Şifresi**: `troy123`
-- Şifrenizi doğruladıktan sonra tarayıcı sekmesini kapatmadığınız sürece panel açık kalır ve tekrar şifre girmeniz gerekmez.
+Bu kılavuz, **Troy Etiket Pro** uygulamasının güncel çalışma mantığını ve fiyat/ürün
+güncelleme akışını açıklar.
 
 ---
 
-## 📥 2. Excel ile Toplu Ürün Yükleme / Güncelleme
-Elinizdeki toplu ürün listelerini tek tek girmek yerine Excel dosyasından (`.xlsx` veya `.xls`) sisteme aktarabilirsiniz.
+## 🔐 1. Giriş Güvenliği
+Uygulama, yetkisiz erişimi engellemek için site giriş şifresiyle korunur.
+- **Giriş şifreleri**: `2808` veya `0828` (kod: `SITE_PASSCODES`, `app.js`).
+- Şifre doğrulandıktan sonra tarayıcı sekmesi açık kaldığı sürece tekrar sorulmaz.
 
-### Excel Kolon Formatı:
-Sistem Excel başlıklarını akıllıca eşleştirir. Aşağıdaki başlıklardan herhangi birini kullanabilirsiniz:
+> Not: Eski "Fiyatları Yönet (Veritabanı)" paneli, Excel yükleme ve tarayıcı-içi fiyat
+> düzenleme **kaldırıldı**. Bunun nedeni güvenlikti: o panel ile siteye giren herkes
+> veritabanını değiştirebiliyordu. Artık fiyat/ürün değişiklikleri yalnızca koddan yapılır.
 
-| Kolon Amacı | Excel Başlığı Seçenekleri (Büyük/Küçük Harf Fark Etmez) | Örnek Veri |
+---
+
+## 💾 2. Veritabanı (`products.json`)
+Tüm ürünler tek bir `products.json` dosyasında tutulur. Her ürün şu alanları taşır:
+
+| Alan | Açıklama | Örnek |
 | :--- | :--- | :--- |
-| **Kategori** | `Kategori`, `Category`, `Tür`, `Tur` | iPhone, iPad, Aksesuar |
-| **Marka** | `Marka`, `Brand`, `Üretici` | Apple |
-| **Model / Adı** | `Model`, `Açıklama`, `Ürün Adı`, `Açiklama` | iPhone 15 Pro Max 256 GB |
-| **Fiyat** | `Fiyat`, `Price`, `Tutar`, `Fiyatı` | 89999 veya 89.999 |
+| `id` / `barcode` | Ürün kodu | `MHFA4TU/A` |
+| `brand` | Marka | `Apple`, `Momax`, `Buff` |
+| `model` | Ürün açıklaması | `iPhone 17 256GB Black` |
+| `price` | Fiyat (sadece rakam, KDV dahil) | `89999` |
+| `concept` | Mağaza konsepti | `APP` |
+| `category` | Kategori (6 değerden biri) | `iPhone` |
+| `priceUpdatedAt` | (opsiyonel) Fiyatın güncellendiği tarih | `2026-06-03` |
 
-*Örnek Excel yapısı:*
-| Kategori | Marka | Model | Fiyat |
-| :--- | :--- | :--- | :--- |
-| iPhone | Apple | iPhone 15 Pro Max 256 GB | 89999 |
-| Aksesuar | Apple | 20 W USB-C Güç Adaptörü | 779 |
+### Kategoriler (yalnızca 6 değer)
+`iPhone`, `iPad`, `Mac`, `Watch`, `AirPods`, `Aksesuar`.
 
-### Excel Yükleme Kuralları:
-1. **Fiyat Güncelleme**: Excel'deki ürünün model adı veritabanında zaten varsa, fiyatı Excel'deki yeni fiyatla güncellenir.
-2. **Yeni Ürün Ekleme**: Model adı veritabanında yoksa, bu ürün kataloğa yeni ürün olarak eklenir.
+Kategoriler `normalize_categories.py` betiğiyle bu 6 değere indirildi. Aksesuarlar arayüzde,
+çalışma anında (`app.js` → `classifyAccessory`) ana cihaza (`accFor`) ve türe (`accType`) göre
+otomatik gruplanır; bu alanlar `products.json`'a yazılmaz.
 
 ---
 
-## 💾 3. Değişiklikleri Kalıcı Hale Getirme (Workflow)
-Sistem tamamen tarayıcı tabanlı çalıştığı için Excel yüklediğinizde veya fiyatları elle düzenlediğinizde bu değişiklikler geçici olarak sizin tarayıcınızda (`localStorage`) saklanır. 
+## 🔄 3. Fiyat / Ürün Güncelleme Akışı
+Değişiklikler doğrudan koddan yapılır:
+1. Yapılacak değişikliği (fiyat, yeni ürün, kategori vb.) asistana bildirin.
+2. Asistan `products.json` dosyasını günceller.
+3. **Fiyatı değişen ürünlere `priceUpdatedAt: "YYYY-MM-DD"` alanı eklenir** (o günün tarihi).
+4. Değişiklikler Git ile push'lanır; siteye giren herkes güncel veriyi görür.
 
-**Tüm kullanıcıların yeni fiyatları görmesi için izlenmesi gereken adımlar:**
-1. Excel dosyanızı yükleyin veya fiyatları düzenleyin.
-2. Veritabanı panelindeki **JSON İndir** butonuna tıklayın. Bu işlem size güncel verileri içeren bir `products.json` dosyası indirir.
-3. İndirdiğiniz bu yeni `products.json` dosyasını, projenin ana klasöründeki eski `products.json` dosyasıyla değiştirin.
-4. Değişiklikleri Git ile pushlayın.
-5. Siteye giren herkes artık sizin güncellediğiniz yeni fiyatları ve ürünleri görecektir.
+---
 
-*Not: Eğer tüm yerel değişiklikleri silip sunucudaki orijinal veritabanına dönmek isterseniz **Varsayılana Sıfırla** butonunu kullanabilirsiniz.*
+## 🆕 4. "Yeni Fiyatlar" Kategorisi
+Otomatik mod sol menüsündeki **🆕 Yeni Fiyatlar** filtresi, katalogdaki **en güncel**
+`priceUpdatedAt` tarihine sahip ürünleri toplu listeler. Böylece hangi ürünlerin değiştiğini
+tek tek aramadan görüp, adetleri seçip çıktıyı tek seferde hazırlayabilirsiniz.
+
+> Mantık: tüm ürünler içindeki en yeni `priceUpdatedAt` bulunur; yalnızca o tarihe eşit
+> olan ürünler gösterilir (`app.js` → `getLatestPriceUpdateDate` + `renderCatalog`).
+
+---
+
+## 🖨️ 5. Baskı (A4)
+Etiketler 3 sütun × 9 satır = sayfa başına 27 etiket olarak A4'e basılır. Düz A4'e basıp elle
+kesim için, yazıcının basamadığı kenar alanına denk gelmesin diye sayfaya garantili üst/yan
+boşluk bırakılır (grid üstten hizalı — `styles.css` → `.print-page` / `.print-grid`).
+Tarayıcı yazdırma penceresinde kenar boşluğu "Yok/None", ölçek %100 önerilir.
