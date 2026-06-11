@@ -567,10 +567,15 @@ function createCatalogItemCard(product) {
   card.className = `catalog-item-card ${qty > 0 ? "has-selected" : ""}`;
   card.dataset.id = product.id;
 
+  // Model zaten marka adıyla başlıyorsa markayı tekrar gösterme ("Earldom Earldom ...")
+  const brandText = capitalizeProductText(product.brand);
+  const modelText = capitalizeProductText(product.model);
+  const showBrand = !modelText.toLocaleLowerCase("tr-TR").startsWith(brandText.toLocaleLowerCase("tr-TR"));
+
   card.innerHTML = `
     <span class="catalog-item-badge">${product.category}</span>
-    <div style="color: var(--muted); font-size: 10px; font-family: monospace; margin: 3px 0 1.5px 0;">${product.barcode || ""}</div>
-    <h4><strong>${capitalizeProductText(product.brand)}</strong> ${capitalizeProductText(product.model)}</h4>
+    <div class="catalog-item-code">${product.barcode || ""}</div>
+    <h4>${showBrand ? `<strong>${brandText}</strong> ` : ""}${modelText}</h4>
     <div class="catalog-item-price">${formatPrice(product.price)} TL</div>
     <div class="catalog-item-actions">
       <div class="counter-container">
@@ -674,7 +679,7 @@ function renderPaginationControls(filteredList, totalPages) {
   const firstBtn = document.createElement("button");
   firstBtn.className = "pagination-btn";
   firstBtn.type = "button";
-  firstBtn.innerHTML = "⏮️ En Başa Git";
+  firstBtn.textContent = "« İlk";
   firstBtn.disabled = catalogCurrentPage === 1;
   firstBtn.addEventListener("click", () => {
     catalogCurrentPage = 1;
@@ -687,7 +692,7 @@ function renderPaginationControls(filteredList, totalPages) {
   const prevBtn = document.createElement("button");
   prevBtn.className = "pagination-btn";
   prevBtn.type = "button";
-  prevBtn.innerHTML = "⬅️ Önceki";
+  prevBtn.textContent = "‹ Önceki";
   prevBtn.disabled = catalogCurrentPage === 1;
   prevBtn.addEventListener("click", () => {
     if (catalogCurrentPage > 1) {
@@ -744,7 +749,7 @@ function renderPaginationControls(filteredList, totalPages) {
   const nextBtn = document.createElement("button");
   nextBtn.className = "pagination-btn";
   nextBtn.type = "button";
-  nextBtn.innerHTML = "Sonraki ➡️";
+  nextBtn.textContent = "Sonraki ›";
   nextBtn.disabled = catalogCurrentPage === totalPages;
   nextBtn.addEventListener("click", () => {
     if (catalogCurrentPage < totalPages) {
@@ -759,7 +764,7 @@ function renderPaginationControls(filteredList, totalPages) {
   const lastBtn = document.createElement("button");
   lastBtn.className = "pagination-btn";
   lastBtn.type = "button";
-  lastBtn.innerHTML = "En Sona Git ⏭️";
+  lastBtn.textContent = "Son »";
   lastBtn.disabled = catalogCurrentPage === totalPages;
   lastBtn.addEventListener("click", () => {
     catalogCurrentPage = totalPages;

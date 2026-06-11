@@ -2,25 +2,62 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#08305e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Troy Etiket">
+    <link rel="apple-touch-icon" href="AppIcon.png">
     <title>Troy Etiket Pro</title>
-    <link rel="stylesheet" href="styles.css?v=20260603d">
+    <link rel="stylesheet" href="styles.css?v=20260611a">
     <link rel="preload" href="APP.png" as="image">
     <link rel="preload" href="APR.png" as="image">
     <link rel="preload" href="AAR.png" as="image">
   </head>
   <body>
+    <!-- SVG icon definitions -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+        <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 5.7a2 2 0 0 0 1.4 1.4L21 12l-5.7 1.9a2 2 0 0 0-1.4 1.4L12 21l-1.9-5.7a2 2 0 0 0-1.4-1.4L3 12l5.7-1.9a2 2 0 0 0 1.4-1.4L12 3z"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2" width="11" height="20" rx="2.5"/><path d="M11 18h2"/></symbol>
+        <symbol id="i-tablet" viewBox="0 0 24 24"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><path d="M11 18h2"/></symbol>
+        <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4.5" y="5" width="15" height="10" rx="2"/><path d="M2.5 19h19"/></symbol>
+        <symbol id="i-watch" viewBox="0 0 24 24"><rect x="7" y="6.5" width="10" height="11" rx="3.5"/><path d="M9.3 6.5l.5-3.5h4.4l.5 3.5M9.3 17.5l.5 3.5h4.4l.5-3.5"/></symbol>
+        <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M4 18v-4a8 8 0 0 1 16 0v4"/><rect x="2.5" y="14" width="4.5" height="6.5" rx="2"/><rect x="17" y="14" width="4.5" height="6.5" rx="2"/></symbol>
+        <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0V8zM12 18v4"/></symbol>
+        <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8z"/><path d="M3.3 7l8.7 5 8.7-5M12 22V12"/></symbol>
+        <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+        <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M17 3a2.8 2.8 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></symbol>
+        <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></symbol>
+        <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+        <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+        <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10.5" width="16" height="10.5" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></symbol>
+        <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4.5A2.5 2.5 0 0 1 2 15.5v-4A2.5 2.5 0 0 1 4.5 9h15A2.5 2.5 0 0 1 22 11.5v4a2.5 2.5 0 0 1-2.5 2.5H18"/><rect x="6" y="14.5" width="12" height="7" rx="1"/></symbol>
+        <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4.5A1.5 1.5 0 0 1 9.5 3h5A1.5 1.5 0 0 1 16 4.5V6M5 6l1 14a2 2 0 0 0 2 1.9h8a2 2 0 0 0 2-1.9l1-14"/></symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+        <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+      </defs>
+    </svg>
+
     <!-- Site Login Screen -->
     <div id="siteLoginScreen" class="site-login-screen">
       <form id="siteLoginForm" class="site-login-card" autocomplete="off">
         <img src="AppIcon.png" alt="Troy Logo" class="site-login-logo">
-        <h1>Troy Etiket Pro</h1>
+        <div class="site-login-heading">
+          <h1>Troy Etiket Pro</h1>
+          <p>Devam etmek için giriş şifrenizi girin</p>
+        </div>
         <label>
           <span>Giriş Şifresi</span>
-          <input id="sitePasswordInput" type="password" inputmode="numeric" placeholder="Şifre" required autofocus>
+          <div class="password-field">
+            <svg class="field-icon" aria-hidden="true"><use href="#i-lock"/></svg>
+            <input id="sitePasswordInput" type="password" inputmode="numeric" placeholder="••••" required autofocus>
+          </div>
         </label>
-        <p id="siteLoginError" class="login-error" hidden>Şifre hatalı.</p>
-        <button class="primary-button" type="submit">Giriş Yap</button>
+        <p id="siteLoginError" class="login-error" hidden>Şifre hatalı. Lütfen tekrar deneyin.</p>
+        <button class="primary-button login-button" type="submit">Giriş Yap</button>
       </form>
     </div>
 
@@ -34,16 +71,16 @@
         </div>
         <div class="mode-options">
           <button id="btnSelectManual" class="mode-card" type="button">
-            <div class="mode-card-icon">✍️</div>
+            <div class="mode-card-icon"><svg aria-hidden="true"><use href="#i-pencil"/></svg></div>
             <h3>Manuel Etiket Modu</h3>
             <p>Ürün adı, fiyat ve diğer detayları elle girerek etiketleri serbestçe hazırlayın.</p>
-            <span class="mode-card-action">Giriş Yap →</span>
+            <span class="mode-card-action">Giriş Yap <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
           </button>
           <button id="btnSelectAuto" class="mode-card" type="button">
-            <div class="mode-card-icon">⚡</div>
+            <div class="mode-card-icon"><svg aria-hidden="true"><use href="#i-zap"/></svg></div>
             <h3>Otomatik Etiket Modu</h3>
             <p>Hazır Apple ürün kataloğundan seçim yapıp adetleri belirleyerek hızlıca etiket basın.</p>
-            <span class="mode-card-action">Giriş Yap →</span>
+            <span class="mode-card-action">Giriş Yap <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
           </button>
         </div>
       </div>
@@ -52,16 +89,22 @@
     <!-- Manuel Mod Shell -->
     <main id="manualShell" class="app-shell" hidden>
       <aside class="editor-panel" aria-label="Etiket bilgileri">
+        <button type="button" class="back-home-button" id="btnManualBackHome">
+          <svg aria-hidden="true"><use href="#i-arrow-left"/></svg>
+          Giriş Ekranına Dön
+        </button>
+
         <div class="brand-block">
           <img class="brand-mark" src="AppIcon.png" alt="">
           <div>
-            <button type="button" class="back-home-button" id="btnManualBackHome">← Giriş Ekranına Dön</button>
             <h1>Troy Etiket Pro</h1>
-            <p>Online etiket hazırlama aracı</p>
+            <p>Manuel etiket hazırlama</p>
           </div>
         </div>
 
         <form id="labelForm" class="label-form" autocomplete="off">
+          <h3 class="panel-section-title">Etiket Bilgileri</h3>
+
           <label>
             <span>Açıklaması (Model)</span>
             <input id="modelInput" name="model" type="text" placeholder="Örn: 20 W USB-C Güç Adaptörü" required>
@@ -102,7 +145,10 @@
           </div>
 
           <div class="form-actions">
-            <button class="primary-button" type="submit">Listeye Ekle</button>
+            <button class="primary-button" type="submit">
+              <svg aria-hidden="true"><use href="#i-plus"/></svg>
+              Listeye Ekle
+            </button>
             <button id="resetFormButton" class="ghost-button" type="button" title="Formu sıfırla">Sıfırla</button>
           </div>
         </form>
@@ -120,12 +166,18 @@
       <section class="workspace">
         <header class="workspace-header">
           <div>
-            <p class="eyebrow">A4 düzeni: 3 sütun x 9 satır</p>
+            <p class="eyebrow">A4 düzeni: 3 sütun × 9 satır</p>
             <h2>Etiketler <span id="countBadge">0</span></h2>
           </div>
           <div class="header-actions">
-            <button id="clearButton" class="ghost-button" type="button" disabled>Temizle</button>
-            <button id="printButton" class="primary-button" type="button" disabled>PDF / Yazdır</button>
+            <button id="clearButton" class="ghost-button" type="button" disabled>
+              <svg aria-hidden="true"><use href="#i-trash"/></svg>
+              Temizle
+            </button>
+            <button id="printButton" class="primary-button" type="button" disabled>
+              <svg aria-hidden="true"><use href="#i-printer"/></svg>
+              PDF / Yazdır
+            </button>
           </div>
         </header>
 
@@ -143,12 +195,16 @@
     <!-- Otomatik Mod Shell -->
     <main id="autoShell" class="app-shell" hidden>
       <aside class="editor-panel auto-panel" aria-label="Otomatik etiket bilgileri">
+        <button type="button" class="back-home-button" id="btnAutoBackHome">
+          <svg aria-hidden="true"><use href="#i-arrow-left"/></svg>
+          Giriş Ekranına Dön
+        </button>
+
         <div class="brand-block">
           <img class="brand-mark" src="AppIcon.png" alt="">
           <div>
-            <button type="button" class="back-home-button" id="btnAutoBackHome">← Giriş Ekranına Dön</button>
             <h1>Troy Etiket Pro</h1>
-            <p>Otomatik etiket hazırlama aracı</p>
+            <p>Otomatik etiket hazırlama</p>
           </div>
         </div>
 
@@ -156,24 +212,30 @@
         <div class="catalog-filters-section">
           <label for="catalogSearch">
             <span>Ürün Arama</span>
-            <input id="catalogSearch" type="text" placeholder="Ürün adı veya model ara...">
+            <div class="search-field">
+              <svg class="field-icon" aria-hidden="true"><use href="#i-search"/></svg>
+              <input id="catalogSearch" type="search" placeholder="Ürün adı veya model ara...">
+            </div>
           </label>
-          
+
+          <h3 class="panel-section-title">Kategoriler</h3>
+
           <div class="category-menu" id="categoryMenu">
             <!-- Tümü (Flat) -->
             <button class="menu-item active" data-filter="all" type="button">
-              <span>🏷️ Tümü</span>
+              <span><svg class="mi" aria-hidden="true"><use href="#i-grid"/></svg>Tümü</span>
             </button>
 
             <!-- Yeni Fiyatlar (Flat) — en son güncellenen fiyatlar -->
             <button class="menu-item" data-filter="recent-prices" type="button">
-              <span>🆕 Yeni Fiyatlar</span>
+              <span><svg class="mi" aria-hidden="true"><use href="#i-sparkle"/></svg>Yeni Fiyatlar</span>
             </button>
 
             <!-- iPhone (Accordion) -->
             <div class="menu-group">
               <button class="menu-item group-toggle" type="button">
-                <span>📱 iPhone</span> <span class="arrow">▼</span>
+                <span><svg class="mi" aria-hidden="true"><use href="#i-phone"/></svg>iPhone</span>
+                <svg class="arrow" aria-hidden="true"><use href="#i-chevron"/></svg>
               </button>
               <div class="group-items">
                 <button class="sub-item" data-filter="iphone-all" type="button">Tüm iPhone'lar</button>
@@ -186,7 +248,8 @@
             <!-- iPad (Accordion) -->
             <div class="menu-group">
               <button class="menu-item group-toggle" type="button">
-                <span>📟 iPad</span> <span class="arrow">▼</span>
+                <span><svg class="mi" aria-hidden="true"><use href="#i-tablet"/></svg>iPad</span>
+                <svg class="arrow" aria-hidden="true"><use href="#i-chevron"/></svg>
               </button>
               <div class="group-items">
                 <button class="sub-item" data-filter="ipad-all" type="button">Tüm iPad'ler</button>
@@ -199,7 +262,8 @@
             <!-- Mac (Accordion) -->
             <div class="menu-group">
               <button class="menu-item group-toggle" type="button">
-                <span>💻 Mac</span> <span class="arrow">▼</span>
+                <span><svg class="mi" aria-hidden="true"><use href="#i-laptop"/></svg>Mac</span>
+                <svg class="arrow" aria-hidden="true"><use href="#i-chevron"/></svg>
               </button>
               <div class="group-items">
                 <button class="sub-item" data-filter="mac-all" type="button">Tüm Mac'ler</button>
@@ -212,7 +276,8 @@
             <!-- Watch (Accordion) -->
             <div class="menu-group">
               <button class="menu-item group-toggle" type="button">
-                <span>⌚ Watch</span> <span class="arrow">▼</span>
+                <span><svg class="mi" aria-hidden="true"><use href="#i-watch"/></svg>Watch</span>
+                <svg class="arrow" aria-hidden="true"><use href="#i-chevron"/></svg>
               </button>
               <div class="group-items">
                 <button class="sub-item" data-filter="watch-all" type="button">Tüm Saatler</button>
@@ -224,13 +289,14 @@
 
             <!-- AirPods (Flat) -->
             <button class="menu-item" data-filter="airpods-all" type="button">
-              <span>🎧 AirPods</span>
+              <span><svg class="mi" aria-hidden="true"><use href="#i-headphones"/></svg>AirPods</span>
             </button>
 
             <!-- Aksesuar (Accordion) — önce ana cihaza göre, sonra türe göre -->
             <div class="menu-group">
               <button class="menu-item group-toggle" type="button">
-                <span>🔌 Aksesuar</span> <span class="arrow">▼</span>
+                <span><svg class="mi" aria-hidden="true"><use href="#i-plug"/></svg>Aksesuar</span>
+                <svg class="arrow" aria-hidden="true"><use href="#i-chevron"/></svg>
               </button>
               <div class="group-items">
                 <button class="sub-item" data-filter="acc-all" type="button">Tüm Aksesuarlar</button>
@@ -254,7 +320,8 @@
             <!-- 3. Parti (Accordion) -->
             <div class="menu-group">
               <button class="menu-item group-toggle" type="button">
-                <span>📦 3. Parti</span> <span class="arrow">▼</span>
+                <span><svg class="mi" aria-hidden="true"><use href="#i-box"/></svg>3. Parti</span>
+                <svg class="arrow" aria-hidden="true"><use href="#i-chevron"/></svg>
               </button>
               <div class="group-items" id="thirdPartyBrandItems">
               </div>
@@ -264,7 +331,7 @@
 
         <!-- Basım Ayarları -->
         <div class="catalog-global-settings">
-          <h3>Basım Ayarları</h3>
+          <h3 class="panel-section-title">Basım Ayarları</h3>
           <label>
             <span>Mağaza Konsepti</span>
             <select id="autoConceptInput" name="concept">
@@ -283,12 +350,18 @@
       <section class="workspace">
         <header class="workspace-header">
           <div>
-            <p class="eyebrow">A4 düzeni: 3 sütun x 9 satır</p>
+            <p class="eyebrow">A4 düzeni: 3 sütun × 9 satır</p>
             <h2>Basılacak Etiketler <span id="autoCountBadge">0</span></h2>
           </div>
           <div class="header-actions">
-            <button id="autoClearButton" class="ghost-button" type="button" disabled>Tümünü Sıfırla</button>
-            <button id="autoPrintButton" class="primary-button" type="button" disabled>PDF / Yazdır</button>
+            <button id="autoClearButton" class="ghost-button" type="button" disabled>
+              <svg aria-hidden="true"><use href="#i-trash"/></svg>
+              Sıfırla
+            </button>
+            <button id="autoPrintButton" class="primary-button" type="button" disabled>
+              <svg aria-hidden="true"><use href="#i-printer"/></svg>
+              PDF / Yazdır
+            </button>
           </div>
         </header>
 
@@ -325,6 +398,6 @@
       </article>
     </template>
 
-    <script src="app.js?v=20260603d"></script>
+    <script src="app.js?v=20260611a"></script>
   </body>
 </html>
