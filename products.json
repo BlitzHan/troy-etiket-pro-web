@@ -76,7 +76,7 @@
     "barcode": "MDH74TU/A",
     "brand": "Apple",
     "model": "13-inch MacBook Air: Apple M5 chip with 10-core CPU and 8-core GPU, 16GB, 512GB SSD - Silver",
-    "price": "62559",
+    "price": "58999",
     "concept": "APR",
     "category": "Mac"
   },
@@ -85,7 +85,7 @@
     "barcode": "MDHA4TU/A",
     "brand": "Apple",
     "model": "13-inch MacBook Air: Apple M5 chip with 10-core CPU and 8-core GPU, 16GB, 512GB SSD - Starlight",
-    "price": "62559",
+    "price": "58999",
     "concept": "APR",
     "category": "Mac"
   },
@@ -94,7 +94,7 @@
     "barcode": "MDHE4TU/A",
     "brand": "Apple",
     "model": "13-inch MacBook Air: Apple M5 chip with 10-core CPU and 8-core GPU, 16GB, 512GB SSD - Midnight",
-    "price": "62559",
+    "price": "58999",
     "concept": "APR",
     "category": "Mac"
   },
@@ -103,7 +103,7 @@
     "barcode": "MDHH4TU/A",
     "brand": "Apple",
     "model": "13-inch MacBook Air: Apple M5 chip with 10-core CPU and 8-core GPU, 16GB, 512GB SSD - Sky Blue",
-    "price": "62559",
+    "price": "58999",
     "concept": "APR",
     "category": "Mac"
   },
@@ -184,7 +184,7 @@
     "barcode": "MDV94TU/A",
     "brand": "Apple",
     "model": "15-inch MacBook Air: Apple M5 chip with 10-core CPU and 10-core GPU, 16GB, 512GB SSD - Silver",
-    "price": "73599",
+    "price": "71999",
     "concept": "APR",
     "category": "Mac"
   },
@@ -193,7 +193,7 @@
     "barcode": "MDVD4TU/A",
     "brand": "Apple",
     "model": "15-inch MacBook Air: Apple M5 chip with 10-core CPU and 10-core GPU, 16GB, 512GB SSD - Starlight",
-    "price": "73599",
+    "price": "71999",
     "concept": "APR",
     "category": "Mac"
   },
@@ -202,7 +202,7 @@
     "barcode": "MDVH4TU/A",
     "brand": "Apple",
     "model": "15-inch MacBook Air: Apple M5 chip with 10-core CPU and 10-core GPU, 16GB, 512GB SSD - Midnight",
-    "price": "73599",
+    "price": "71999",
     "concept": "APR",
     "category": "Mac"
   },
@@ -211,7 +211,7 @@
     "barcode": "MDVQ4TU/A",
     "brand": "Apple",
     "model": "15-inch MacBook Air: Apple M5 chip with 10-core CPU and 10-core GPU, 16GB, 512GB SSD - Sky Blue",
-    "price": "73599",
+    "price": "71999",
     "concept": "APR",
     "category": "Mac"
   },
@@ -1084,7 +1084,7 @@
     "barcode": "MG2Q4TU/A",
     "brand": "Apple",
     "model": "iPhone Air 512GB Space Black",
-    "price": "108317",
+    "price": "84999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1093,7 +1093,7 @@
     "barcode": "MG2T4TU/A",
     "brand": "Apple",
     "model": "iPhone Air 512GB Cloud White",
-    "price": "108317",
+    "price": "84999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1102,7 +1102,7 @@
     "barcode": "MG2U4TU/A",
     "brand": "Apple",
     "model": "iPhone Air 512GB Light Gold",
-    "price": "108317",
+    "price": "84999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1111,7 +1111,7 @@
     "barcode": "MG2V4TU/A",
     "brand": "Apple",
     "model": "iPhone Air 512GB Sky Blue",
-    "price": "108317",
+    "price": "84999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1120,7 +1120,7 @@
     "barcode": "MG2W4TU/A",
     "brand": "Apple",
     "model": "iPhone Air 1TB Space Black",
-    "price": "120917",
+    "price": "92999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1129,7 +1129,7 @@
     "barcode": "MG2X4TU/A",
     "brand": "Apple",
     "model": "iPhone Air 1TB Cloud White",
-    "price": "120917",
+    "price": "92999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1138,7 +1138,7 @@
     "barcode": "MG2Y4TU/A",
     "brand": "Apple",
     "model": "iPhone Air 1TB Light Gold",
-    "price": "120917",
+    "price": "92999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1147,7 +1147,7 @@
     "barcode": "MG304TU/A",
     "brand": "Apple",
     "model": "iPhone Air 1TB Sky Blue",
-    "price": "120917",
+    "price": "92999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1156,7 +1156,7 @@
     "barcode": "MG8G4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 256GB Silver",
-    "price": "119999",
+    "price": "116999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1165,7 +1165,7 @@
     "barcode": "MG8H4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 256GB Cosmic Orange",
-    "price": "119999",
+    "price": "116999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1174,7 +1174,7 @@
     "barcode": "MG8J4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 256GB Deep Blue",
-    "price": "119999",
+    "price": "116999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1183,7 +1183,7 @@
     "barcode": "MG8K4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 512GB Silver",
-    "price": "133999",
+    "price": "130999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1192,7 +1192,7 @@
     "barcode": "MG8M4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 512GB Cosmic Orange",
-    "price": "133999",
+    "price": "130999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1201,7 +1201,7 @@
     "barcode": "MG8N4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 512GB Deep Blue",
-    "price": "133999",
+    "price": "130999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1210,7 +1210,7 @@
     "barcode": "MG8P4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 1TB Silver",
-    "price": "147999",
+    "price": "144999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1219,7 +1219,7 @@
     "barcode": "MG8Q4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 1TB Cosmic Orange",
-    "price": "147999",
+    "price": "144999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1228,7 +1228,7 @@
     "barcode": "MG8R4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 1TB Deep Blue",
-    "price": "147999",
+    "price": "144999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1237,7 +1237,7 @@
     "barcode": "MFYM4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 256GB Silver",
-    "price": "132999",
+    "price": "129999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1246,7 +1246,7 @@
     "barcode": "MFYN4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 256GB Cosmic Orange",
-    "price": "132999",
+    "price": "129999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1255,7 +1255,7 @@
     "barcode": "MFYP4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 256GB Deep Blue",
-    "price": "132999",
+    "price": "129999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1264,7 +1264,7 @@
     "barcode": "MFYQ4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 512GB Silver",
-    "price": "146999",
+    "price": "142999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1273,7 +1273,7 @@
     "barcode": "MFYT4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 512GB Cosmic Orange",
-    "price": "146999",
+    "price": "142999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1282,7 +1282,7 @@
     "barcode": "MFYU4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 512GB Deep Blue",
-    "price": "146999",
+    "price": "142999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1291,7 +1291,7 @@
     "barcode": "MFYV4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 1TB Silver",
-    "price": "160999",
+    "price": "156999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1300,7 +1300,7 @@
     "barcode": "MFYW4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 1TB Cosmic Orange",
-    "price": "160999",
+    "price": "156999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1309,7 +1309,7 @@
     "barcode": "MFYX4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 1TB Deep Blue",
-    "price": "160999",
+    "price": "156999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1318,7 +1318,7 @@
     "barcode": "MFYY4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 2TB Silver",
-    "price": "188999",
+    "price": "182999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1327,7 +1327,7 @@
     "barcode": "MG004TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 2TB Cosmic Orange",
-    "price": "188999",
+    "price": "182999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1336,7 +1336,7 @@
     "barcode": "MG014TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 2TB Deep Blue",
-    "price": "188999",
+    "price": "182999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1435,7 +1435,7 @@
     "barcode": "MYE73TU/A",
     "brand": "Apple",
     "model": "iPhone 16 128GB Black",
-    "price": "70999",
+    "price": "66999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1444,7 +1444,7 @@
     "barcode": "MYE93TU/A",
     "brand": "Apple",
     "model": "iPhone 16 128GB White",
-    "price": "70999",
+    "price": "66999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1453,7 +1453,7 @@
     "barcode": "MYEA3TU/A",
     "brand": "Apple",
     "model": "iPhone 16 128GB Pink",
-    "price": "70999",
+    "price": "66999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1462,7 +1462,7 @@
     "barcode": "MYEC3TU/A",
     "brand": "Apple",
     "model": "iPhone 16 128GB Ultramarine",
-    "price": "70999",
+    "price": "66999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -1471,7 +1471,7 @@
     "barcode": "MYED3TU/A",
     "brand": "Apple",
     "model": "iPhone 16 128GB Teal",
-    "price": "70999",
+    "price": "66999",
     "concept": "APR",
     "category": "iPhone"
   },
@@ -2470,7 +2470,7 @@
     "barcode": "MD3Y4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Wi-Fi 128GB - Silver",
-    "price": "20999",
+    "price": "18999",
     "concept": "APR",
     "category": "iPad"
   },
@@ -2479,7 +2479,7 @@
     "barcode": "MD4A4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Wi-Fi 128GB - Blue",
-    "price": "20999",
+    "price": "18999",
     "concept": "APR",
     "category": "iPad"
   },
@@ -2488,7 +2488,7 @@
     "barcode": "MD4D4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Wi-Fi 128GB - Yellow",
-    "price": "20999",
+    "price": "18999",
     "concept": "APR",
     "category": "iPad"
   },
@@ -2497,7 +2497,7 @@
     "barcode": "MD4E4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Wi-Fi 128GB - Pink",
-    "price": "20999",
+    "price": "18999",
     "concept": "APR",
     "category": "iPad"
   },
@@ -3118,7 +3118,7 @@
     "barcode": "MH304TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Air Wi-Fi 128GB - Space Grey",
-    "price": "36999",
+    "price": "34999",
     "concept": "APR",
     "category": "iPad"
   },
@@ -3127,7 +3127,7 @@
     "barcode": "MH314TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Air Wi-Fi 128GB - Blue",
-    "price": "36999",
+    "price": "34999",
     "concept": "APR",
     "category": "iPad"
   },
@@ -3136,7 +3136,7 @@
     "barcode": "MH334TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Air Wi-Fi 128GB - Starlight",
-    "price": "36999",
+    "price": "34999",
     "concept": "APR",
     "category": "iPad"
   },
@@ -3145,7 +3145,7 @@
     "barcode": "MH344TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Air Wi-Fi 128GB - Purple",
-    "price": "36999",
+    "price": "34999",
     "concept": "APR",
     "category": "iPad"
   },
@@ -3154,7 +3154,7 @@
     "barcode": "MH354TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Air Wi-Fi 256GB - Space Grey",
-    "price": "41999",
+    "price": "39999",
     "concept": "APR",
     "category": "iPad"
   },
@@ -3163,7 +3163,7 @@
     "barcode": "MH364TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Air Wi-Fi 256GB - Blue",
-    "price": "41999",
+    "price": "39999",
     "concept": "APR",
     "category": "iPad"
   },
@@ -3172,7 +3172,7 @@
     "barcode": "MH374TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Air Wi-Fi 256GB - Starlight",
-    "price": "41999",
+    "price": "39999",
     "concept": "APR",
     "category": "iPad"
   },
@@ -3181,7 +3181,7 @@
     "barcode": "MH394TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Air Wi-Fi 256GB - Purple",
-    "price": "41999",
+    "price": "39999",
     "concept": "APR",
     "category": "iPad"
   },
@@ -4324,7 +4324,7 @@
     "barcode": "MFHP4TU/A",
     "brand": "Apple",
     "model": "AirPods Pro 3",
-    "price": "12499",
+    "price": "12999",
     "concept": "APR",
     "category": "AirPods"
   },
@@ -4378,7 +4378,7 @@
     "barcode": "MXP63TU/A",
     "brand": "Apple",
     "model": "AirPods 4",
-    "price": "7499",
+    "price": "7999",
     "concept": "APR",
     "category": "AirPods"
   },
