@@ -2787,7 +2787,7 @@
     "model": "11-inch iPad Pro Wi-Fi 256GB with standard glass - Space Black",
     "price": "64999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -2797,7 +2797,7 @@
     "model": "11-inch iPad Pro Wi-Fi 256GB with standard glass - Silver",
     "price": "64999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -2807,7 +2807,7 @@
     "model": "11-inch iPad Pro Wi-Fi 512GB with standard glass - Space Black",
     "price": "76999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "MDWN4TU/A",
@@ -2816,7 +2816,7 @@
     "model": "11-inch iPad Pro Wi-Fi 512GB with standard glass - Silver",
     "price": "76999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "MDWP4TU/A",
@@ -2825,7 +2825,7 @@
     "model": "11-inch iPad Pro Wi-Fi 1TB with standard glass - Space Black",
     "price": "100999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "MDWQ4TU/A",
@@ -2834,7 +2834,7 @@
     "model": "11-inch iPad Pro Wi-Fi 1TB with standard glass - Silver",
     "price": "100999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "MDWR4TU/A",
@@ -2861,7 +2861,7 @@
     "model": "11-inch iPad Pro Wi-Fi 2TB with standard glass - Space Black",
     "price": "124999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "MDWV4TU/A",
@@ -2870,7 +2870,7 @@
     "model": "11-inch iPad Pro Wi-Fi 2TB with standard glass - Silver",
     "price": "124999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "MDWW4TU/A",
@@ -2897,7 +2897,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 256GB with standard glass - Space Black",
     "price": "76999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME2P4TU/A",
@@ -2906,7 +2906,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 256GB with standard glass - Silver",
     "price": "76999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME2Q4TU/A",
@@ -2915,7 +2915,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 512GB with standard glass - Space Black",
     "price": "88999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME2T4TU/A",
@@ -2924,7 +2924,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 512GB with standard glass - Silver",
     "price": "88999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME2U4TU/A",
@@ -2933,7 +2933,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 1TB with standard glass - Space Black",
     "price": "112999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME2V4TU/A",
@@ -2942,7 +2942,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 1TB with standard glass - Silver",
     "price": "112999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME2W4TU/A",
@@ -2969,7 +2969,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 2TB with standard glass - Space Black",
     "price": "136999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME6A4TU/A",
@@ -2978,7 +2978,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 2TB with standard glass - Silver",
     "price": "136999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME6C4TU/A",
@@ -3005,7 +3005,7 @@
     "model": "13-inch iPad Pro Wi-Fi 256GB with standard glass - Space Black",
     "price": "79999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -3015,7 +3015,7 @@
     "model": "13-inch iPad Pro Wi-Fi 256GB with standard glass - Silver",
     "price": "79999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -3025,7 +3025,7 @@
     "model": "13-inch iPad Pro Wi-Fi 512GB with standard glass - Space Black",
     "price": "91999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "MDYM4TU/A",
@@ -3034,7 +3034,7 @@
     "model": "13-inch iPad Pro Wi-Fi 512GB with standard glass - Silver",
     "price": "91999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "MDYN4TU/A",
@@ -3043,7 +3043,7 @@
     "model": "13-inch iPad Pro Wi-Fi 1TB with standard glass - Space Black",
     "price": "115999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "MDYP4TU/A",
@@ -3052,7 +3052,7 @@
     "model": "13-inch iPad Pro Wi-Fi 1TB with standard glass - Silver",
     "price": "115999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "MDYQ4TU/A",
@@ -3079,7 +3079,7 @@
     "model": "13-inch iPad Pro Wi-Fi 2TB with standard glass - Space Black",
     "price": "139999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "MDYU4TU/A",
@@ -3088,7 +3088,7 @@
     "model": "13-inch iPad Pro Wi-Fi 2TB with standard glass - Silver",
     "price": "139999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "MDYV4TU/A",
@@ -3115,7 +3115,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 256GB with standard glass - Space Black",
     "price": "91999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME7X4TU/A",
@@ -3124,7 +3124,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 256GB with standard glass - Silver",
     "price": "91999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME7Y4TU/A",
@@ -3133,7 +3133,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 512GB with standard glass - Space Black",
     "price": "103999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME8C4TU/A",
@@ -3142,7 +3142,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 512GB with standard glass - Silver",
     "price": "103999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME8D4TU/A",
@@ -3151,7 +3151,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 1TB with standard glass - Space Black",
     "price": "127999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME8F4TU/A",
@@ -3160,7 +3160,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 1TB with standard glass - Silver",
     "price": "127999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME8G4TU/A",
@@ -3187,7 +3187,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 2TB with standard glass - Space Black",
     "price": "151999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME8K4TU/A",
@@ -3196,7 +3196,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 2TB with standard glass - Silver",
     "price": "151999",
     "concept": "APR",
-    "category": "Aksesuar"
+    "category": "iPad"
   },
   {
     "id": "ME8M4TU/A",
@@ -15264,7 +15264,7 @@
     "model": "11-inch iPad Pro Wi-Fi 256GB with standard glass - Silver",
     "price": "64999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15274,7 +15274,7 @@
     "model": "11-inch iPad Pro Wi-Fi 512GB with standard glass - Space Black",
     "price": "76999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15284,7 +15284,7 @@
     "model": "11-inch iPad Pro Wi-Fi 512GB with standard glass - Silver",
     "price": "76999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15294,7 +15294,7 @@
     "model": "11-inch iPad Pro Wi-Fi 1TB with standard glass - Space Black",
     "price": "100999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15304,7 +15304,7 @@
     "model": "11-inch iPad Pro Wi-Fi 1TB with standard glass - Silver",
     "price": "100999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15334,7 +15334,7 @@
     "model": "11-inch iPad Pro Wi-Fi 2TB with standard glass - Space Black",
     "price": "124999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15344,7 +15344,7 @@
     "model": "11-inch iPad Pro Wi-Fi 2TB with standard glass - Silver",
     "price": "124999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15374,7 +15374,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 256GB with standard glass - Silver",
     "price": "76999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15384,7 +15384,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 512GB with standard glass - Space Black",
     "price": "88999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15394,7 +15394,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 512GB with standard glass - Silver",
     "price": "88999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15404,7 +15404,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 1TB with standard glass - Space Black",
     "price": "112999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15414,7 +15414,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 1TB with standard glass - Silver",
     "price": "112999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15444,7 +15444,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 2TB with standard glass - Space Black",
     "price": "136999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15454,7 +15454,7 @@
     "model": "11-inch iPad Pro Wi-Fi + Cellular 2TB with standard glass - Silver",
     "price": "136999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15484,7 +15484,7 @@
     "model": "13-inch iPad Pro Wi-Fi 256GB with standard glass - Silver",
     "price": "79999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15494,7 +15494,7 @@
     "model": "13-inch iPad Pro Wi-Fi 512GB with standard glass - Space Black",
     "price": "91999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15504,7 +15504,7 @@
     "model": "13-inch iPad Pro Wi-Fi 512GB with standard glass - Silver",
     "price": "91999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15514,7 +15514,7 @@
     "model": "13-inch iPad Pro Wi-Fi 1TB with standard glass - Space Black",
     "price": "115999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15524,7 +15524,7 @@
     "model": "13-inch iPad Pro Wi-Fi 1TB with standard glass - Silver",
     "price": "115999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15554,7 +15554,7 @@
     "model": "13-inch iPad Pro Wi-Fi 2TB with standard glass - Space Black",
     "price": "139999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15564,7 +15564,7 @@
     "model": "13-inch iPad Pro Wi-Fi 2TB with standard glass - Silver",
     "price": "139999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15594,7 +15594,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 256GB with standard glass - Silver",
     "price": "91999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15604,7 +15604,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 512GB with standard glass - Space Black",
     "price": "103999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15614,7 +15614,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 512GB with standard glass - Silver",
     "price": "103999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15624,7 +15624,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 1TB with standard glass - Space Black",
     "price": "127999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15634,7 +15634,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 1TB with standard glass - Silver",
     "price": "127999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15664,7 +15664,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 2TB with standard glass - Space Black",
     "price": "151999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {
@@ -15674,7 +15674,7 @@
     "model": "13-inch iPad Pro Wi-Fi + Cellular 2TB with standard glass - Silver",
     "price": "151999",
     "concept": "APR",
-    "category": "Aksesuar",
+    "category": "iPad",
     "priceUpdatedAt": "2026-06-29"
   },
   {

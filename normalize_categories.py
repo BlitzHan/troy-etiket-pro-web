@@ -3,6 +3,7 @@
 Değerler: iPhone, iPad, Mac, Watch, AirPods, Aksesuar
 brand/model/price/barcode/id alanlarına dokunmaz."""
 import json
+import re
 from collections import Counter
 
 PATH = "products.json"
@@ -15,7 +16,7 @@ ACC_KEYWORDS = [
     "aramid", "kevlar", "ekran kor", "screen protector", "screen prot",
     "kablo", "cable", "adaptör", "adapter", "şarj", "charger", "powerbank",
     "power bank", "güç adaptörü", "kordon", "band", "loop", "kayış",
-    "çanta", " bag", "sleeve", "stand", "tutucu", "pencil", "kalem",
+    "çanta", " bag", "sleeve", "tutucu", "pencil", "kalem",
     "klavye", "keyboard", "hoparlör", "speaker", "kulaklık", "kulaklik",
     "mouse", " hub", " dock", "dönüştürücü", "magsafe", "bracelet",
     "magnetic link", "modern buckle", "crossbody", "strap", "key ring",
@@ -24,8 +25,15 @@ ACC_KEYWORDS = [
 ]
 
 
+# "stand" tek başına bir aksesuar (masa standı/tutucu) işaretidir, ancak iPad Pro
+# açıklamalarındaki "standard glass" ifadesine takılmamalı → kelime sınırıyla eşleştir.
+_STAND_RE = re.compile(r"\bstand\b")
+
+
 def is_accessory_kw(model: str) -> bool:
     m = model.lower()
+    if _STAND_RE.search(m):
+        return True
     return any(k in m for k in ACC_KEYWORDS)
 
 
