@@ -1259,6 +1259,19 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 .print-grid .label-visual { width: 64mm; height: 30.7mm; }
 .print-placeholder { width: 64mm; height: 30.7mm; }
 
+/* APP mağazaları için etiket ölçüsü (60mm x 30mm — APR'den küçük, DOKUNMA) */
+.print-grid.print-grid--app {
+  grid-template-columns: repeat(3, 60mm);
+  grid-template-rows: repeat(9, 30mm);
+  width: 180mm;
+  height: 270mm;
+}
+.print-grid.print-grid--app .label-visual,
+.print-grid.print-grid--app .print-placeholder {
+  width: 60mm;
+  height: 30mm;
+}
+
 @page { size: A4; margin: 0; }
 @media print {
   html, body { height: auto !important; overflow: visible !important; }

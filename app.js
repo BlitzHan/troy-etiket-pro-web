@@ -323,6 +323,8 @@ function renderPrintArea() {
     return priceA - priceB;
   });
 
+  const activeConcept = currentScreen === "automatic" ? autoConceptInput.value : conceptInput.value;
+
   for (let pageStart = 0; pageStart < printItems.length; pageStart += 27) {
     const pageItems = printItems.slice(pageStart, pageStart + 27);
     const page = document.createElement("div");
@@ -330,6 +332,7 @@ function renderPrintArea() {
 
     const grid = document.createElement("div");
     grid.className = "print-grid";
+    if (activeConcept === "APP") grid.classList.add("print-grid--app");
 
     for (let index = 0; index < 27; index += 1) {
       const item = pageItems[index];
