@@ -277,7 +277,7 @@ function saveItems() {
 function fillLabel(node, item) {
   node.querySelector(".label-brand").textContent = capitalizeProductText(item.brand);
   node.querySelector(".label-model").textContent = capitalizeProductText(item.model);
-  node.querySelector(".label-price").textContent = `${item.price} TL`;
+  node.querySelector(".label-price").textContent = `${item.price} ₺`;
   node.querySelector(".label-date").textContent = item.date;
   node.querySelector(".label-artwork").src = `${item.concept || "APP"}.png`;
 }
@@ -576,7 +576,7 @@ function createCatalogItemCard(product) {
     <span class="catalog-item-badge">${product.category}</span>
     <div class="catalog-item-code">${product.barcode || ""}</div>
     <h4>${showBrand ? `<strong>${brandText}</strong> ` : ""}${modelText}</h4>
-    <div class="catalog-item-price">${formatPrice(product.price)} TL</div>
+    <div class="catalog-item-price">${formatPrice(product.price)} ₺</div>
     <div class="catalog-item-actions">
       <div class="counter-container">
         <button class="counter-button btn-dec" type="button" aria-label="Azalt">-</button>
