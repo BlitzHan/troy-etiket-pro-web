@@ -1,6 +1,43 @@
 const storageKey = "troy-etiket-pro-items";
 const formatter = new Intl.NumberFormat("tr-TR");
 
+/* ── Sürüm kontrolü ──
+   iPad'lerde "ana ekrana ekle" ile kullanılıyor: iOS sayfayı bellekte tutuyor,
+   GitHub Pages de HTML'i 10 dk önbellekliyor. Uygulama her öne geldiğinde
+   sunucudaki index.html'e bakıp app.js'in ?v= sürümü değiştiyse kendini
+   yeniler. Sürümün tek kaynağı index.html'deki ?v= — ayrıca dosya bakma. */
+const CURRENT_VERSION = (() => {
+  const src = document.currentScript?.src || "";
+  try { return new URL(src, location.href).searchParams.get("v") || ""; }
+  catch { return ""; }
+})();
+
+async function checkForNewVersion() {
+  if (!CURRENT_VERSION) return;
+  try {
+    const response = await fetch("index.html", { cache: "no-store" });
+    if (!response.ok) return;
+    const html = await response.text();
+    const latest = html.match(/app\.js\?v=([\w.-]+)/)?.[1];
+    if (!latest || latest === CURRENT_VERSION) return;
+    // Aynı sürüm için tekrar tekrar yenileme döngüsüne girme.
+    if (sessionStorage.getItem("troy-reload-attempted") === latest) return;
+    sessionStorage.setItem("troy-reload-attempted", latest);
+    // Sorgu parametresi önbelleği atlatır; hash (#manual/#automatic) korunur.
+    location.replace(`${location.pathname}?guncel=${Date.now()}${location.hash}`);
+  } catch {
+    // Çevrimdışı ya da ağ hatası — sessizce geç, uygulama çalışmaya devam etsin.
+  }
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") checkForNewVersion();
+});
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) checkForNewVersion();
+});
+checkForNewVersion();
+
 // Site Login Elements
 const siteLoginScreen = document.querySelector("#siteLoginScreen");
 const siteLoginForm = document.querySelector("#siteLoginForm");
