@@ -325,8 +325,11 @@ function renderPrintArea() {
 
   const activeConcept = currentScreen === "automatic" ? autoConceptInput.value : conceptInput.value;
 
-  for (let pageStart = 0; pageStart < printItems.length; pageStart += 27) {
-    const pageItems = printItems.slice(pageStart, pageStart + 27);
+  // APP etiketi 63mm x 32mm: A4'e 3x8 = 24 sığar; diğer konseptler 3x9 = 27.
+  const perPage = activeConcept === "APP" ? 24 : 27;
+
+  for (let pageStart = 0; pageStart < printItems.length; pageStart += perPage) {
+    const pageItems = printItems.slice(pageStart, pageStart + perPage);
     const page = document.createElement("div");
     page.className = "print-page";
 
@@ -334,7 +337,7 @@ function renderPrintArea() {
     grid.className = "print-grid";
     if (activeConcept === "APP") grid.classList.add("print-grid--app");
 
-    for (let index = 0; index < 27; index += 1) {
+    for (let index = 0; index < perPage; index += 1) {
       const item = pageItems[index];
       if (item) {
         const visual = labelTemplate.content.querySelector(".label-visual").cloneNode(true);
@@ -437,6 +440,16 @@ async function importJson(file) {
   } finally {
     importInput.value = "";
   }
+}
+
+// APP etiketi 63mm x 32mm olduğundan A4'e 3x8 sığar; diğer konseptler 3x9.
+function updateLayoutEyebrows() {
+  const layoutEyebrow = document.querySelector("#layoutEyebrow");
+  const autoLayoutEyebrow = document.querySelector("#autoLayoutEyebrow");
+  const textFor = (concept) =>
+    concept === "APP" ? "A4 düzeni: 3 sütun × 8 satır" : "A4 düzeni: 3 sütun × 9 satır";
+  if (layoutEyebrow) layoutEyebrow.textContent = textFor(conceptInput.value);
+  if (autoLayoutEyebrow) autoLayoutEyebrow.textContent = textFor(autoConceptInput.value);
 }
 
 // Navigation & Routing Logic
@@ -874,7 +887,10 @@ conceptInput.addEventListener("change", () => {
   items.forEach(item => item.concept = selectedConcept);
   saveItems();
   renderPreview();
+  updateLayoutEyebrows();
 });
+
+autoConceptInput.addEventListener("change", updateLayoutEyebrows);
 
 previewGrid.addEventListener("click", (event) => {
   const card = event.target.closest(".label-card");
@@ -1036,6 +1052,7 @@ if (items.length > 0 && items[0].concept) {
   conceptInput.value = items[0].concept;
 }
 renderPreview();
+updateLayoutEyebrows();
 window.addEventListener("load", applyRouting);
 window.addEventListener("hashchange", applyRouting);
 applyRouting();
