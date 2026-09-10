@@ -22,7 +22,7 @@ Tüm ürünler tek bir `products.json` dosyasında tutulur. Her ürün şu alanl
 | Alan | Açıklama | Örnek |
 | :--- | :--- | :--- |
 | `id` / `barcode` | Ürün kodu | `MHFA4TU/A` |
-| `brand` | Marka | `Apple`, `Momax`, `Buff` |
+| `brand` | Marka | `Apple`, `Beats` |
 | `model` | Ürün açıklaması | `iPhone 17 256GB Black` |
 | `price` | Fiyat (sadece rakam, KDV dahil) | `89999` |
 | `concept` | Mağaza konsepti | `APP` |
@@ -58,7 +58,9 @@ python3 update_prices.py "Troy KMP FL_v5.1 10.09.2026.md" --apply --push  # + co
 - `priceUpdatedAt` listedeki "Geçerli olmaya başladığı tarih"ten alınır (yoksa dosya adından).
 - Mevcut ürünlerde yalnızca fiyat değişir; ad/marka/kategori korunur.
 - Yeni ürünler listedeki sıraya göre eklenir; marka (Apple/Beats) ve kategori otomatik atanır.
-- Listede olmayan ürünler silinmez. Aynı liste tekrar uygulanırsa değişiklik olmaz.
+- **Site yalnızca en son listedeki orijinal ürünleri içerir:** listede olmayan ürünler
+  (3. parti markalar, listeden çıkan eski modeller) kaldırılır. Kaldırmamak için `--keep-missing`.
+- Aynı liste tekrar uygulanırsa değişiklik olmaz.
 
 ---
 

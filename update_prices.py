@@ -7,12 +7,14 @@ Kullanım:
   python3 update_prices.py "Troy KMP FL_v5.1 10.09.2026.md" --apply --push  # + git commit & push
 
 Kurallar:
+- products.json en son listeyle birebir eşitlenir: site yalnızca listedeki orijinal
+  ürünleri gösterir. Listede olmayan ürünler (3. parti markalar, listeden çıkan eski
+  modeller) KALDIRILIR. Kaldırmamak için --keep-missing.
 - Baz fiyat "Kampanyalı Peşin Fiyatı" sütunudur (etikete basılan fiyat).
 - Mevcut ürün: yalnızca fiyat değiştiyse `price` ve `priceUpdatedAt` güncellenir.
   model/brand/category'ye dokunulmaz (ör. Beats ürünlerinin Türkçe adları korunur).
 - Yeni ürün: listedeki komşusunun hemen arkasına eklenir; marka ve kategori otomatik
   belirlenir, `priceUpdatedAt` eklenir.
-- Listede olmayan ürünler SİLİNMEZ (Momax, Piili vb. zaten bu listede yok).
 - Aynı liste tekrar çalıştırılırsa hiçbir şey değişmez.
 """
 import argparse
@@ -32,7 +34,8 @@ COL_CODE = "Ürün Kodu"
 COL_MODEL = "Açıklama / Model"
 COL_PRICE = "Kampanyalı Peşin Fiyatı"
 
-# Listeden bu kadardan az ürün okunursa dosya bozuk/format değişmiş sayılır.
+# Listeden bu kadardan az ürün okunursa dosya bozuk/format değişmiş sayılır
+# (eşitleme modunda katalogun yanlışlıkla boşaltılmasını da engeller).
 MIN_ROWS = 100
 
 
@@ -101,6 +104,7 @@ def main():
     ap.add_argument("price_list", type=Path, help="Troy KMP fiyat listesi (.md)")
     ap.add_argument("--apply", action="store_true", help="products.json'a yaz")
     ap.add_argument("--push", action="store_true", help="--apply sonrası git commit & push")
+    ap.add_argument("--keep-missing", action="store_true", help="listede olmayan ürünleri kaldırma")
     ap.add_argument("--date", help="priceUpdatedAt tarihi (YYYY-MM-DD); varsayılan listeden okunur")
     ap.add_argument("-v", "--verbose", action="store_true", help="tüm değişiklikleri listele")
     args = ap.parse_args()
@@ -129,7 +133,7 @@ def main():
     by_id = {p["id"]: p for p in products}
 
     changed, added = [], []
-    insert_after = {}  # mevcut ürün id → arkasına eklenecek yeni ürünler (liste sırasıyla)
+    insert_after = {}  # listedeki mevcut ürün id → arkasına eklenecek yeni ürünler (liste sırasıyla)
     anchor = None
     for code, (model, price) in seen.items():
         p = by_id.get(code)
@@ -154,19 +158,23 @@ def main():
         added.append(new)
         insert_after.setdefault(anchor, []).append(new)
 
+    missing = [p for p in products if p["id"] not in seen]
+    removed = [] if args.keep_missing else missing
+
     result = list(insert_after.get(None, []))
     for p in products:
-        result.append(p)
+        if args.keep_missing or p["id"] in seen:
+            result.append(p)
         result.extend(insert_after.get(p["id"], []))
-
-    missing = [p for p in products if p["brand"] in ("Apple", "Beats") and p["id"] not in seen]
 
     # --- Rapor ---
     up = sum(1 for _, old, new in changed if int(new) > int(old))
     print(f"Liste: {args.price_list.name}  |  tarih: {date}  |  okunan ürün: {len(seen)}")
     print(f"Fiyatı değişen: {len(changed)} (artan {up}, düşen {len(changed) - up})")
     print(f"Yeni ürün:      {len(added)}  {dict(Counter(n['category'] for n in added))}")
-    print(f"Listede olmayan Apple/Beats ürünü (dokunulmadı): {len(missing)}")
+    missing_label = "dokunulmadı" if args.keep_missing else "KALDIRILACAK"
+    print(f"Listede olmayan ürün ({missing_label}): {len(missing)}  "
+          f"{dict(Counter(p['brand'] for p in missing).most_common())}")
     limit = None if args.verbose else 10
 
     def tl(price):
@@ -180,7 +188,11 @@ def main():
         print("\n-- Yeni ürünler --")
         for n in added[:limit]:
             print(f"  {n['id']:<11} {tl(n['price']):>8}  [{n['category']}/{n['brand']}] {n['model'][:70]}")
-    if not args.verbose and (len(changed) > 10 or len(added) > 10):
+    if removed:
+        print("\n-- Kaldırılan ürünler --")
+        for p in removed[:limit]:
+            print(f"  {p['id']:<11} {tl(p['price']):>8}  [{p['brand']}] {p['model'][:70]}")
+    if not args.verbose and max(len(changed), len(added), len(removed)) > 10:
         print("  ... (tamamı için -v)")
     for w in warnings:
         print(f"UYARI: {w}")
@@ -188,7 +200,7 @@ def main():
     if not args.apply:
         print("\nÖnizleme — products.json değişmedi. Uygulamak için --apply ekleyin.")
         return
-    if not changed and not added:
+    if not changed and not added and not removed:
         print("\nDeğişiklik yok.")
         return
 
@@ -196,8 +208,8 @@ def main():
     print(f"\nproducts.json yazıldı: {len(products)} → {len(result)} ürün")
 
     if args.push:
-        msg = (f"Fiyat listesi {args.price_list.stem}: "
-               f"{len(changed)} fiyat güncelle, {len(added)} yeni ürün ekle")
+        msg = (f"Fiyat listesi {args.price_list.stem}: {len(changed)} fiyat güncelle, "
+               f"{len(added)} yeni ürün ekle, {len(removed)} ürün kaldır")
         subprocess.run(["git", "add", "products.json"], cwd=ROOT, check=True)
         subprocess.run(["git", "commit", "-m", msg], cwd=ROOT, check=True)
         subprocess.run(["git", "push"], cwd=ROOT, check=True)
