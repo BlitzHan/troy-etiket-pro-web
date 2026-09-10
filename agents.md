@@ -45,6 +45,21 @@ Değişiklikler doğrudan koddan yapılır:
 3. **Fiyatı değişen ürünlere `priceUpdatedAt: "YYYY-MM-DD"` alanı eklenir** (o günün tarihi).
 4. Değişiklikler Git ile push'lanır; siteye giren herkes güncel veriyi görür.
 
+### Troy KMP fiyat listesi → otomatik güncelleme (`update_prices.py`)
+Yeni Troy KMP listesinin `.md` hali geldiğinde tek komutla uygulanır:
+
+```bash
+python3 update_prices.py "Troy KMP FL_v5.1 10.09.2026.md"                 # önizleme
+python3 update_prices.py "Troy KMP FL_v5.1 10.09.2026.md" --apply         # products.json'a yaz
+python3 update_prices.py "Troy KMP FL_v5.1 10.09.2026.md" --apply --push  # + commit & push
+```
+
+- Baz fiyat **Kampanyalı Peşin Fiyatı** sütunudur.
+- `priceUpdatedAt` listedeki "Geçerli olmaya başladığı tarih"ten alınır (yoksa dosya adından).
+- Mevcut ürünlerde yalnızca fiyat değişir; ad/marka/kategori korunur.
+- Yeni ürünler listedeki sıraya göre eklenir; marka (Apple/Beats) ve kategori otomatik atanır.
+- Listede olmayan ürünler silinmez. Aynı liste tekrar uygulanırsa değişiklik olmaz.
+
 ---
 
 ## 🆕 4. "Yeni Fiyatlar" Kategorisi
