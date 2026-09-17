@@ -4,80 +4,80 @@
     "barcode": "MHFA4TU/A",
     "brand": "Apple",
     "model": "MacBook Neo 13inch A18 Pro 6CPU5GPU8GB256GBSilver",
-    "price": "41499",
+    "price": "45999",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHFD4TU/A",
     "barcode": "MHFD4TU/A",
     "brand": "Apple",
     "model": "MacBook Neo 13inch A18 Pro 6CPU5GPU8GB256GBCitrus",
-    "price": "41499",
+    "price": "45999",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHFF4TU/A",
     "barcode": "MHFF4TU/A",
     "brand": "Apple",
     "model": "MacBook Neo 13inch A18 Pro 6CPU5GPU8GB256GBIndigo",
-    "price": "41499",
+    "price": "45999",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHFH4TU/A",
     "barcode": "MHFH4TU/A",
     "brand": "Apple",
     "model": "MacBook Neo 13inch A18 Pro 6CPU5GPU8GB256GBBlush",
-    "price": "41499",
+    "price": "45999",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHFC4TU/A",
     "barcode": "MHFC4TU/A",
     "brand": "Apple",
     "model": "MacBook Neo 13inch A18 Pro 6CPU5GPU8GB512GBTouchIDSilver",
-    "price": "45999",
+    "price": "52249",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHFE4TU/A",
     "barcode": "MHFE4TU/A",
     "brand": "Apple",
     "model": "MacBook Neo 13inch A18 Pro 6CPU5GPU8GB512GBTouchIDCitrus",
-    "price": "45999",
+    "price": "52249",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHFG4TU/A",
     "barcode": "MHFG4TU/A",
     "brand": "Apple",
     "model": "MacBook Neo 13inch A18 Pro 6CPU5GPU8GB512GBTouchIDIndigo",
-    "price": "45999",
+    "price": "52249",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHFJ4TU/A",
     "barcode": "MHFJ4TU/A",
     "brand": "Apple",
     "model": "MacBook Neo 13inch A18 Pro 6CPU5GPU8GB512GBTIDBlush",
-    "price": "45999",
+    "price": "52249",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDH74TU/A",
@@ -324,220 +324,220 @@
     "barcode": "MDE14TU/A",
     "brand": "Apple",
     "model": "14-inch MacBook Pro: Apple M5 chip with 10-core CPU and 10-core GPU, 16GB, 1TB SSD - Space Black",
-    "price": "129999",
+    "price": "126099",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDE54TU/A",
     "barcode": "MDE54TU/A",
     "brand": "Apple",
     "model": "14-inch MacBook Pro: Apple M5 chip with 10-core CPU and 10-core GPU, 16GB, 1TB SSD - Silver",
-    "price": "129999",
+    "price": "126099",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDE34TU/A",
     "barcode": "MDE34TU/A",
     "brand": "Apple",
     "model": "14-inch MacBook Pro: Apple M5 chip with 10-core CPU and 10-core GPU, 24GB, 1TB SSD - Space Black",
-    "price": "142499",
+    "price": "138224",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDE64TU/A",
     "barcode": "MDE64TU/A",
     "brand": "Apple",
     "model": "14-inch MacBook Pro: Apple M5 chip with 10-core CPU and 10-core GPU, 24GB, 1TB SSD - Silver",
-    "price": "142499",
+    "price": "138224",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MJ3D4TU/A",
     "barcode": "MJ3D4TU/A",
     "brand": "Apple",
     "model": "14-inch MacBook Pro: Apple M5 chip with 10-core CPU and 10-core GPU, 32GB, 1TB SSD - Space Black",
-    "price": "154999",
+    "price": "150349",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MJ3E4TU/A",
     "barcode": "MJ3E4TU/A",
     "brand": "Apple",
     "model": "14-inch MacBook Pro: Apple M5 chip with 10-core CPU and 10-core GPU, 32GB, 1TB SSD - Silver",
-    "price": "154999",
+    "price": "150349",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGDN4TU/A",
     "barcode": "MGDN4TU/A",
     "brand": "Apple",
     "model": "14-inch MacBook Pro: Apple M5 Pro chip with 15-core CPU and 16-core GPU, 24GB, 1TB SSD - Silver",
-    "price": "164999",
+    "price": "160049",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-06-29"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGDR4TU/A",
     "barcode": "MGDR4TU/A",
     "brand": "Apple",
     "model": "14-inch MacBook Pro: Apple M5 Pro chip with 15-core CPU and 16-core GPU, 24GB, 1TB SSD - Space Black",
-    "price": "164999",
+    "price": "160049",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-06-29"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MJLV4TU/A",
     "barcode": "MJLV4TU/A",
     "brand": "Apple",
     "model": "14-inch MacBook Pro: Apple M5 Pro chip with 15-core CPU and 16-core GPU, 24GB, 2TB SSD - Silver",
-    "price": "196249",
+    "price": "190362",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-06-29"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MJLW4TU/A",
     "barcode": "MJLW4TU/A",
     "brand": "Apple",
     "model": "14-inch MacBook Pro: Apple M5 Pro chip with 15-core CPU and 16-core GPU, 24GB, 2TB SSD - Space Black",
-    "price": "196249",
+    "price": "190362",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-06-29"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGDP4TU/A",
     "barcode": "MGDP4TU/A",
     "brand": "Apple",
     "model": "14-inch MacBook Pro: Apple M5 Pro chip with 18-core CPU and 20-core GPU, 24GB, 2TB SSD - Silver",
-    "price": "208749",
+    "price": "202487",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-06-29"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGDT4TU/A",
     "barcode": "MGDT4TU/A",
     "brand": "Apple",
     "model": "14-inch MacBook Pro: Apple M5 Pro chip with 18-core CPU and 20-core GPU, 24GB, 2TB SSD - Space Black",
-    "price": "208749",
+    "price": "202487",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-06-29"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGDQ4TU/A",
     "barcode": "MGDQ4TU/A",
     "brand": "Apple",
     "model": "14-inch MacBook Pro: Apple M5 Max chip with 18-core CPU and 32-core GPU, 36GB, 2TB SSD - Silver",
-    "price": "264999",
+    "price": "257049",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-06-29"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGDU4TU/A",
     "barcode": "MGDU4TU/A",
     "brand": "Apple",
     "model": "14-inch MacBook Pro: Apple M5 Max chip with 18-core CPU and 32-core GPU, 36GB, 2TB SSD - Space Black",
-    "price": "264999",
+    "price": "257049",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-06-29"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGE44TU/A",
     "barcode": "MGE44TU/A",
     "brand": "Apple",
     "model": "16-inch MacBook Pro: Apple M5 Pro chip with 18-core CPU and 20-core GPU, 24GB, 1TB SSD - Silver",
-    "price": "189999",
+    "price": "189149",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGEA4TU/A",
     "barcode": "MGEA4TU/A",
     "brand": "Apple",
     "model": "16-inch MacBook Pro: Apple M5 Pro chip with 18-core CPU and 20-core GPU, 24GB, 1TB SSD - Space Black",
-    "price": "189999",
+    "price": "189149",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGE64TU/A",
     "barcode": "MGE64TU/A",
     "brand": "Apple",
     "model": "16-inch MacBook Pro: Apple M5 Pro chip with 18-core CPU and 20-core GPU, 48GB, 1TB SSD - Silver",
-    "price": "224999",
+    "price": "225524",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGEC4TU/A",
     "barcode": "MGEC4TU/A",
     "brand": "Apple",
     "model": "16-inch MacBook Pro: Apple M5 Pro chip with 18-core CPU and 20-core GPU, 48GB, 1TB SSD - Space Black",
-    "price": "224999",
+    "price": "225524",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGE74TU/A",
     "barcode": "MGE74TU/A",
     "brand": "Apple",
     "model": "16-inch MacBook Pro: Apple M5 Max chip with 18-core CPU and 32-core GPU, 36GB, 2TB SSD - Silver",
-    "price": "284999",
+    "price": "276449",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGED4TU/A",
     "barcode": "MGED4TU/A",
     "brand": "Apple",
     "model": "16-inch MacBook Pro: Apple M5 Max chip with 18-core CPU and 32-core GPU, 36GB, 2TB SSD - Space Black",
-    "price": "284999",
+    "price": "276449",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGE94TU/A",
     "barcode": "MGE94TU/A",
     "brand": "Apple",
     "model": "16-inch MacBook Pro: Apple M5 Max chip with 18-core CPU and 40-core GPU, 48GB, 2TB SSD - Silver",
-    "price": "324999",
+    "price": "315249",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGEE4TU/A",
     "barcode": "MGEE4TU/A",
     "brand": "Apple",
     "model": "16-inch MacBook Pro: Apple M5 Max chip with 18-core CPU and 40-core GPU, 48GB, 2TB SSD - Space Black",
-    "price": "324999",
+    "price": "315249",
     "concept": "APR",
     "category": "Mac",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MCX44TU/A",
@@ -1224,160 +1224,160 @@
     "barcode": "MHRV4TU/A",
     "brand": "Apple",
     "model": "iPhone 17e 256GB Black",
-    "price": "62999",
+    "price": "68619",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHRW4TU/A",
     "barcode": "MHRW4TU/A",
     "brand": "Apple",
     "model": "iPhone 17e 256GB White",
-    "price": "62999",
+    "price": "68619",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHRX4TU/A",
     "barcode": "MHRX4TU/A",
     "brand": "Apple",
     "model": "iPhone 17e 256GB Soft Pink",
-    "price": "62999",
+    "price": "68619",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHRY4TU/A",
     "barcode": "MHRY4TU/A",
     "brand": "Apple",
     "model": "iPhone 17e 512GB Black",
-    "price": "77699",
+    "price": "84999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHU04TU/A",
     "barcode": "MHU04TU/A",
     "brand": "Apple",
     "model": "iPhone 17e 512GB White",
-    "price": "77699",
+    "price": "84999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHU34TU/A",
     "barcode": "MHU34TU/A",
     "brand": "Apple",
     "model": "iPhone 17e 512GB Soft Pink",
-    "price": "77699",
+    "price": "84999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG6J4TU/A",
     "barcode": "MG6J4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 256GB Black",
-    "price": "89249",
+    "price": "94999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG6K4TU/A",
     "barcode": "MG6K4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 256GB White",
-    "price": "89249",
+    "price": "94999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG6L4TU/A",
     "barcode": "MG6L4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 256GB Mist Blue",
-    "price": "89249",
+    "price": "94999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG6M4TU/A",
     "barcode": "MG6M4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 256GB Lavender",
-    "price": "89249",
+    "price": "94999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG6N4TU/A",
     "barcode": "MG6N4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 256GB Sage",
-    "price": "89249",
+    "price": "94999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG6P4TU/A",
     "barcode": "MG6P4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 512GB Black",
-    "price": "103949",
+    "price": "111149",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG6Q4TU/A",
     "barcode": "MG6Q4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 512GB White",
-    "price": "103949",
+    "price": "111149",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG6T4TU/A",
     "barcode": "MG6T4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 512GB Mist Blue",
-    "price": "103949",
+    "price": "111149",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG6U4TU/A",
     "barcode": "MG6U4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 512GB Lavender",
-    "price": "103949",
+    "price": "111149",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG6V4TU/A",
     "barcode": "MG6V4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 512GB Sage",
-    "price": "103949",
+    "price": "111149",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG2L4TU/A",
@@ -1504,260 +1504,260 @@
     "barcode": "MG8G4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 256GB Silver",
-    "price": "110999",
+    "price": "116999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG8H4TU/A",
     "barcode": "MG8H4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 256GB Cosmic Orange",
-    "price": "110999",
+    "price": "116999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG8J4TU/A",
     "barcode": "MG8J4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 256GB Deep Blue",
-    "price": "110999",
+    "price": "116999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG8K4TU/A",
     "barcode": "MG8K4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 512GB Silver",
-    "price": "125999",
+    "price": "128999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG8M4TU/A",
     "barcode": "MG8M4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 512GB Cosmic Orange",
-    "price": "125999",
+    "price": "128999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG8N4TU/A",
     "barcode": "MG8N4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 512GB Deep Blue",
-    "price": "125999",
+    "price": "128999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG8P4TU/A",
     "barcode": "MG8P4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 1TB Silver",
-    "price": "145999",
+    "price": "138999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG8Q4TU/A",
     "barcode": "MG8Q4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 1TB Cosmic Orange",
-    "price": "145999",
+    "price": "138999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG8R4TU/A",
     "barcode": "MG8R4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro 1TB Deep Blue",
-    "price": "145999",
+    "price": "138999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MFYM4TU/A",
     "barcode": "MFYM4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 256GB Silver",
-    "price": "122999",
+    "price": "129999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MFYN4TU/A",
     "barcode": "MFYN4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 256GB Cosmic Orange",
-    "price": "122999",
+    "price": "129999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MFYP4TU/A",
     "barcode": "MFYP4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 256GB Deep Blue",
-    "price": "122999",
+    "price": "129999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MFYQ4TU/A",
     "barcode": "MFYQ4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 512GB Silver",
-    "price": "137999",
+    "price": "141999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MFYT4TU/A",
     "barcode": "MFYT4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 512GB Cosmic Orange",
-    "price": "137999",
+    "price": "141999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MFYU4TU/A",
     "barcode": "MFYU4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 512GB Deep Blue",
-    "price": "137999",
+    "price": "141999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MFYV4TU/A",
     "barcode": "MFYV4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 1TB Silver",
-    "price": "157999",
+    "price": "152999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MFYW4TU/A",
     "barcode": "MFYW4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 1TB Cosmic Orange",
-    "price": "157999",
+    "price": "152999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MFYX4TU/A",
     "barcode": "MFYX4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 1TB Deep Blue",
-    "price": "157999",
+    "price": "152999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MFYY4TU/A",
     "barcode": "MFYY4TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 2TB Silver",
-    "price": "183999",
+    "price": "182999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG004TU/A",
     "barcode": "MG004TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 2TB Cosmic Orange",
-    "price": "183999",
+    "price": "182999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MG014TU/A",
     "barcode": "MG014TU/A",
     "brand": "Apple",
     "model": "iPhone 17 Pro Max 2TB Deep Blue",
-    "price": "183999",
+    "price": "182999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MYE73TU/A",
     "barcode": "MYE73TU/A",
     "brand": "Apple",
     "model": "iPhone 16 128GB Black",
-    "price": "76649",
+    "price": "79999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MYE93TU/A",
     "barcode": "MYE93TU/A",
     "brand": "Apple",
     "model": "iPhone 16 128GB White",
-    "price": "76649",
+    "price": "79999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MYEA3TU/A",
     "barcode": "MYEA3TU/A",
     "brand": "Apple",
     "model": "iPhone 16 128GB Pink",
-    "price": "76649",
+    "price": "79999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MYEC3TU/A",
     "barcode": "MYEC3TU/A",
     "brand": "Apple",
     "model": "iPhone 16 128GB Ultramarine",
-    "price": "76649",
+    "price": "79999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MYED3TU/A",
     "barcode": "MYED3TU/A",
     "brand": "Apple",
     "model": "iPhone 16 128GB Teal",
-    "price": "76649",
+    "price": "79999",
     "concept": "APR",
     "category": "iPhone",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MTP03TU/A",
@@ -3874,80 +3874,80 @@
     "barcode": "MDWP4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Pro Wi-Fi 1TB with standard glass - Space Black",
-    "price": "109999",
+    "price": "113999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDWQ4TU/A",
     "barcode": "MDWQ4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Pro Wi-Fi 1TB with standard glass - Silver",
-    "price": "109999",
+    "price": "113999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDWR4TU/A",
     "barcode": "MDWR4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Pro Wi-Fi 1TB with nano-texture glass - Space Black",
-    "price": "113999",
+    "price": "119999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDWT4TU/A",
     "barcode": "MDWT4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Pro Wi-Fi 1TB with nano-texture glass - Silver",
-    "price": "113999",
+    "price": "119999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDWU4TU/A",
     "barcode": "MDWU4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Pro Wi-Fi 2TB with standard glass - Space Black",
-    "price": "136799",
+    "price": "143999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDWV4TU/A",
     "barcode": "MDWV4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Pro Wi-Fi 2TB with standard glass - Silver",
-    "price": "136799",
+    "price": "143999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDWW4TU/A",
     "barcode": "MDWW4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Pro Wi-Fi 2TB with nano-texture glass - Space Black",
-    "price": "142499",
+    "price": "149999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDWX4TU/A",
     "barcode": "MDWX4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Pro Wi-Fi 2TB with nano-texture glass - Silver",
-    "price": "142499",
+    "price": "149999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "ME2N4TU/A",
@@ -4094,20 +4094,20 @@
     "barcode": "MDYL4TU/A",
     "brand": "Apple",
     "model": "13-inch iPad Pro Wi-Fi 512GB with standard glass - Space Black",
-    "price": "99749",
+    "price": "104999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDYM4TU/A",
     "barcode": "MDYM4TU/A",
     "brand": "Apple",
     "model": "13-inch iPad Pro Wi-Fi 512GB with standard glass - Silver",
-    "price": "99749",
+    "price": "104999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDYN4TU/A",
@@ -4134,60 +4134,60 @@
     "barcode": "MDYQ4TU/A",
     "brand": "Apple",
     "model": "13-inch iPad Pro Wi-Fi 1TB with nano-texture glass - Space Black",
-    "price": "128249",
+    "price": "134999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDYR4TU/A",
     "barcode": "MDYR4TU/A",
     "brand": "Apple",
     "model": "13-inch iPad Pro Wi-Fi 1TB with nano-texture glass - Silver",
-    "price": "128249",
+    "price": "134999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDYT4TU/A",
     "barcode": "MDYT4TU/A",
     "brand": "Apple",
     "model": "13-inch iPad Pro Wi-Fi 2TB with standard glass - Space Black",
-    "price": "151049",
+    "price": "158999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDYU4TU/A",
     "barcode": "MDYU4TU/A",
     "brand": "Apple",
     "model": "13-inch iPad Pro Wi-Fi 2TB with standard glass - Silver",
-    "price": "151049",
+    "price": "158999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDYV4TU/A",
     "barcode": "MDYV4TU/A",
     "brand": "Apple",
     "model": "13-inch iPad Pro Wi-Fi 2TB with nano-texture glass - Space Black",
-    "price": "156749",
+    "price": "164999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MDYW4TU/A",
     "barcode": "MDYW4TU/A",
     "brand": "Apple",
     "model": "13-inch iPad Pro Wi-Fi 2TB with nano-texture glass - Silver",
-    "price": "156749",
+    "price": "164999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "ME7W4TU/A",
@@ -4394,40 +4394,40 @@
     "barcode": "MH3A4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Air Wi-Fi 512GB - Space Grey",
-    "price": "59999",
+    "price": "62999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MH3C4TU/A",
     "barcode": "MH3C4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Air Wi-Fi 512GB - Blue",
-    "price": "59999",
+    "price": "62999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MH3D4TU/A",
     "barcode": "MH3D4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Air Wi-Fi 512GB - Starlight",
-    "price": "59999",
+    "price": "62999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MH3E4TU/A",
     "barcode": "MH3E4TU/A",
     "brand": "Apple",
     "model": "11-inch iPad Air Wi-Fi 512GB - Purple",
-    "price": "59999",
+    "price": "62999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MH3G4TU/A",
@@ -4634,40 +4634,40 @@
     "barcode": "MH5N4TU/A",
     "brand": "Apple",
     "model": "13-inch iPad Air Wi-Fi 128GB - Space Grey",
-    "price": "52999",
+    "price": "55999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MH5P4TU/A",
     "barcode": "MH5P4TU/A",
     "brand": "Apple",
     "model": "13-inch iPad Air Wi-Fi 128GB - Blue",
-    "price": "52999",
+    "price": "55999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MH5Q4TU/A",
     "barcode": "MH5Q4TU/A",
     "brand": "Apple",
     "model": "13-inch iPad Air Wi-Fi 128GB - Starlight",
-    "price": "52999",
+    "price": "55999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MH5T4TU/A",
     "barcode": "MH5T4TU/A",
     "brand": "Apple",
     "model": "13-inch iPad Air Wi-Fi 128GB - Purple",
-    "price": "52999",
+    "price": "55999",
     "concept": "APR",
     "category": "iPad",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MH5U4TU/A",
@@ -5316,6 +5316,16 @@
     "category": "Aksesuar"
   },
   {
+    "id": "MW5L3ZM/A",
+    "barcode": "MW5L3ZM/A",
+    "brand": "Apple",
+    "model": "USB-C to USB Adapter",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
     "id": "MW5M3ZM/A",
     "barcode": "MW5M3ZM/A",
     "brand": "Apple",
@@ -5581,10 +5591,10 @@
     "barcode": "MFHP4TU/A",
     "brand": "Apple",
     "model": "AirPods Pro 3",
-    "price": "15499",
+    "price": "17499",
     "concept": "APR",
     "category": "AirPods",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MKFT4TU/A",
@@ -5611,65 +5621,70 @@
     "barcode": "MHWK4TU/A",
     "brand": "Apple",
     "model": "AirPods Max 2 - Midnight",
-    "price": "36999",
+    "price": "39999",
     "concept": "APR",
-    "category": "AirPods"
+    "category": "AirPods",
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHWL4TU/A",
     "barcode": "MHWL4TU/A",
     "brand": "Apple",
     "model": "AirPods Max 2 - Starlight",
-    "price": "36999",
+    "price": "39999",
     "concept": "APR",
-    "category": "AirPods"
+    "category": "AirPods",
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHWM4TU/A",
     "barcode": "MHWM4TU/A",
     "brand": "Apple",
     "model": "AirPods Max 2 - Blue",
-    "price": "36999",
+    "price": "39999",
     "concept": "APR",
-    "category": "AirPods"
+    "category": "AirPods",
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHWN4TU/A",
     "barcode": "MHWN4TU/A",
     "brand": "Apple",
     "model": "AirPods Max 2 - Orange",
-    "price": "36999",
+    "price": "39999",
     "concept": "APR",
-    "category": "AirPods"
+    "category": "AirPods",
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MHWP4TU/A",
     "barcode": "MHWP4TU/A",
     "brand": "Apple",
     "model": "AirPods Max 2 - Purple",
-    "price": "36999",
+    "price": "39999",
     "concept": "APR",
-    "category": "AirPods"
+    "category": "AirPods",
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MXP63TU/A",
     "barcode": "MXP63TU/A",
     "brand": "Apple",
     "model": "AirPods 4",
-    "price": "8999",
+    "price": "8299",
     "concept": "APR",
     "category": "AirPods",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MXP93TU/A",
     "barcode": "MXP93TU/A",
     "brand": "Apple",
     "model": "AirPods 4 with Active Noise Cancellation",
-    "price": "11999",
+    "price": "10999",
     "concept": "APR",
     "category": "AirPods",
-    "priceUpdatedAt": "2026-09-10"
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MYH93ZM/A",
@@ -5919,6 +5934,16 @@
     "priceUpdatedAt": "2026-09-10"
   },
   {
+    "id": "MK8P4EE/A",
+    "barcode": "MK8P4EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-C to USB-C Woven Cable (1.5m) - Power Pink",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
     "id": "MK8Q4EE/A",
     "barcode": "MK8Q4EE/A",
     "brand": "Beats",
@@ -5927,6 +5952,16 @@
     "concept": "APR",
     "category": "Aksesuar",
     "priceUpdatedAt": "2026-09-10"
+  },
+  {
+    "id": "MK8R4EE/A",
+    "barcode": "MK8R4EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-A to USB-C Woven Cable (1.5m) - Power Pink",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MLH84EE/A",
@@ -6549,6 +6584,16 @@
     "category": "Aksesuar"
   },
   {
+    "id": "MW2Q3ZM/A",
+    "barcode": "MW2Q3ZM/A",
+    "brand": "Apple",
+    "model": "Apple USB-C 3,5 mm Kulaklık Jakı Adaptörü",
+    "price": "499",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
     "id": "MW2R3ZM/A",
     "barcode": "MW2R3ZM/A",
     "brand": "Apple",
@@ -6661,6 +6706,16 @@
     "concept": "APR",
     "category": "Aksesuar",
     "priceUpdatedAt": "2026-09-10"
+  },
+  {
+    "id": "MW2N3TU/A",
+    "barcode": "MW2N3TU/A",
+    "brand": "Apple",
+    "model": "Power Adapter Extension Cable",
+    "price": "999",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MFEL4TU/A",
@@ -11353,6 +11408,16 @@
     "priceUpdatedAt": "2026-06-29"
   },
   {
+    "id": "MWML3ZM/A",
+    "barcode": "MWML3ZM/A",
+    "brand": "Apple",
+    "model": "USB-C to Apple Pencil Adapter",
+    "price": "479",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
     "id": "MX2D3ZE/A",
     "barcode": "MX2D3ZE/A",
     "brand": "Apple",
@@ -11543,6 +11608,16 @@
     "priceUpdatedAt": "2026-06-29"
   },
   {
+    "id": "MDGA4EE/A",
+    "barcode": "MDGA4EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-C to USB-C Woven Cable (1.5 m) - Bolt Black",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
     "id": "MDGC4EE/A",
     "barcode": "MDGC4EE/A",
     "brand": "Beats",
@@ -11553,6 +11628,46 @@
     "priceUpdatedAt": "2026-06-29"
   },
   {
+    "id": "MDGD4EE/A",
+    "barcode": "MDGD4EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-C to USB-C Woven Cable (1.5 m) - Surge Stone",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
+    "id": "MDGE4EE/A",
+    "barcode": "MDGE4EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-C to USB-C Woven Cable (1.5 m) - Nitro Navy",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
+    "id": "MDGF4EE/A",
+    "barcode": "MDGF4EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-C to USB-C Woven Cable (1.5 m) - Rapid Red",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
+    "id": "MDGG4EE/A",
+    "barcode": "MDGG4EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-A to USB-C Woven Cable (1.5 m) - Bolt Black",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
     "id": "MDGH4EE/A",
     "barcode": "MDGH4EE/A",
     "brand": "Beats",
@@ -11561,6 +11676,36 @@
     "concept": "APR",
     "category": "Aksesuar",
     "priceUpdatedAt": "2026-06-29"
+  },
+  {
+    "id": "MDGJ4EE/A",
+    "barcode": "MDGJ4EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-A to USB-C Woven Cable (1.5 m) - Surge Stone",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
+    "id": "MDGK4EE/A",
+    "barcode": "MDGK4EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-C to Lightning Woven Cable (1.5 m) - Bolt Black",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
+    "id": "MDGL4EE/A",
+    "barcode": "MDGL4EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-C to Lightning Woven Cable (1.5 m) - Surge Stone",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "ME2J4EE/A",
@@ -11601,6 +11746,56 @@
     "concept": "APR",
     "category": "Aksesuar",
     "priceUpdatedAt": "2026-06-29"
+  },
+  {
+    "id": "MEQ94EE/A",
+    "barcode": "MEQ94EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-C to USB-C Woven Short Cable (20 cm) - Bolt Black",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
+    "id": "MEQL4EE/A",
+    "barcode": "MEQL4EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-A to USB-C Woven Short Cable (20 cm) - Bolt Black",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
+    "id": "MEQM4EE/A",
+    "barcode": "MEQM4EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-C to Lightning Woven Short Cable (20 cm) - Bolt Black",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
+    "id": "MFEH4EE/A",
+    "barcode": "MFEH4EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-C to Lightning Woven Cable (1.5 m) - Rapid Red",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
+  },
+  {
+    "id": "MFEJ4EE/A",
+    "barcode": "MFEJ4EE/A",
+    "brand": "Beats",
+    "model": "Beats USB-A to USB-C Woven Cable (1.5 m) - Rapid Red",
+    "price": "949",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MGJ84LL/A",
@@ -12101,6 +12296,16 @@
     "concept": "APR",
     "category": "Aksesuar",
     "priceUpdatedAt": "2026-06-29"
+  },
+  {
+    "id": "MLH74ZM/A",
+    "barcode": "MLH74ZM/A",
+    "brand": "Apple",
+    "model": "Polishing Cloth",
+    "price": "579",
+    "concept": "APR",
+    "category": "Aksesuar",
+    "priceUpdatedAt": "2026-09-15"
   },
   {
     "id": "MKG04ZM/A",
