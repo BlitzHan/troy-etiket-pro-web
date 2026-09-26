@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-title" content="Troy Etiket">
     <link rel="apple-touch-icon" href="AppIcon.png">
     <title>Troy Etiket Pro</title>
-    <link rel="stylesheet" href="styles.css?v=20260926a">
+    <link rel="stylesheet" href="styles.css?v=20260926c">
     <link rel="preload" href="APP.png" as="image">
     <link rel="preload" href="APR.png" as="image">
     <link rel="preload" href="AAR.png" as="image">
@@ -377,11 +377,14 @@
     <section id="printArea" class="print-area" aria-label="Yazdırılacak etiketler"></section>
 
     <dialog id="printHelpDialog" class="print-help-dialog" aria-labelledby="printHelpTitle">
-      <h2 id="printHelpTitle">Yazdırma penceresi açılmadı</h2>
-      <p>iPadOS, ana ekrana eklenen uygulamada yazdırmaya izin vermiyor. Etiketleri Safari'de açıp oradan yazdırabilirsin; seçtiğin ürünler ve adetler aktarılır.</p>
+      <h2 id="printHelpTitle">Yazdır</h2>
+      <p id="printHelpStatus">Etiketler hazırlanıyor…</p>
       <div class="print-help-actions">
         <button class="ghost-button" type="button" data-close>Kapat</button>
-        <a id="printHelpOpenLink" class="primary-button" href="./" target="_blank" rel="noopener">Safari'de Aç</a>
+        <button id="printHelpShareButton" class="primary-button" type="button" disabled>
+          <svg aria-hidden="true"><use href="#i-printer"/></svg>
+          Yazdır
+        </button>
       </div>
     </dialog>
 
@@ -407,6 +410,6 @@
       </article>
     </template>
 
-    <script src="app.js?v=20260926a"></script>
+    <script src="app.js?v=20260926c"></script>
   </body>
 </html>

@@ -12,17 +12,6 @@ const CURRENT_VERSION = (() => {
   catch { return ""; }
 })();
 
-/* ── Safari'ye yazdırma aktarımı ──
-   Web app'ten "Safari'de Aç" ile gelindiyse seçimler ?yazdir= ile taşınır.
-   Sürüm kontrolü sayfayı sorgusuz yenileyebileceği için hemen sakla. */
-const PENDING_PRINT_KEY = "troy-pending-print";
-(() => {
-  const raw = new URLSearchParams(location.search).get("yazdir");
-  if (!raw) return;
-  sessionStorage.setItem(PENDING_PRINT_KEY, raw);
-  history.replaceState(null, "", location.pathname + location.hash);
-})();
-
 async function checkForNewVersion() {
   if (!CURRENT_VERSION) return;
   try {
@@ -524,7 +513,6 @@ function applyRouting() {
   }
 
   hideSiteLogin();
-  applyPendingPrint();
   const hash = window.location.hash;
   if (hash === "#manual") {
     currentScreen = "manual";
@@ -566,33 +554,6 @@ siteLoginForm.addEventListener("submit", (event) => {
 sitePasswordInput.addEventListener("input", () => {
   siteLoginError.hidden = true;
 });
-
-function applyPendingPrint() {
-  const raw = sessionStorage.getItem(PENDING_PRINT_KEY);
-  if (!raw) return;
-  sessionStorage.removeItem(PENDING_PRINT_KEY);
-  try {
-    const pending = JSON.parse(raw);
-    if (pending.s === "automatic" && pending.q && typeof pending.q === "object") {
-      selectedQuantities = {};
-      for (const [id, qty] of Object.entries(pending.q)) {
-        const n = Math.max(0, Math.min(100, Number(qty) || 0));
-        if (n > 0) selectedQuantities[id] = n;
-      }
-      if (pending.c) autoConceptInput.value = pending.c;
-      if (pending.d) autoDateInput.value = pending.d;
-      updateAutoBadge();
-    } else if (pending.s === "manual" && Array.isArray(pending.items)) {
-      items = pending.items.filter(isValidItem);
-      saveItems();
-      if (items[0]?.concept) conceptInput.value = items[0].concept;
-      renderPreview();
-    }
-    updateLayoutEyebrows();
-  } catch {
-    // Bozuk bağlantı — normal açılışla devam et.
-  }
-}
 
 // "Yeni Fiyatlar" için: katalogdaki en güncel priceUpdatedAt tarihi (yoksa null).
 function getLatestPriceUpdateDate() {
@@ -1119,14 +1080,16 @@ window.addEventListener("beforeprint", () => {
 });
 
 /* ── Yazdırma ──
-   iPadOS, ana ekrana eklenen web app'te window.print()'i sessizce yok sayabiliyor
-   (Safari'de çalışıyor). Web app'te yazdırma penceresi açılmazsa seçimleri
-   taşıyan bir bağlantıyla Safari'de açmayı öner. */
+   iPadOS 27, ana ekrana eklenen web app'te window.print()'i sessizce yok sayıyor
+   (Safari'de çalışıyor). Web app'te yazdırma penceresi açılmazsa etiketleri A4 PDF'e
+   çevirip paylaşım menüsünü açıyoruz; oradan "Yazdır" sistem yazdırma ekranını açar. */
 const isStandaloneApp = navigator.standalone === true
   || window.matchMedia("(display-mode: standalone)").matches;
 const printHelpDialog = document.querySelector("#printHelpDialog");
-const printHelpOpenLink = document.querySelector("#printHelpOpenLink");
+const printHelpStatus = document.querySelector("#printHelpStatus");
+const printHelpShareButton = document.querySelector("#printHelpShareButton");
 let printDialogOpened = false;
+let labelsPdfFile = null;
 
 function printLabels() {
   renderPrintArea();
@@ -1134,35 +1097,92 @@ function printLabels() {
   window.print();
   if (!isStandaloneApp) return;
   setTimeout(() => {
-    if (!printDialogOpened) showPrintHelp();
-  }, 1500);
+    if (!printDialogOpened) printViaPdf();
+  }, 1000);
 }
 
-function buildPrintHandoffUrl() {
-  const payload = currentScreen === "automatic"
-    ? {
-        s: "automatic",
-        c: autoConceptInput.value,
-        d: autoDateInput.value,
-        q: Object.fromEntries(Object.entries(selectedQuantities).filter(([, qty]) => qty > 0)),
-      }
-    : { s: "manual", items };
-  const url = new URL(location.pathname, location.href);
-  url.searchParams.set("yazdir", JSON.stringify(payload));
-  url.hash = `#${payload.s}`;
-  return url.href;
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = resolve;
+    script.onerror = () => reject(new Error(`Yüklenemedi: ${src}`));
+    document.head.append(script);
+  });
 }
 
-function showPrintHelp() {
-  printHelpOpenLink.href = buildPrintHandoffUrl();
-  if (typeof printHelpDialog.showModal === "function") printHelpDialog.showModal();
-  else printHelpDialog.setAttribute("open", "");
+async function loadPdfLibraries() {
+  if (!window.html2canvas) {
+    await loadScript("https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js");
+  }
+  if (!window.jspdf) {
+    await loadScript("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js");
+  }
 }
+
+// img.decode() ekran dışındaki resimlerde takılabiliyor; load/complete yeterli.
+function waitForImage(img) {
+  if (img.complete) return Promise.resolve();
+  return new Promise(resolve => {
+    img.addEventListener("load", resolve, { once: true });
+    img.addEventListener("error", resolve, { once: true });
+    setTimeout(resolve, 5000);
+  });
+}
+
+// Baskı alanını ekran dışında görünür yapıp her A4 sayfasını 300 dpi resim olarak PDF'e koyar.
+async function buildLabelsPdf() {
+  await loadPdfLibraries();
+  renderPrintArea();
+  printArea.classList.add("print-area--capture");
+  try {
+    await document.fonts.ready;
+    await Promise.all([...printArea.querySelectorAll("img")].map(waitForImage));
+    const pdf = new window.jspdf.jsPDF({ unit: "mm", format: "a4", orientation: "portrait" });
+    const pages = [...printArea.querySelectorAll(".print-page")];
+    for (const [index, page] of pages.entries()) {
+      const canvas = await window.html2canvas(page, { scale: 300 / 96, backgroundColor: "#ffffff" });
+      if (index > 0) pdf.addPage("a4", "portrait");
+      pdf.addImage(canvas.toDataURL("image/jpeg", 0.92), "JPEG", 0, 0, 210, 297);
+    }
+    return new File([pdf.output("blob")], "etiketler.pdf", { type: "application/pdf" });
+  } finally {
+    printArea.classList.remove("print-area--capture");
+  }
+}
+
+async function printViaPdf() {
+  labelsPdfFile = null;
+  printHelpStatus.textContent = "Etiketler hazırlanıyor…";
+  printHelpShareButton.disabled = true;
+  if (!printHelpDialog.open) printHelpDialog.showModal();
+  try {
+    labelsPdfFile = await buildLabelsPdf();
+    printHelpStatus.textContent = "Etiketler hazır. \"Yazdır\"a bas, açılan menüden \"Yazdır\"ı seç.";
+    printHelpShareButton.disabled = false;
+  } catch (error) {
+    console.error("PDF oluşturulamadı:", error);
+    printHelpStatus.textContent = "Etiketler hazırlanamadı. İnternet bağlantısını kontrol edip tekrar dene.";
+  }
+}
+
+printHelpShareButton.addEventListener("click", async () => {
+  if (!labelsPdfFile) return;
+  if (navigator.canShare?.({ files: [labelsPdfFile] })) {
+    try {
+      await navigator.share({ files: [labelsPdfFile] });
+      printHelpDialog.close();
+    } catch (error) {
+      if (error.name !== "AbortError") console.error("Paylaşım açılamadı:", error);
+    }
+    return;
+  }
+  // Paylaşım desteklenmiyorsa PDF'i aynı pencerede aç (iOS önizlemesinden yazdırılabilir).
+  window.location.href = URL.createObjectURL(labelsPdfFile);
+});
 
 printHelpDialog.addEventListener("click", (event) => {
-  if (event.target.closest("[data-close]") || event.target === printHelpOpenLink) {
-    printHelpDialog.close();
-  }
+  if (event.target.closest("[data-close]")) printHelpDialog.close();
 });
 
 // Initializations
