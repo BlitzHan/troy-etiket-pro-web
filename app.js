@@ -12,6 +12,17 @@ const CURRENT_VERSION = (() => {
   catch { return ""; }
 })();
 
+/* ── Safari'ye yazdırma aktarımı ──
+   Web app'ten "Safari'de Aç" ile gelindiyse seçimler ?yazdir= ile taşınır.
+   Sürüm kontrolü sayfayı sorgusuz yenileyebileceği için hemen sakla. */
+const PENDING_PRINT_KEY = "troy-pending-print";
+(() => {
+  const raw = new URLSearchParams(location.search).get("yazdir");
+  if (!raw) return;
+  sessionStorage.setItem(PENDING_PRINT_KEY, raw);
+  history.replaceState(null, "", location.pathname + location.hash);
+})();
+
 async function checkForNewVersion() {
   if (!CURRENT_VERSION) return;
   try {
@@ -513,6 +524,7 @@ function applyRouting() {
   }
 
   hideSiteLogin();
+  applyPendingPrint();
   const hash = window.location.hash;
   if (hash === "#manual") {
     currentScreen = "manual";
@@ -554,6 +566,33 @@ siteLoginForm.addEventListener("submit", (event) => {
 sitePasswordInput.addEventListener("input", () => {
   siteLoginError.hidden = true;
 });
+
+function applyPendingPrint() {
+  const raw = sessionStorage.getItem(PENDING_PRINT_KEY);
+  if (!raw) return;
+  sessionStorage.removeItem(PENDING_PRINT_KEY);
+  try {
+    const pending = JSON.parse(raw);
+    if (pending.s === "automatic" && pending.q && typeof pending.q === "object") {
+      selectedQuantities = {};
+      for (const [id, qty] of Object.entries(pending.q)) {
+        const n = Math.max(0, Math.min(100, Number(qty) || 0));
+        if (n > 0) selectedQuantities[id] = n;
+      }
+      if (pending.c) autoConceptInput.value = pending.c;
+      if (pending.d) autoDateInput.value = pending.d;
+      updateAutoBadge();
+    } else if (pending.s === "manual" && Array.isArray(pending.items)) {
+      items = pending.items.filter(isValidItem);
+      saveItems();
+      if (items[0]?.concept) conceptInput.value = items[0].concept;
+      renderPreview();
+    }
+    updateLayoutEyebrows();
+  } catch {
+    // Bozuk bağlantı — normal açılışla devam et.
+  }
+}
 
 // "Yeni Fiyatlar" için: katalogdaki en güncel priceUpdatedAt tarihi (yoksa null).
 function getLatestPriceUpdateDate() {
@@ -945,10 +984,7 @@ clearButton.addEventListener("click", () => {
   renderPreview();
 });
 
-printButton.addEventListener("click", () => {
-  renderPrintArea();
-  window.print();
-});
+printButton.addEventListener("click", printLabels);
 
 sampleButton.addEventListener("click", () => {
   items = [
@@ -1074,13 +1110,60 @@ autoClearButton.addEventListener("click", () => {
   }
 });
 
-autoPrintButton.addEventListener("click", () => {
-  renderPrintArea();
-  window.print();
-});
+autoPrintButton.addEventListener("click", printLabels);
 
 // Print area global listener (for browser menu printing)
-window.addEventListener("beforeprint", renderPrintArea);
+window.addEventListener("beforeprint", () => {
+  printDialogOpened = true;
+  renderPrintArea();
+});
+
+/* ── Yazdırma ──
+   iPadOS, ana ekrana eklenen web app'te window.print()'i sessizce yok sayabiliyor
+   (Safari'de çalışıyor). Web app'te yazdırma penceresi açılmazsa seçimleri
+   taşıyan bir bağlantıyla Safari'de açmayı öner. */
+const isStandaloneApp = navigator.standalone === true
+  || window.matchMedia("(display-mode: standalone)").matches;
+const printHelpDialog = document.querySelector("#printHelpDialog");
+const printHelpOpenLink = document.querySelector("#printHelpOpenLink");
+let printDialogOpened = false;
+
+function printLabels() {
+  renderPrintArea();
+  printDialogOpened = false;
+  window.print();
+  if (!isStandaloneApp) return;
+  setTimeout(() => {
+    if (!printDialogOpened) showPrintHelp();
+  }, 1500);
+}
+
+function buildPrintHandoffUrl() {
+  const payload = currentScreen === "automatic"
+    ? {
+        s: "automatic",
+        c: autoConceptInput.value,
+        d: autoDateInput.value,
+        q: Object.fromEntries(Object.entries(selectedQuantities).filter(([, qty]) => qty > 0)),
+      }
+    : { s: "manual", items };
+  const url = new URL(location.pathname, location.href);
+  url.searchParams.set("yazdir", JSON.stringify(payload));
+  url.hash = `#${payload.s}`;
+  return url.href;
+}
+
+function showPrintHelp() {
+  printHelpOpenLink.href = buildPrintHandoffUrl();
+  if (typeof printHelpDialog.showModal === "function") printHelpDialog.showModal();
+  else printHelpDialog.setAttribute("open", "");
+}
+
+printHelpDialog.addEventListener("click", (event) => {
+  if (event.target.closest("[data-close]") || event.target === printHelpOpenLink) {
+    printHelpDialog.close();
+  }
+});
 
 // Initializations
 dateInput.value = todayForInput();

@@ -1275,9 +1275,24 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 }
 
 @page { size: A4; margin: 0; }
+.print-help-dialog {
+  width: min(420px, calc(100vw - 32px));
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-l);
+}
+.print-help-dialog::backdrop { background: rgba(15, 28, 46, 0.4); }
+.print-help-dialog h2 { margin: 0 0 8px; font-size: 17px; }
+.print-help-dialog p { margin: 0 0 18px; color: var(--ink-2); font-size: 14px; line-height: 1.5; }
+.print-help-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.print-help-actions a { text-decoration: none; }
+
 @media print {
   html, body { height: auto !important; overflow: visible !important; }
   body { background: #fff; }
-  .app-shell, .welcome-screen, .site-login-screen { display: none !important; }
+  .app-shell, .welcome-screen, .site-login-screen, .print-help-dialog { display: none !important; }
   .print-area { display: block !important; }
 }
