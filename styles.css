@@ -1258,7 +1258,13 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
   width: 192mm;
   height: 276.3mm;
 }
-.print-grid .label-visual { width: 64mm; height: 30.7mm; }
+.print-grid .label-visual {
+  width: 64mm;
+  height: 30.7mm;
+  /* Fiziksel etikete tam sıfır oturmasın: her etiket kendi hücresinin ortasında %3
+     küçültülür (hücre/merkezler sabit, kenarlarda ~1mm pay). */
+  transform: scale(0.97);
+}
 .print-placeholder { width: 64mm; height: 30.7mm; }
 
 /* APP mağazaları için etiket ölçüsü (63mm x 32mm — fiziksel etiket 65mm x 34mm,
