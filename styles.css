@@ -1257,14 +1257,12 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
   grid-template-rows: repeat(9, 30.7mm);
   width: 192mm;
   height: 276.3mm;
-}
-.print-grid .label-visual {
-  width: 64mm;
-  height: 30.7mm;
-  /* Fiziksel etikete tam sıfır oturmasın: her etiket kendi hücresinin ortasında %3
-     küçültülür (hücre/merkezler sabit, kenarlarda ~1mm pay). */
+  /* Etiketler bitişik kalsın (tek makas darbesiyle kesim) ama tutucuya tam sıfır
+     oturmasın: ızgaranın tamamı %3 küçültülür, üstten ortalı. */
   transform: scale(0.97);
+  transform-origin: top center;
 }
+.print-grid .label-visual { width: 64mm; height: 30.7mm; }
 .print-placeholder { width: 64mm; height: 30.7mm; }
 
 /* APP mağazaları için etiket ölçüsü (63mm x 32mm — fiziksel etiket 65mm x 34mm,
