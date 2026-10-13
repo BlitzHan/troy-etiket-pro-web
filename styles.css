@@ -1264,8 +1264,11 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 }
 /* iPhone/iPad: iOS yazdırma sayfayı yazıcının basılabilir alanına sığdırıp ~%4 küçültüyor
    (kenar boşluğu "Yok" seçeneği yok). Bu küçültmeyi telafi edip Mac'teki çıktıyla aynı
-   fiziksel ölçüyü vermek için ızgara burada büyütülür (0.97 / 0.96 ≈ 1.01). */
-.is-ios .print-grid { transform: scale(1.01); }
+   fiziksel ölçüyü vermek için ızgara burada büyütülür (sahada denenerek ayarlanır).
+   iOS sayfayı zaten basılabilir alana sığdırdığı için üst boşluk azaltılır; böylece
+   büyütülen ızgara A4'ten taşmaz. */
+.is-ios .print-page { padding-top: 6mm; }
+.is-ios .print-grid { transform: scale(1.04); }
 .print-grid .label-visual { width: 64mm; height: 30.7mm; }
 .print-placeholder { width: 64mm; height: 30.7mm; }
 
