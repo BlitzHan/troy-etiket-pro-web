@@ -1085,6 +1085,11 @@ window.addEventListener("beforeprint", () => {
    çevirip paylaşım menüsünü açıyoruz; oradan "Yazdır" sistem yazdırma ekranını açar. */
 const isStandaloneApp = navigator.standalone === true
   || window.matchMedia("(display-mode: standalone)").matches;
+// iPhone/iPad yazdırırken A4'ü yazıcının basılabilir alanına sığdırmak için küçültüyor
+// (Mac'te kenar boşluğu "Yok" seçilebiliyor, iOS'ta seçilemiyor). styles.css bunu telafi eder.
+const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent)
+  || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+if (isIOSDevice) document.documentElement.classList.add("is-ios");
 const printHelpDialog = document.querySelector("#printHelpDialog");
 const printHelpStatus = document.querySelector("#printHelpStatus");
 const printHelpShareButton = document.querySelector("#printHelpShareButton");
