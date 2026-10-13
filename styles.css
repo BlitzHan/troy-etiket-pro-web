@@ -1262,13 +1262,10 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
   transform: scale(0.97);
   transform-origin: top center;
 }
-/* iPhone/iPad: iOS yazdırma sayfayı yazıcının basılabilir alanına sığdırıp ~%4 küçültüyor
-   (kenar boşluğu "Yok" seçeneği yok). Bu küçültmeyi telafi edip Mac'teki çıktıyla aynı
-   fiziksel ölçüyü vermek için ızgara burada büyütülür (sahada denenerek ayarlanır).
-   iOS sayfayı zaten basılabilir alana sığdırdığı için üst boşluk azaltılır; böylece
-   büyütülen ızgara A4'ten taşmaz. */
-.is-ios .print-page { padding-top: 6mm; }
-.is-ios .print-grid { transform: scale(1.04); }
+/* iPhone/iPad her zaman A4 PDF'ten basar (app.js → printLabels). iOS PDF'i yazıcının
+   basılabilir alanına sığdırıp ~%3–4 küçülttüğü için oradaki %3 küçültme kaldırılır;
+   sonuç Mac çıktısıyla aynı boyuta gelir. */
+.is-ios .print-grid { transform: none; }
 .print-grid .label-visual { width: 64mm; height: 30.7mm; }
 .print-placeholder { width: 64mm; height: 30.7mm; }
 

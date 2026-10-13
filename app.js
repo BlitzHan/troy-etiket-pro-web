@@ -1085,8 +1085,7 @@ window.addEventListener("beforeprint", () => {
    çevirip paylaşım menüsünü açıyoruz; oradan "Yazdır" sistem yazdırma ekranını açar. */
 const isStandaloneApp = navigator.standalone === true
   || window.matchMedia("(display-mode: standalone)").matches;
-// iPhone/iPad yazdırırken A4'ü yazıcının basılabilir alanına sığdırmak için küçültüyor
-// (Mac'te kenar boşluğu "Yok" seçilebiliyor, iOS'ta seçilemiyor). styles.css bunu telafi eder.
+// iPhone/iPad'de baskı her zaman PDF üzerinden yapılır (bkz. printLabels, styles.css → .is-ios).
 const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent)
   || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 if (isIOSDevice) document.documentElement.classList.add("is-ios");
@@ -1097,6 +1096,12 @@ let printDialogOpened = false;
 let labelsPdfFile = null;
 
 function printLabels() {
+  // iOS Safari'nin kendi yazdırması sayfaya ek kenar boşluğu koyup etiketleri ~%17
+  // küçültüyor ve bu kontrol edilemiyor; iOS'ta her zaman ölçüsü sabit PDF'ten basılır.
+  if (isIOSDevice) {
+    printViaPdf();
+    return;
+  }
   renderPrintArea();
   printDialogOpened = false;
   window.print();
